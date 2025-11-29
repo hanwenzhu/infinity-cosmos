@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Enriched limits</title>
+<link rel="next" href="sec-cosmos.html" title="-Cosmoi" />
+<link rel="prev" href="sec-homotopy-category.html" title="The homotopy category of a quasi-category, isofibrations, and equivalences" />
+<link rel="up" href="sect0001.html" title="-Cosmoi" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">\(\infty \)-Cosmoi</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Overview</span></a>
+ </li>
+<li class="">
+  <a href="sec-simplicial-sets.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Simplicial sets</span></a>
+ </li>
+<li class="">
+  <a href="sec-homotopy-category.html"><span class="toc_ref">1.3</span> <span class="toc_entry">The homotopy category of a quasi-category, isofibrations, and equivalences</span></a>
+ </li>
+<li class=" active current">
+  <a href="sec-enriched-limits.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Enriched limits</span></a>
+ </li>
+<li class="">
+  <a href="sec-cosmos.html"><span class="toc_ref">1.5</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+ </li>
+<li class="">
+  <a href="sec-change-of-base.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Change of base</span></a>
+ </li>
+<li class="">
+  <a href="sec-examples.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Examples of \(\infty \)-cosmoi</span></a>
+ </li>
+<li class="">
+  <a href="sec-htpy-2-cat.html"><span class="toc_ref">1.8</span> <span class="toc_entry">The homotopy 2-category</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="sec:enriched-limits">1.4 Enriched limits</h1>
+
+<p>A simplicially enriched category—commonly called a “simplicial category” for short—is a category that is enriched over the cartesian monoidal category of simplicial sets. We recall the definition, which already exists in Mathlib. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:simplicial-category">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.1</span>
+    <span class="definition_thmtitle">simplicial categories as enriched categories</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-enriched-limits.html#defn:simplicial-category">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:sset-category">Definition 1.2.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.SimplicialCategory" class="lean_decl">CategoryTheory.SimplicialCategory</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  
+<p>The data of a <b class="bfseries">simplicial category</b> is a <b class="bfseries">simplicially enriched category</b> with a set of objects and a simplicial set \({\mathord {\mathcal{A}}}(x,y)\) of morphisms between each ordered pair of objects. Each endo-hom space contains a distinguished 0-simplex \(\textup{id}_x \in {\mathord {\mathcal{A}}}(x,y)_0\), and composition is required to define a simplicial map </p>
+<div class="centered"> <div class="tikzcd" id="a0000000058">
+    <img src="images/img-0022.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+  \cA(y,z) \times \cA(x,y) \arrow[r, &#34;\circ&#34;] &amp; \cA(x,z)
+  \end{tikzcd}" />
+</div> </div>
+<p> The composition is required to be associative and unital, in a sense expressed by the commutative diagrams of simplicial sets </p>
+<div class="centered"> <div class="tikzcd" id="a0000000059">
+    <img src="images/img-0023.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=small]
+  \cA(y,z) \times \cA(x,y) \times \cA(w,x) \arrow[d, &#34;\id \times \circ&#34;&#39;] \arrow[r, &#34;\circ \times \id&#34;] &amp; \cA(x,z) \times \cA(w,x) \arrow[d, &#34;\circ&#34;]  \\ \cA(y,z) \times \cA(w,y) \arrow[r, &#34;\circ&#34;&#39;] &amp; \cA(w,z)
+  \end{tikzcd}" />
+</div> <div class="tikzcd" id="a0000000060">
+    <img src="images/img-0024.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \cA(x,y) \arrow[r, &#34;\id_y \times \id&#34;] \arrow[dr, &#34;\id&#34;] \arrow[d, &#34;\id \times \id_x&#34;&#39;]  &amp; \cA(y,y) \times \cA(x,y) \arrow[d, &#34;\circ&#34;] \\ \cA(x,y) \times \cA(x,x) \arrow[r, &#34;\circ&#34;&#39;] &amp; \cA(x,y)
+  \end{tikzcd}" />
+</div> </div>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:n-arrow">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.2</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-enriched-limits.html#defn:n-arrow">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-enriched-limits.html#defn:simplicial-category">Definition 1.4.1</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplicial-set">Definition 1.2.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  For each \(n \geq 0\), an \(n\)-simplex in \({\mathord {\mathcal{A}}}(x,y)\) is referred to as an \(n\)-<b class="bfseries">arrow</b> from \(x\) to \(y\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:cat-of-n-arrows">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.4.3</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-enriched-limits.html#lem:cat-of-n-arrows">#</a>
+    
+    <a class="icon proof" href="sec-enriched-limits.html#a0000000061"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> For any simplicial category \({\mathord {\mathcal{A}}}\) and \(n \geq 0\), the \(n\)-arrows assemble into the arrows of an ordinary category \({\mathord {\mathcal{A}}}_n\) with the same set of objects as \({\mathord {\mathcal{A}}}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000061">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> The category of \(n\)-arrows is easy to construct directly. Alternatively, this result can be proven by applying the theory of change-of-base of §<a href="sec-change-of-base.html">1.6</a> to the functor \(\textup{ev}_n \colon {\mathord {\mathcal{sSet}}}\to {\mathord {\mathcal{Set}}}\). </p>
+
+  </div>
+</div>
+<p>In particular, the underlying category of a simplicial category can be identified with the category of \(0\)-arrows. Below we link the general Mathlib construction of the underlying category of an enriched category, though it might be useful to formalize a lemma characterizing it in the way stated here. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:underlying-cat">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.4</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-enriched-limits.html#defn:underlying-cat">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-enriched-limits.html#defn:simplicial-category">Definition 1.4.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.categoryForgetEnrichment" class="lean_decl">CategoryTheory.categoryForgetEnrichment</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p> The category \({\mathord {\mathcal{A}}}_0\) of 0-arrows is the <b class="bfseries">underlying category</b> of the simplicial category \({\mathord {\mathcal{A}}}\), which forgets the higher dimensional simplicial structure. </p>
+
+  </div>
+</div>
+<p>There is alternate presentation of the data of a simplicial category as a simplicial object in the category of categories and identity-on-objects functors.<a class="footnote" href="#a0000000062">
+  <sup class="footnotemark">1</sup>
+</a> </p>
+<div class="dig_thmwrapper theorem-style-theorem" id="dig:simplicial-cat">
+  <div class="dig_thmheading">
+    <span class="dig_thmcaption">
+    Digression
+    </span>
+    <span class="dig_thmlabel">1.4.5</span>
+    <span class="dig_thmtitle">simplicial categories as simplicial objects</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-enriched-limits.html#dig:simplicial-cat">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="dig_thmcontent">
+  <p> A <b class="bfseries">simplicial category</b> \({\mathord {\mathcal{A}}}\) is equivalently given by categories \({\mathord {\mathcal{A}}}_n\), with a common set of objects and whose arrows are called \(n\)-<b class="bfseries">arrows</b>, that assemble into a diagram \(\Delta ^{\mathord {\textup{op}}}\to {\mathord {\mathcal{Cat}}}\) of identity-on-objects functors </p>
+<div class="centered"> <div class="tikzcd" id="a0000000063">
+    <img src="images/img-0025.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+  \cdots \cA_3 \arrow[r, shift right=2.25em, &#34;\cdot\face^0&#34; description, pos=.35] \arrow[r, shift right=.75em, &#34;\cdot\face^1&#34; description, pos=.35] \arrow[r, shift left=.75em, &#34;\cdot\face^2&#34; description, pos=.35] \arrow[r, shift left=2.25em, &#34;\cdot\face^3&#34; description, pos=.35]&amp; \cA_2  \arrow[l, &#34;\cdot\degen^1&#34; description, pos=.35] \arrow[l, shift left=1.5em, &#34;\cdot\degen^0&#34; description, pos=.35] \arrow[l, shift right=1.5em, &#34;\cdot\degen^2&#34; description, pos=.35] \arrow[r, &#34;\cdot\face^1&#34; description, pos=.35] \arrow[r, shift left=1.5em, &#34;\cdot\face^2&#34; description, pos=.35] \arrow[r, shift right=1.5em, &#34;\cdot\face^0&#34; description, pos=.35]  &amp; \cA_1 \arrow[l, shift left=.75em, &#34;\cdot\degen^0&#34; description, pos=.35] \arrow[l, shift right=.75em, &#34;\cdot\degen^1&#34; description, pos=.35] \arrow[r, shift left=.75em, &#34;\cdot\face^1&#34; description, pos=.35] \arrow[r, shift right=.75em, &#34;\cdot\face^0&#34; description, pos=.35] &amp; \cA_0 \arrow[l, &#34;\cdot\degen^0&#34; description, pos=.35]
+  \end{tikzcd}" />
+</div>\(\eqcolon {\mathord {\mathcal{A}}}\) </div>
+
+  </div>
+</div>
+<p>By contrast, the notion of simplicially enriched limit remains to be formalized. Fortunately, we do not (immediately) require the general notion of <em>weighted limits</em>, as the notion of an \(\infty \)-cosmos only requires two special cases: <em>cotensors</em> and <em>conical limits</em>. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:simplicial-cotensor">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.6</span>
+    <span class="definition_thmtitle">simplicial cotensors</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-enriched-limits.html#defn:simplicial-cotensor">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-enriched-limits.html#defn:simplicial-category">Definition 1.4.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.SimplicialCategory.HasCotensor" class="lean_decl">CategoryTheory.SimplicialCategory.HasCotensor</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \({\mathord {\mathcal{A}}}\) be a simplicial category. The <b class="bfseries">cotensor</b> of an object \(A \in {\mathord {\mathcal{A}}}\) by a simplicial set \(U\) is given by the data of an object \(A^U \in {\mathord {\mathcal{A}}}\) together with a cone \(U \to {\mathord {\mathcal{A}}}(A^U,A)\) so that the induced map defines an isomorphism of simplicial sets: </p>
+<div class="equation" id="eq:cotensor-defn">
+<p>
+  <div class="equation_content">
+    \begin{equation} \label{eq:cotensor-defn} {\mathord {\mathcal{A}}}(X,A^U) \cong {\mathord {\mathcal{A}}}(X,A)^U \end{equation}
+  </div>
+  <span class="equation_label">1.4.1</span>
+</p>
+</div>
+
+  </div>
+</div>
+<p>Note by construction the isomorphism <a href="sec-enriched-limits.html#eq:cotensor-defn" class="eqref">1.4.1</a> is automatically simplicially natural in \(X\). This simplicial naturality is an important aspect of the enriched universal property. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:simplicial-cotensors">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.7</span>
+    <span class="definition_thmtitle">simplicial cotensors</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-enriched-limits.html#defn:simplicial-cotensors">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-enriched-limits.html#defn:simplicial-cotensor">Definition 1.4.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.SimplicialCategory.HasCotensors" class="lean_decl">CategoryTheory.SimplicialCategory.HasCotensors</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A simplicial category \({\mathord {\mathcal{A}}}\) <b class="bfseries">has cotensors</b> when all cotensors exist. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:cotensor-associativity">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.4.8</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-enriched-limits.html#lem:cotensor-associativity">#</a>
+    
+    <a class="icon proof" href="sec-enriched-limits.html#a0000000064"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-enriched-limits.html#defn:simplicial-cotensors">Definition 1.4.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  When a simplicial category has cotensors, cotensors are associative: given \(A \in {\mathord {\mathcal{A}}}\) and simplicial sets \(U\) and \(V\) there are canonical isomorphisms </p>
+<div class="displaymath" id="a0000000065">
+  \[  (A^U)^V \cong A^{U \times V} \cong (A^V)^U. \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000064">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>By the enriched Yoneda lemma, these objects represent the same simplicial functors \({\mathord {\mathcal{A}}}^{\mathord {\textup{op}}}\to {\mathord {\mathcal{sSet}}}\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:cotensor-bifunctor">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.4.9</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-enriched-limits.html#lem:cotensor-bifunctor">#</a>
+    
+    <a class="icon proof" href="sec-enriched-limits.html#a0000000066"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-enriched-limits.html#defn:simplicial-cotensors">Definition 1.4.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.SimplicialCategory.cotensor_bifunctoriality" class="lean_decl">CategoryTheory.SimplicialCategory.cotensor_bifunctoriality</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Assuming such objects exist, the simplicial cotensor defines a bifunctor </p>
+<div class="centered"> <div class="tikzcd" id="a0000000067">
+    <img src="images/img-0026.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=tiny] s\mathcal{S}et\op \times \cA \arrow[r] &amp; \cA \\
+  (U,A) \arrow[r, maps to] &amp; A^U
+  \end{tikzcd}" />
+</div></div>
+<p> in a unique way making the isomorphism <a href="sec-enriched-limits.html#eq:cotensor-defn" class="eqref">1.4.1</a> natural in \(U\) and \(A\) as well. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000066">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Functoriality in each variable follows from the universal property. </p>
+
+  </div>
+</div>
+<p>The other simplicial limit notions postulated by axiom <a href="sec-cosmos.html#defn:cosmos">1.5.1</a><a href="sec-cosmos.html#itm:cosmos-limits">i</a> are <b class="bfseries">conical</b>, which is the term used for ordinary 1-categorical limit shapes that satisfy an enriched analog of the usual universal property. Such limits also define limits in the underlying category, but the usual universal property is strengthened. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:simplicial-conical-limit">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.4.10</span>
+    <span class="definition_thmtitle">simplicial conical limits</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-enriched-limits.html#defn:simplicial-conical-limit">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-enriched-limits.html#defn:simplicial-category">Definition 1.4.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.Enriched.IsConicalLimit" class="lean_decl">CategoryTheory.Enriched.IsConicalLimit</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  Consider a limit cone \((\lim _{j \in J}A_j \to A_j)_{j \in J}\) in the underlying category \({\mathord {\mathcal{A}}}_0\) of a simplicially-enriched category \({\mathord {\mathcal{A}}}\). By applying the covariant representable functor \({\mathord {\mathcal{A}}}(X,-) \colon {\mathord {\mathcal{A}}}_0 \to {\mathord {\mathcal{sSet}}}\) to a limit cone \((\lim _{j \in J}A_j \to A_j)_{j \in J}\) in \({\mathord {\mathcal{A}}}_0\), we obtain a natural comparison map </p>
+<div class="equation" id="eq:simplicial-limit-map">
+<p>
+  <div class="equation_content">
+    \begin{equation} \label{eq:simplicial-limit-map} {\mathord {\mathcal{A}}}(X,\lim _{j \in J}A_j) \to \lim _{j \in J}{\mathord {\mathcal{A}}}(X,A_j). \end{equation}
+  </div>
+  <span class="equation_label">1.4.2</span>
+</p>
+</div>
+<p> We say that \(\lim _{j\in J}A_j\) defines a <b class="bfseries">simplicially enriched limit</b> if and only if <a href="sec-enriched-limits.html#eq:simplicial-limit-map" class="eqref">1.4.2</a> is an isomorphism of simplicial sets for all \(X \in {\mathord {\mathcal{A}}}\). </p>
+
+  </div>
+</div>
+<div class="rmk_thmwrapper theorem-style-theorem" id="a0000000068">
+  <div class="rmk_thmheading">
+    <span class="rmk_thmcaption">
+    Remark
+    </span>
+    <span class="rmk_thmlabel">1.4.11</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-enriched-limits.html#a0000000068">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="rmk_thmcontent">
+  <p>For Mathlib, these conical limits have been defined more generally for enriched ordinary categories over arbitrary monoidal categories. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+<footer id="footnotes">
+<ol>
+  <li id="a0000000062">The phrase “simplicial object in \({\mathord {\mathcal{Cat}}}\)” is reserved for the more general yet less common notion of a diagram \(\Delta ^{\mathord {\textup{op}}}\to {\mathord {\mathcal{Cat}}}\) that is not necessarily comprised of identity-on-objects functors.</li>
+</ol>
+</footer>
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sec-homotopy-category.html" title="The homotopy category of a quasi-category, isofibrations, and equivalences"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0001.html" title="\(\infty \)-Cosmoi"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sec-cosmos.html" title="\(\infty \)-Cosmoi"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

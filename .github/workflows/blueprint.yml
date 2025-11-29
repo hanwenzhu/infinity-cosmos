@@ -62,6 +62,7 @@ jobs:
       - name: Build the project
         uses: leanprover/lean-action@434f25c2f80ded67bba02502ad3a86f25db50709 # v1.3.0
         with:
+          build-args: :blueprint
           use-github-cache: false
 
       - name: Compile blueprint and documentation

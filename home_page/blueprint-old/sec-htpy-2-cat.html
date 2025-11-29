@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The homotopy 2-category</title>
+<link rel="next" href="sect0003.html" title="Bibliography" />
+<link rel="prev" href="sec-examples.html" title="Examples of -cosmoi" />
+<link rel="up" href="sect0001.html" title="-Cosmoi" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">\(\infty \)-Cosmoi</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Overview</span></a>
+ </li>
+<li class="">
+  <a href="sec-simplicial-sets.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Simplicial sets</span></a>
+ </li>
+<li class="">
+  <a href="sec-homotopy-category.html"><span class="toc_ref">1.3</span> <span class="toc_entry">The homotopy category of a quasi-category, isofibrations, and equivalences</span></a>
+ </li>
+<li class="">
+  <a href="sec-enriched-limits.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Enriched limits</span></a>
+ </li>
+<li class="">
+  <a href="sec-cosmos.html"><span class="toc_ref">1.5</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+ </li>
+<li class="">
+  <a href="sec-change-of-base.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Change of base</span></a>
+ </li>
+<li class="">
+  <a href="sec-examples.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Examples of \(\infty \)-cosmoi</span></a>
+ </li>
+<li class=" active current">
+  <a href="sec-htpy-2-cat.html"><span class="toc_ref">1.8</span> <span class="toc_entry">The homotopy 2-category</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="sec:htpy-2-cat">1.8 The homotopy 2-category</h1>
+
+<p>Small 1-categories define the objects of a strict 2-category \({\mathord {\mathcal{Cat}}}\) of categories, functors, and natural transformations. Many basic categorical notions — those defined in terms of categories, functors, and natural transformations — can be defined internally to the 2-category \({\mathord {\mathcal{Cat}}}\). This suggests a natural avenue for generalization: reinterpreting these same definitions in a generic 2-category using its objects in place of small categories, its 1-cells in place of functors, and its 2-cells in place of natural transformations. </p>
+<p>A significant portion of the theory of \(\infty \)-categories in any fixed \(\infty \)-cosmos can be developed by following exactly this outline, working internally to a 2-category that we refer to as the <em>homotopy 2-category</em> that we associate to any \(\infty \)-cosmos. The homotopy 2-category of an \(\infty \)-cosmos is a quotient of the full \(\infty \)-cosmos, replacing each quasi-categorical functor space by its homotopy category. Surprisingly, this rather destructive quotienting operation preserves quite a lot of information. This said, we caution the reader against becoming overly seduced by homotopy 2-categories, which are more of a technical convenience for reducing the complexity of our arguments than a fundamental notion of \(\infty \)-category theory. </p>
+<p>Paralleling our discussion of simplicial categories in Definition <a href="sec-enriched-limits.html#defn:simplicial-category">1.4.1</a> and Digression <a href="sec-enriched-limits.html#dig:simplicial-cat">1.4.5</a>, there are two perspectives on the notion of a 2-category, which can be understood equally as: </p>
+<ol class="enumerate">
+  <li><p> “two-dimensional” categories, with objects; <b class="bfseries">1-cells</b>, whose boundary are given by a pair of objects; and <b class="bfseries">2-cells</b>, whose boundary are given by a parallel pair of 1-cells between a pair of objects — together with partially defined composition operations governed by this boundary data </p>
+</li>
+  <li><p>or as categories enriched over \({\mathord {\mathcal{Cat}}}\). </p>
+</li>
+</ol>
+<p>Both notions exist in Mathlib in some form. The notion <a href="sec-htpy-2-cat.html#itm:strict-bicategory">i</a> is called a <em>strict bicategory</em> and is defined as a special case of a bicategory, in which the associators and unitors are identities (converted into 2-cells). The general notion of enriched category can be specialized to the case of enriching over the cartesian monoidal category of categories, but the connection between these notions remains to be explored. </p>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:2-cat-as-cat-enriched">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.8.1</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#prop:2-cat-as-cat-enriched">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p> There is an equivalence between categories enriched in categories and strict bicategories. In particular, each can be converted into the other. </p>
+
+  </div>
+</div>
+<p>The homotopy 2-category is most efficiently defined as a category enriched in \({\mathord {\mathcal{Cat}}}\) by applying the theory of change-of-base developed in §<a href="sec-change-of-base.html">1.6</a>. The homotopy 2-category for the \(\infty \)-cosmos of quasi-categories was first introduced by Joyal in his work on the foundations of quasi-category theory <span class="cite">
+	[
+	<a href="sect0003.html#Joyal:2008tq" >Joy08</a>
+	]
+</span>. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:homotopy-2-cat">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.8.2</span>
+    <span class="definition_thmtitle">homotopy 2-category</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#defn:homotopy-2-cat">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#defn:homotopy-cat">Definition 1.2.23</a></li>
+          
+          <li><a href="sec-change-of-base.html#ex:nerve-ho-change-of-base">Example 1.6.12</a></li>
+          
+          <li><a href="sec-htpy-2-cat.html#prop:2-cat-as-cat-enriched">Proposition 1.8.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  Let \({\mathord {\mathcal{K}}}\) be an \(\infty \)-cosmos. Its <b class="bfseries">homotopy 2-category</b> is the 2-category \(\mathfrak {h}{\mathord {\mathcal{K}}}\) whose </p>
+<ul class="itemize">
+  <li><p>objects are the objects \(A, B\) of \({\mathord {\mathcal{K}}}\), i.e., the \(\infty \)-categories;</p>
+</li>
+  <li><p>1-cells \(f \colon A \to B\) are the 0-arrows in the functor space \({\mathord {\mathsf{Fun}}}(A,B)\), i.e., the \(\infty \)-functors; and </p>
+</li>
+  <li><p>2-cells </p>
+<div class="centered"> <div class="tikzcd" id="a0000000142">
+    <img src="images/img-0067.svg" class="tikzcd-vector" alt="\begin{tikzcd}  A \arrow[r, start anchor=15, end anchor=165, bend left, &#34;f&#34;] \arrow[r, start anchor=345, end anchor=195, bend right, &#34;g&#34;&#39;] \arrow[r, phantom, &#34;{\scriptstyle\Downarrow \alpha}&#34;] &amp; B\end{tikzcd}" />
+</div> </div>
+<p> are homotopy classes of 1-simplices in \({\mathord {\mathsf{Fun}}}(A,B)\), which we call <b class="bfseries">\(\infty \)-natural transformations</b>. </p>
+</li>
+</ul>
+<p> Put another way \(\mathfrak {h}{\mathord {\mathcal{K}}}\) is the 2-category with the same objects as \({\mathord {\mathcal{K}}}\) and with hom-categories defined by </p>
+<div class="displaymath" id="a0000000143">
+  \[  {\mathord {\mathsf{hFun}}}(A,B) :={\mathord {\mathsf{h}}}({\mathord {\mathsf{Fun}}}(A,B)), \]
+</div>
+<p> that is, \({\mathord {\mathsf{hFun}}}(A,B)\) is the homotopy category of the quasi-category \({\mathord {\mathsf{Fun}}}(A,B)\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:underlying-cat-of-2cat">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.8.3</span>
+    <span class="definition_thmtitle">underlying category of a 2-category</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#defn:underlying-cat-of-2cat">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p> The <b class="bfseries">underlying category</b> of a 2-category is defined by simply forgetting its 2-cells. Note that an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) and its homotopy 2-category \(\mathfrak {h}{\mathord {\mathcal{K}}}\) share the same underlying category \({\mathord {\mathcal{K}}}_0\) of \(\infty \)-categories and \(\infty \)-functors in \({\mathord {\mathcal{K}}}\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:underlying-cat-iso">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.8.4</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#lem:underlying-cat-iso">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-htpy-2-cat.html#defn:underlying-cat-of-2cat">Definition 1.8.3</a></li>
+          
+          <li><a href="sec-enriched-limits.html#defn:underlying-cat">Definition 1.4.4</a></li>
+          
+          <li><a href="sec-htpy-2-cat.html#defn:homotopy-2-cat">Definition 1.8.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  The underlying category of the homotopy 2-category of an \(\infty \)-cosmos is isomorphic to the underlying category of the \(\infty \)-cosmos. </p>
+
+  </div>
+</div>
+<p>We elaborate on the connection between data in the homotopy 2-category and data in the \(\infty \)-cosmos. </p>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:invertible-2-cell">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.8.5</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#lem:invertible-2-cell">#</a>
+    
+    <a class="icon proof" href="sec-htpy-2-cat.html#a0000000144"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-htpy-2-cat.html#defn:homotopy-2-cat">Definition 1.8.2</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#lem:qcat-1-simplex-htpy">Lemma 1.2.20</a></li>
+          
+          <li><a href="sec-homotopy-category.html#prop:coherent-iso">Proposition 1.3.13</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>\(\quad \)  </p>
+<ol class="enumerate">
+  <li><p> Every 2-cell </p>
+<div class="centered"> <div class="tikzcd" id="a0000000145">
+    <img src="images/img-0068.svg" class="tikzcd-vector" alt="\begin{tikzcd}  A \arrow[r, start anchor=15, end anchor=165, bend left, &#34;f&#34;] \arrow[r, start anchor=345, end anchor=195, bend right, &#34;g&#34;&#39;] \arrow[r, phantom, &#34;\scriptstyle\Downarrow\alpha&#34;] &amp; B \end{tikzcd}" />
+</div> </div>
+<p> in the homotopy 2-category of an \(\infty \)-cosmos is represented by a map of quasi-categories as below-left or equivalently by a functor as below-right </p>
+<div class="centered"> <div class="tikzcd" id="a0000000146">
+    <img src="images/img-0069.svg" class="tikzcd-vector" alt="\begin{tikzcd} [sep=small] &amp; \catone+\catone \arrow[dl, hook&#39;] \arrow[dr, &#34;{(f,g)}&#34;] &amp; &amp;  &amp; ~ &amp;  A \arrow[rr, &#34;\name{\alpha}&#34;] \arrow[dr, &#34;{(g,f)}&#34;&#39;] &amp; &amp; B^\cattwo \arrow[dl, &#34;{(p_1,p_0)}&#34;, two heads] \\ \cattwo \arrow[rr, &#34;{\alpha}&#34;&#39;] &amp;&amp; \Fun(A,B) &amp;\arrow[ur, phantom, &#34;\leftrightsquigarrow&#34;] &amp;  &amp;&amp; B \times B
+  \end{tikzcd}" />
+</div> </div>
+<p> and two such maps represent the same 2-cell if and only if they are homotopic as 1-simplices in \({\mathord {\mathsf{Fun}}}(A,B)\). </p>
+</li>
+  <li><p> Every invertible 2-cell </p>
+<div class="centered"> <div class="tikzcd" id="a0000000147">
+    <img src="images/img-0070.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large] A \arrow[r, start anchor=18, end anchor=162, bend left=20, &#34;f&#34;] \arrow[r,  start anchor=342, end anchor=198, bend right=20, &#34;g&#34;&#39;] \arrow[r, phantom, &#34;\scriptstyle\cong\Downarrow\alpha&#34;] &amp; B \end{tikzcd}" />
+</div> </div>
+<p> in the homotopy 2-category of an \(\infty \)-cosmos is represented by a map of quasi-categories as below-left or equivalently by a functor as below-right </p>
+<div class="centered"> <div class="tikzcd" id="a0000000148">
+    <img src="images/img-0071.svg" class="tikzcd-vector" alt="\begin{tikzcd} [sep=small] &amp; \catone+\catone \arrow[dl, hook&#39;] \arrow[dr, &#34;{(f,g)}&#34;] &amp; &amp;  &amp; ~ &amp;  A \arrow[rr, &#34;\name{\alpha}&#34;] \arrow[dr, &#34;{(g,f)}&#34;&#39;] &amp; &amp; B^\iso \arrow[dl, &#34;{(p_1,p_0)}&#34;, two heads] \\ \iso \arrow[rr, &#34;{\alpha}&#34;&#39;] &amp;&amp; \Fun(A,B) &amp;\arrow[ur, phantom, &#34;\leftrightsquigarrow&#34;] &amp;  &amp;&amp; B \times B
+  \end{tikzcd}" />
+</div> </div>
+<p> and two such maps represent the same invertible 2-cell if and only if their common restrictions along \([1]\hookrightarrow I\) are homotopic as 1-simplices in \({\mathord {\mathsf{Fun}}}(A,B)\). </p>
+</li>
+</ol>
+
+  </div>
+</div>
+<p>The notion of homotopic 1-simplices referenced here is defined in Lemma <a href="sec-simplicial-sets.html#lem:qcat-1-simplex-htpy">1.2.20</a>. Since the 2-cells in the homotopy 2-category are referred to as \(\infty \)-natural transformations, we refer to the invertible 2-cells in the homotopy 2-category as <b class="bfseries">\(\infty \)-natural isomorphisms</b>. </p>
+<div class="proof_wrapper" id="a0000000144">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The statement <a href="sec-htpy-2-cat.html#itm:2-cell-as-functor">i</a> records the definition of the 2-cells in the homotopy 2-category and the universal property <a href="sec-enriched-limits.html#eq:cotensor-defn" class="eqref">1.4.1</a> of the simplicial cotensor. For <a href="sec-htpy-2-cat.html#itm:2-iso-as-functor">ii</a>, a 2-cell in the homotopy 2-category is <b class="bfseries">invertible</b> if and only if it defines an isomorphism in the appropriate hom-category \({\mathord {\mathsf{hFun}}}(A,B)\). By Proposition <a href="sec-homotopy-category.html#prop:coherent-iso">1.3.13</a> it follows that each invertible 2-cell \(\alpha \) is represented by a homotopy coherent isomorphism \({\alpha } \colon I\to {\mathord {\mathsf{Fun}}}(A,B)\), which similarly internalizes to define a functor \({\ulcorner {\alpha }\urcorner } \colon A \to B^I\). </p>
+
+  </div>
+</div>
+<p>We now begin to relate the simplicially enriched structures of an \(\infty \)-cosmos to the 2-categorical structures in its homotopy 2-category by proving that homotopy 2-categories inherit products from their \(\infty \)-cosmoi that satisfy a 2-categorical universal property. To illustrate, recall that the terminal \(\infty \)-category \(1 \in {\mathord {\mathcal{K}}}\) has the universal property \({\mathord {\mathsf{Fun}}}(X,1) \cong [0]\) for all \(X \in {\mathord {\mathcal{K}}}\). Applying the homotopy category functor we see that \(1 \in \mathfrak {h}{\mathord {\mathcal{K}}}\) has the universal property \({\mathord {\mathsf{hFun}}}(X,1) \cong [0]\) for all \(X \in \mathfrak {h}{\mathord {\mathcal{K}}}\), which is expressed by saying that the \(\infty \)-category \(1\) defines a <b class="bfseries">2-terminal object</b> in the homotopy 2-category. This 2-categorical universal property has both a 1-dimensional and a 2-dimensional aspect. Since \({\mathord {\mathsf{hFun}}}(X,1)\cong [0]\) is a category with a single object, there exists a unique morphism \(X \to 1\) in \({\mathord {\mathcal{K}}}\), and since \({\mathord {\mathsf{hFun}}}(X,1)\cong [0]\) has only a single morphism, the only 2-cells in \(\mathfrak {h}{\mathord {\mathcal{K}}}\) with codomain 1 are identities. </p>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:htpy-2-cat-closure">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.8.6</span>
+    <span class="proposition_thmtitle">cartesian (closure)</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#prop:htpy-2-cat-closure">#</a>
+    
+    <a class="icon proof" href="sec-htpy-2-cat.html#a0000000149"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+          <li><a href="sec-examples.html#defn:closed-cosmos">Definition 1.7.6</a></li>
+          
+          <li><a href="sec-homotopy-category.html#lem:ho-preserves-finite-products">Lemma 1.3.9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>  \(\quad \) </p>
+<ol class="enumerate">
+  <li><p>The homotopy 2-category of any \(\infty \)-cosmos has 2-categorical products. </p>
+</li>
+  <li><p> The homotopy 2-category of a cartesian closed \(\infty \)-cosmos is cartesian closed as a 2-category. </p>
+</li>
+</ol>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000149">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> While the functor \({\mathord {\mathsf{h}}}\colon {\mathord {\mathcal{sSet}}}\to {\mathord {\mathcal{Cat}}}\) only preserves finite products, the restricted functor \({\mathord {\mathsf{h}}}\colon {\mathord {\mathcal{QCat}}}\to {\mathord {\mathcal{Cat}}}\) preserves <em>all</em> products on account of the simplified description of the homotopy category of a quasi-category given in Lemma <a href="sec-homotopy-category.html#lem:htpy-cat-of-qcat">1.3.8</a>. Thus for any set \(I\) and family of \(\infty \)-categories \((A_i)_{i \in I}\) in \({\mathord {\mathcal{K}}}\), the homotopy category functor carries the isomorphism of functor spaces to an isomorphism of hom-categories </p>
+<div class="centered"> <div class="tikzcd" id="a0000000150">
+    <img src="images/img-0072.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=small] \Fun(X,\prod_{i \in I} A_i) \arrow[r, &#34;\cong&#34;] &amp; \prod_{i \in I} \Fun(X,A_i) &amp; \arrow[r, maps to, &#34;\ho&#34;] &amp; ~ &amp; \hFun(X,\prod_{i \in I} A_i) \arrow[r, &#34;\cong&#34;] &amp; \prod_{i \in I} \hFun(X,A_i).
+  \end{tikzcd}" />
+</div> </div>
+<p> This proves that the homotopy 2-category \(\mathfrak {h}{\mathord {\mathcal{K}}}\) has products whose universal properties have both a 1- and 2-dimensional component, as described in the empty case for terminal objects above. </p>
+<p>If \({\mathord {\mathcal{K}}}\) is a cartesian closed \(\infty \)-cosmos, then for any triple of \(\infty \)-categories \(A,B,C \in {\mathord {\mathcal{K}}}\) there exist exponential objects \(C^A, C^B \in {\mathord {\mathcal{K}}}\) characterized by natural isomorphisms </p>
+<div class="displaymath" id="a0000000151">
+  \[  {\mathord {\mathsf{Fun}}}(A \times B, C) \cong {\mathord {\mathsf{Fun}}}(A, C^B) \cong {\mathord {\mathsf{Fun}}}(B,C^A). \]
+</div>
+<p> Passing to homotopy categories we have natural isomorphisms </p>
+<div class="displaymath" id="a0000000152">
+  \[  {\mathord {\mathsf{hFun}}}(A \times B, C) \cong {\mathord {\mathsf{hFun}}}(A, C^B) \cong {\mathord {\mathsf{hFun}}}(B,C^A), \]
+</div>
+<p> which demonstrates that \(\mathfrak {h}{\mathord {\mathcal{K}}}\) is cartesian closed as a 2-category: functors \(A \times B \to C\) transpose to define functors \(A \to C^B\) and \(B \to C^A\), and natural transformations transpose similarly. </p>
+
+  </div>
+</div>
+<p>There is a standard definition of <em>isomorphism</em> between two objects in any 1-category, preserved by any functor. Similarly, there is a standard definition of <em>equivalence</em> between two objects in any 2-category, preserved by any 2-functor: </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:2-cat-equivalence">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.8.7</span>
+    <span class="definition_thmtitle">equivalence</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#defn:2-cat-equivalence">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p> An <b class="bfseries">equivalence</b> in a 2-category is given by </p>
+<ul class="itemize">
+  <li><p>a pair of objects \(A\) and \(B\); </p>
+</li>
+  <li><p>a pair of 1-cells \(f \colon A \to B\) and \(g \colon B \to A\); and </p>
+</li>
+  <li><p>a pair of invertible 2-cells </p>
+<div class="centered"> <div class="tikzcd" id="a0000000153">
+    <img src="images/img-0073.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+  A \arrow[r, bend left=25, equals] \arrow[r, bend right=25, &#34;gf&#34;&#39;] \arrow[r, phantom, &#34;{\scriptstyle\cong\Downarrow\alpha}&#34;] &amp; A &amp; \text{and} &amp; B \arrow[r, bend right=25, equals] \arrow[r, bend left=25, &#34;fg&#34;] \arrow[r, phantom, &#34;{\scriptstyle\cong\Downarrow\beta}&#34;] &amp; B
+  \end{tikzcd}" />
+</div> </div>
+</li>
+</ul>
+<p> When \(A\) and \(B\) are <b class="bfseries">equivalent</b>, we write \(A \simeq B\) and refer to the 1-cells \(f\) and \(g\) as <b class="bfseries">equivalences</b>, denoted by “\(\rightsquigarrow \).” </p>
+
+  </div>
+</div>
+<p>In the case of the homotopy 2-category of an \(\infty \)-cosmos we have a competing definition of equivalence from <a href="sec-cosmos.html#defn:cosmos">1.5.1</a>: namely a 1-cell \(f \colon A \rightsquigarrow B\) that induces an equivalence \(f_* \colon {\mathord {\mathsf{Fun}}}(X,A) \rightsquigarrow {\mathord {\mathsf{Fun}}}(X,B)\) on functor spaces — or equivalently, by Lemma <a href="sec-cosmos.html#lem:equiv-htpy-equiv">1.5.9</a>, a homotopy equivalence defined relative to the interval \(I\). Crucially, all three notions of equivalence coincide: </p>
+<div class="theorem_thmwrapper theorem-style-theorem" id="thm:equiv-are-equiv">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">1.8.8</span>
+    <span class="theorem_thmtitle">equivalences are equivalences</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#thm:equiv-are-equiv">#</a>
+    
+    <a class="icon proof" href="sec-htpy-2-cat.html#a0000000154"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+          <li><a href="sec-cosmos.html#defn:equivalence">Definition 1.5.2</a></li>
+          
+          <li><a href="sec-htpy-2-cat.html#defn:2-cat-equivalence">Definition 1.8.7</a></li>
+          
+          <li><a href="sec-htpy-2-cat.html#defn:homotopy-2-cat">Definition 1.8.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>  In any \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\), the following are equivalent and characterize what it means for a functor \(f \colon A \to B\) between \(\infty \)-categories to define an <b class="bfseries">equivalence</b>. </p>
+<ol class="enumerate">
+  <li><p> For all \(X \in {\mathord {\mathcal{K}}}\), the post-composition map \(f_* \colon {\mathord {\mathsf{Fun}}}(X,A) \rightsquigarrow {\mathord {\mathsf{Fun}}}(X,B)\) defines an equivalence of quasi-categories. </p>
+</li>
+  <li><p> There exists a functor \(g \colon B \to A\) and natural isomorphisms \(\alpha \colon \textup{id}_A \cong gf\) and \(\beta \colon fg \cong \textup{id}_B\) in the homotopy 2-category. </p>
+</li>
+  <li><p> There exists a functor \(g \colon B \to A\) and maps </p>
+<div class="centered"> <div class="tikzcd" id="a0000000155">
+    <img src="images/img-0074.svg" class="tikzcd-vector" alt="\begin{tikzcd}  &amp; A &amp; &amp;  &amp; B \\ A \arrow[ur, equals] \arrow[dr, &#34;gf&#34;&#39;] \arrow[r, &#34;\alpha&#34;] &amp; A^\iso  \arrow[u, two heads, &#34;\sim&#34;, &#34;\ev_0&#34;&#39;] \arrow[d, two heads, &#34;\sim&#34;&#39;, &#34;\ev_1&#34;] &amp;\text{and} &amp;  B \arrow[dr, equals] \arrow[r, &#34;\beta&#34;] \arrow[ur, &#34;fg&#34;] &amp; B^\iso \arrow[u, two heads, &#34;\sim&#34;, &#34;\ev_0&#34;&#39;] \arrow[d, two heads, &#34;\sim&#34;&#39;, &#34;\ev_1&#34;] \\ &amp; A &amp; &amp;  &amp; B
+  \end{tikzcd}" />
+</div> </div>
+<p> in the \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\). </p>
+</li>
+</ol>
+
+  </div>
+</div>
+<p>As an illustrative comparison of 2-categorical and quasi-categorical techniques, rather than appealing to Lemma <a href="sec-cosmos.html#lem:equiv-htpy-equiv">1.5.9</a> to prove <a href="sec-htpy-2-cat.html#itm:rep-equiv">i</a>\(\Leftrightarrow \)<a href="sec-htpy-2-cat.html#itm:htpy-equiv">iii</a>, we re-prove it. </p>
+<div class="proof_wrapper" id="a0000000154">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>For <a href="sec-htpy-2-cat.html#itm:rep-equiv">i</a>\(\Rightarrow \)<a href="sec-htpy-2-cat.html#itm:2cat-equiv">ii</a>, if the induced map \(f_* \colon {\mathord {\mathsf{Fun}}}(X,A) \rightsquigarrow {\mathord {\mathsf{Fun}}}(X,B)\) defines an equivalence of quasi-categories then the functor \(f_* \colon {\mathord {\mathsf{hFun}}}(X,A) \rightsquigarrow {\mathord {\mathsf{hFun}}}(X,B)\) defines an equivalence of categories, by Lemma <a href="sec-homotopy-category.html#lem:qcat-htpy-cat-equiv">1.3.17</a>. In particular, the equivalence \(f_* \colon {\mathord {\mathsf{hFun}}}(B,A) \rightsquigarrow {\mathord {\mathsf{hFun}}}(B,B)\) is essentially surjective so there exists \(g \in {\mathord {\mathsf{hFun}}}(B,A)\) and an isomorphism \(\beta \colon fg \cong \textup{id}_B \in {\mathord {\mathsf{hFun}}}(B,B)\). Now since \(f_* \colon {\mathord {\mathsf{hFun}}}(A,A) \rightsquigarrow {\mathord {\mathsf{hFun}}}(A,B)\) is fully faithful, the isomorphism \(\beta f \colon fgf \cong f \in {\mathord {\mathsf{hFun}}}(A,B)\) can be lifted to define an isomorphism \(\alpha ^{-1} \colon gf \cong \textup{id}_A \in {\mathord {\mathsf{hFun}}}(A,A)\). This defines the data of a 2-categorical equivalence in Definition <a href="sec-htpy-2-cat.html#defn:2-cat-equivalence">1.8.7</a>. </p>
+<p>To see that <a href="sec-htpy-2-cat.html#itm:2cat-equiv">ii</a>\(\Rightarrow \)<a href="sec-htpy-2-cat.html#itm:htpy-equiv">iii</a> recall from Lemma <a href="sec-htpy-2-cat.html#lem:invertible-2-cell">1.8.5</a> that the natural isomorphisms \(\alpha \colon \textup{id}_A \cong gf\) and \(\beta \colon fg \cong \textup{id}_B\) in \(\mathfrak {h}{\mathord {\mathcal{K}}}\) are represented by maps \(\alpha \colon A \to A^I\) and \(\beta \colon B \to B^I\) in \({\mathord {\mathcal{K}}}\) as in Lemma <a href="sec-cosmos.html#lem:equiv-htpy-equiv">1.5.9</a>. </p>
+<p>Finally, <a href="sec-htpy-2-cat.html#itm:htpy-equiv">iii</a>\(\Rightarrow \)<a href="sec-htpy-2-cat.html#itm:rep-equiv">i</a> since \({\mathord {\mathsf{Fun}}}(X,-)\) carries the data of <a href="sec-htpy-2-cat.html#itm:htpy-equiv">iii</a> to the data of an equivalence of quasi-categories as in Definition <a href="sec-homotopy-category.html#defn:qcat-equivalence">1.3.16</a>. </p>
+
+  </div>
+</div>
+<p>It is hard to overstate the importance of Theorem <a href="sec-htpy-2-cat.html#thm:equiv-are-equiv">1.8.8</a> for the work that follows. The categorical constructions that we introduce for \(\infty \)-categories, \(\infty \)-functors, and \(\infty \)-natural transformations are invariant under 2-categorical equivalence in the homotopy 2-category and the universal properties we develop similarly characterize 2-categorical equivalence classes of \(\infty \)-categories. Theorem <a href="sec-htpy-2-cat.html#thm:equiv-are-equiv">1.8.8</a> then asserts that such constructions are “homotopically correct”: both invariant under equivalence in the \(\infty \)-cosmos and precisely identifying equivalence classes of objects. </p>
+<p>The equivalence invariance of the functor space in the codomain variable is axiomatic, but equivalence invariance in the domain variable is not.<a class="footnote" href="#a0000000156">
+  <sup class="footnotemark">1</sup>
+</a> Nor is it evident how this could be proven from either <a href="sec-htpy-2-cat.html#itm:rep-equiv">i</a> or <a href="sec-htpy-2-cat.html#itm:htpy-equiv">iii</a> of Theorem <a href="sec-htpy-2-cat.html#thm:equiv-are-equiv">1.8.8</a>. But using <a href="sec-htpy-2-cat.html#itm:2cat-equiv">ii</a> and 2-categorical techniques, there is now a short proof. </p>
+<div class="corollary_thmwrapper theorem-style-theorem" id="cor:equiv-invar-fun">
+  <div class="corollary_thmheading">
+    <span class="corollary_thmcaption">
+    Corollary
+    </span>
+    <span class="corollary_thmlabel">1.8.9</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#cor:equiv-invar-fun">#</a>
+    
+    <a class="icon proof" href="sec-htpy-2-cat.html#a0000000157"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+          <li><a href="sec-htpy-2-cat.html#thm:equiv-are-equiv">Theorem 1.8.8</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="corollary_thmcontent">
+  <p>  Equivalences of \(\infty \)-categories \(A' \rightsquigarrow A\) and \(B \rightsquigarrow B'\) induce an equivalence of functor spaces \({\mathord {\mathsf{Fun}}}(A,B) \rightsquigarrow {\mathord {\mathsf{Fun}}}(A',B')\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000157">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> The representable simplicial functors \({\mathord {\mathsf{Fun}}}(A,-)\colon {\mathord {\mathcal{K}}}\to {\mathord {\mathcal{QCat}}}\) and \({\mathord {\mathsf{Fun}}}(-,B)\colon {\mathord {\mathcal{K}}}^{\mathord {\textup{op}}}\to {\mathord {\mathcal{QCat}}}\) induce 2-functors \({\mathord {\mathsf{Fun}}}(A,-)\colon \mathfrak {h}{\mathord {\mathcal{K}}}\to \mathfrak {h}{\mathord {\mathcal{QCat}}}\) and \({\mathord {\mathsf{Fun}}}(-,B)\colon \mathfrak {h}{\mathord {\mathcal{K}}}^{\mathord {\textup{op}}}\to \mathfrak {h}{\mathord {\mathcal{QCat}}}\), which preserve the 2-categorical equivalences of Definition <a href="sec-htpy-2-cat.html#defn:2-cat-equivalence">1.8.7</a>. By Theorem <a href="sec-htpy-2-cat.html#thm:equiv-are-equiv">1.8.8</a> this is what we wanted to show. </p>
+
+  </div>
+</div>
+<p>There is also a standard 2-categorical notion of an isofibration, defined in the statement of Proposition <a href="sec-htpy-2-cat.html#prop:isofib-define-isofib">1.8.10</a>. We now show that any isofibration in an \(\infty \)-cosmos defines an isofibration in its homotopy 2-category. </p>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:isofib-define-isofib">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.8.10</span>
+    <span class="proposition_thmtitle">isofibrations are isofibrations</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#prop:isofib-define-isofib">#</a>
+    
+    <a class="icon proof" href="sec-htpy-2-cat.html#a0000000158"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>  An isofibration \(p \colon E \twoheadrightarrow B\) in an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) also defines an <b class="bfseries">isofibration</b> in the homotopy 2-category \(\mathfrak {h}{\mathord {\mathcal{K}}}\): given any invertible 2-cell as displayed below-left abutting to \(B\) with a specified lift of one of its boundary 1-cells through \(p\), there exists an invertible 2-cell abutting to \(E\) with this boundary 1-cell as displayed below-right that whiskers with \(p\) to the original 2-cell. </p>
+<div class="centered"> <div class="tikzcd" id="a0000000159">
+    <img src="images/img-0075.svg" class="tikzcd-vector" alt="\begin{tikzcd}  X \arrow[r, &#34;e&#34;] \arrow[dr, bend right, &#34;b&#34;&#39;] &amp; E \arrow[d, two heads, &#34;p&#34;] \arrow[dl, phantom, &#34;{\scriptstyle\cong\Downarrow\beta}&#34; near start] &amp;\arrow[d, phantom, &#34;=&#34;] &amp; X \arrow[rr, start anchor=15, end anchor=165, bend left=20, &#34;e&#34;] \arrow[rr, start anchor=345, end anchor=195, bend right=20, &#34;\bar{e}&#34;&#39;, dashed] \arrow[rr, phantom, &#34;{\scriptstyle\cong\Downarrow\gamma}&#34;] &amp;&amp; E \arrow[d, two heads, &#34;p&#34;] \\ ~ &amp; B &amp; ~ &amp; &amp; &amp; B
+  \end{tikzcd}" />
+</div> </div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000158">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The universal property of the statement says that the functor </p>
+<div class="displaymath" id="a0000000160">
+  \[ p_* \colon {\mathord {\mathsf{hFun}}}(X,E) \twoheadrightarrow {\mathord {\mathsf{hFun}}}(X,B) \]
+</div>
+<p> is an isofibration of categories in the sense defined in Proposition <a href="sec-examples.html#prop:cat-cosmos">1.7.3</a>. By axiom <a href="sec-cosmos.html#defn:cosmos">1.5.1</a><a href="sec-cosmos.html#itm:cosmos-isofib">ii</a>, since \(p \colon E \twoheadrightarrow B\) is an isofibration in \({\mathord {\mathcal{K}}}\), the induced map \(p_* \colon {\mathord {\mathsf{Fun}}}(X,E) \twoheadrightarrow {\mathord {\mathsf{Fun}}}(X,B)\) is an isofibration of quasi-categories. So it suffices to show that the functor \({\mathord {\mathsf{h}}}\colon {\mathord {\mathcal{QCat}}}\to {\mathord {\mathcal{Cat}}}\) carries isofibrations of quasi-categories to isofibrations of categories. </p>
+<p>So let us now consider an isofibration \(p \colon E \twoheadrightarrow B\) between quasi-categories. By Proposition <a href="sec-homotopy-category.html#prop:coherent-iso">1.3.13</a>, every isomorphism \(\beta \) in the homotopy category \({\mathord {\mathsf{h}}}{B}\) of the quasi-category \(B\) is represented by a simplicial map \(\beta \colon I\to B\). By Definition <a href="sec-homotopy-category.html#defn:qcat-isofibration">1.3.15</a>, the lifting problem </p>
+<div class="centered"> <div class="tikzcd" id="a0000000161">
+    <img src="images/img-0076.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+  \catone \arrow[r, &#34;e&#34;] \arrow[d, hook] &amp; E \arrow[d, two heads, &#34;p&#34;] \\ \iso \arrow[ur, dashed, &#34;\gamma&#34;] \arrow[r, &#34;\beta&#34;&#39;] &amp; B
+  \end{tikzcd}" />
+</div> </div>
+<p> can be solved, and the map \(\gamma \colon I\to E\) so produced represents a lift of the isomorphism from \({\mathord {\mathsf{h}}}{B}\) to an isomorphism in \({\mathord {\mathsf{h}}}{E}\) with domain \(e\). </p>
+
+  </div>
+</div>
+<div class="con_thmwrapper theorem-style-definition" id="a0000000162">
+  <div class="con_thmheading">
+    <span class="con_thmcaption">
+    Convention
+    </span>
+    <span class="con_thmlabel">1.8.11</span>
+    <span class="con_thmtitle">on isofibrations in homotopy 2-categories</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#a0000000162">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="con_thmcontent">
+  <p> Since the converse to Proposition <a href="sec-htpy-2-cat.html#prop:isofib-define-isofib">1.8.10</a> does not hold, there is a potential ambiguity when using the term “isofibration” to refer to a map in the homotopy 2-category of an \(\infty \)-cosmos. We adopt the convention that when we declare a map in \(\mathfrak {h}{\mathord {\mathcal{K}}}\) to be an isofibration we always mean this is the stronger sense of defining an isofibration in \({\mathord {\mathcal{K}}}\). This stronger condition gives us access to the 2-categorical lifting property of Proposition <a href="sec-htpy-2-cat.html#prop:isofib-define-isofib">1.8.10</a> and also to homotopical properties axiomatized in Definition <a href="sec-cosmos.html#defn:cosmos">1.5.1</a>, which ensure that the strictly defined limits of <a href="sec-cosmos.html#defn:cosmos">1.5.1</a><a href="sec-cosmos.html#itm:cosmos-limits">i</a> are automatically equivalence invariant constructions (see <span class="cite">
+	[
+	<a href="sect0003.html#RiehlVerity:2022eo" >RV22</a>
+	, 
+	6.2.8,
+	§
+	C.1
+	]
+</span>). </p>
+
+  </div>
+</div>
+<p>We conclude this chapter with a final definition that can be extracted from the homotopy 2-category of an \(\infty \)-cosmos. The 1- and 2-cells in the homotopy 2-category from the terminal \(\infty \)-category \(1 \in {\mathord {\mathcal{K}}}\) to a generic \(\infty \)-category \(A \in {\mathord {\mathcal{K}}}\) define the objects and morphisms in the homotopy category of the \(\infty \)-category \(A\). </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:htpy-cat-of-infinity-cat">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.8.12</span>
+    <span class="definition_thmtitle">homotopy category of an \(\infty \)-category</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-htpy-2-cat.html#defn:htpy-cat-of-infinity-cat">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#defn:homotopy-cat">Definition 1.2.23</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  The <b class="bfseries">homotopy category</b> of an \(\infty \)-category \(A\) in an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) is defined to be the homotopy category of its underlying quasi-category, that is: </p>
+<div class="displaymath" id="a0000000163">
+  \[  {\mathord {\mathsf{h}}}A :={\mathord {\mathsf{hFun}}}(1,A) :={\mathord {\mathsf{h}}}({\mathord {\mathsf{Fun}}}(1,A)). \]
+</div>
+
+  </div>
+</div>
+<p>As we shall discover, homotopy categories generally inherit “derived” analogues of structures present at the level of \(\infty \)-categories.  </p>
+
+
+</div> <!--main-text -->
+<footer id="footnotes">
+<ol>
+  <li id="a0000000156">The functor \({\mathord {\mathsf{Fun}}}(A,-)\) is a <em>cosmological functor</em>, preserving all of the structure of Definition <a href="sec-cosmos.html#defn:cosmos">1.5.1</a>. Cosmological functors then preserve a large class of cosmological notions, including equivalences. These results, however, do not apply to \({\mathord {\mathsf{Fun}}}(-,B)\) since this functor is not cosmological.</li>
+</ol>
+</footer>
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sec-examples.html" title="Examples of \(\infty \)-cosmoi"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0001.html" title="\(\infty \)-Cosmoi"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sect0003.html" title="Bibliography"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

@@ -1,0 +1,2083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simplicial sets</title>
+<link rel="next" href="sec-homotopy-category.html" title="The homotopy category of a quasi-category, isofibrations, and equivalences" />
+<link rel="prev" href="sect0002.html" title="Overview" />
+<link rel="up" href="sect0001.html" title="-Cosmoi" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">\(\infty \)-Cosmoi</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Overview</span></a>
+ </li>
+<li class=" active current">
+  <a href="sec-simplicial-sets.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Simplicial sets</span></a>
+ </li>
+<li class="">
+  <a href="sec-homotopy-category.html"><span class="toc_ref">1.3</span> <span class="toc_entry">The homotopy category of a quasi-category, isofibrations, and equivalences</span></a>
+ </li>
+<li class="">
+  <a href="sec-enriched-limits.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Enriched limits</span></a>
+ </li>
+<li class="">
+  <a href="sec-cosmos.html"><span class="toc_ref">1.5</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+ </li>
+<li class="">
+  <a href="sec-change-of-base.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Change of base</span></a>
+ </li>
+<li class="">
+  <a href="sec-examples.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Examples of \(\infty \)-cosmoi</span></a>
+ </li>
+<li class="">
+  <a href="sec-htpy-2-cat.html"><span class="toc_ref">1.8</span> <span class="toc_entry">The homotopy 2-category</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="sec:simplicial-sets">1.2 Simplicial sets</h1>
+
+<p>Before introducing an axiomatic framework that allows us to develop \(\infty \)-category theory in general, we first consider one model in particular: <em>quasi-categories</em>, which were introduced in 1973 by Boardman and Vogt <span class="cite">
+	[
+	<a href="sect0003.html#BoardmanVogt:1973hi" >BV73</a>
+	]
+</span> in their study of homotopy coherent diagrams. Ordinary 1-categories give examples of quasi-categories via the construction of Definition <a href="sec-simplicial-sets.html#defn:nerve">1.2.15</a>. Joyal first undertook the task of extending 1-category theory to quasi-category theory in <span class="cite">
+	[
+	<a href="sect0003.html#Joyal:2002qk" >Joy02</a>
+	]
+</span> and <span class="cite">
+	[
+	<a href="sect0003.html#Joyal:2008tq" >Joy08</a>
+	]
+</span> and in several unpublished draft book manuscripts. The majority of the results in this section are due to him. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:simplex-category">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.1</span>
+    <span class="definition_thmtitle">the simplex category</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:simplex-category">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SimplexCategory.smallCategory" class="lean_decl">SimplexCategory.smallCategory</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  Let \(\Delta \) denote the <b class="bfseries">simplex category</b> of finite nonempty ordinals \([n] = \{ 0 {\lt}1 {\lt}\cdots {\lt} n\} \) and order-preserving maps. </p>
+
+  </div>
+</div>
+<p>The maps in the simplex category include in particular: </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:face-map">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.2</span>
+    <span class="definition_thmtitle">elementary face maps</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:face-map">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplex-category">Definition 1.2.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SimplexCategory.δ" class="lean_decl">SimplexCategory.δ</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   The <b class="bfseries">elementary&#160;face&#160;operators</b> are the maps </p>
+<div class="centered"> <div class="tikzcd" id="a0000000010">
+    <img src="images/img-0001.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=tiny, column sep=small]
+   {[n-1]} \arrow[r, tail, &#34;{\face^i}&#34;] &amp; {[n]}  &amp; {0 \leq i \leq n}
+\end{tikzcd}" />
+</div> </div>
+<p> whose images omit the element \(i \in [n]\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:degeneracy-map">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.3</span>
+    <span class="definition_thmtitle">elementary degeneracy maps</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:degeneracy-map">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplex-category">Definition 1.2.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SimplexCategory.σ" class="lean_decl">SimplexCategory.σ</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   The <b class="bfseries">elementary&#160;degeneracy&#160;operators</b> are the maps </p>
+<div class="centered"> <div class="tikzcd" id="a0000000011">
+    <img src="images/img-0002.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=tiny, column sep=small]
+ {[n+1]} \arrow[r, two heads, &#34;{\degen^i}&#34;] &amp; {[n]} &amp; {0 \leq i \leq n }
+\end{tikzcd}" />
+</div> </div>
+<p> whose images double up on the element \(i \in [n]\). </p>
+
+  </div>
+</div>
+<p>The following decomposition result is yet to be proven, though there are related results on the image factorization in the simplex category: </p>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:simplex-cat-factorization">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.2.4</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#prop:simplex-cat-factorization">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000012"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:face-map">Definition 1.2.2</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#defn:degeneracy-map">Definition 1.2.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SimplexCategory.instHasStrongEpiImages" class="lean_decl">SimplexCategory.instHasStrongEpiImages</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   Every morphism in \(\Delta \) factors uniquely as an epimorphism followed by a monomorphism; these epimorphisms, the <b class="bfseries">degeneracy operators</b>, decompose as composites of elementary degeneracy operators, while the monomorphisms, the <b class="bfseries">face operators</b>, decompose as composites of elementary face operators. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000012">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The image factorizations have been formalized but the canonical decompositions into elementary face and degeneracy operators remain to be done. </p>
+
+  </div>
+</div>
+<div class="defn_thmwrapper theorem-style-definition" id="defn:simplicial-set">
+  <div class="defn_thmheading">
+    <span class="defn_thmcaption">
+    Definition
+    </span>
+    <span class="defn_thmlabel">1.2.5</span>
+    <span class="defn_thmtitle">simplicial set</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:simplicial-set">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplex-category">Definition 1.2.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="defn_thmcontent">
+  <p>   A <b class="bfseries">simplicial set</b> is a presheaf on the simplex category. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:sset-category">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.6</span>
+    <span class="definition_thmtitle">the category of simplicial sets</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:sset-category">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplicial-set">Definition 1.2.5</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplex-category">Definition 1.2.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.largeCategory" class="lean_decl">SSet.largeCategory</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   The category of <b class="bfseries">simplicial sets</b> is the category \({\mathord {\mathcal{sSet}}}:={\mathord {\mathcal{Set}}}^{\Delta ^{\mathord {\textup{op}}}}\) of presheaves on the simplex category. </p>
+
+  </div>
+</div>
+<p>Standard examples of simplicial sets include: </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:standard-simplex">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.7</span>
+    <span class="definition_thmtitle">standard simplex</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:standard-simplex">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplicial-set">Definition 1.2.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.stdSimplex" class="lean_decl">SSet.stdSimplex</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   We write \(\Delta [n]\) for the <b class="bfseries">standard \(n\)-simplex</b> the simplicial set represented by \([n] \in \Delta \). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:simplex-boundary">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.8</span>
+    <span class="definition_thmtitle">simplex boundary</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:simplex-boundary">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:standard-simplex">Definition 1.2.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.boundary" class="lean_decl">SSet.boundary</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   We write \(\partial \Delta [n] \subset \Delta [n]\) for the <b class="bfseries">boundary sphere</b> of the \(n\)-simplex. The sphere \(\partial \Delta [n]\) is the simplicial subset generated by the codimension-one faces of the \(n\)-simplex. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:simplicial-horn">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.9</span>
+    <span class="definition_thmtitle">simplicial horn</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:simplicial-horn">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:standard-simplex">Definition 1.2.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.horn" class="lean_decl">SSet.horn</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   We write \(\Lambda ^k[n] \subset \Delta [n]\) for the \(k\)-<b class="bfseries">horn</b> in the \(n\)-simplex. The horn \(\Lambda ^k[n]\) is the further simplicial subset of \(\partial \Delta [n]\) that omits the face opposite the vertex \(k\), but it is defined as a subset of \(\Delta [n]\). </p>
+
+  </div>
+</div>
+<p>Given a simplicial set \(X\), it is conventional to write \(X_n\) for the set of \(n\)-<b class="bfseries">simplices</b>, defined by evaluating at \([n] \in \Delta \). This is implemented as a scoped notation “_[n]” accessible with “open Simplicial” or “open scoped Simplicial.” </p>
+<p>By the Yoneda lemma: </p>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:simplex-yoneda">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.2.10</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#lem:simplex-yoneda">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000013"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:standard-simplex">Definition 1.2.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.yonedaEquiv" class="lean_decl">SSet.yonedaEquiv</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Each \(n\)-simplex \(x \in X_n\) corresponds to a map of simplicial sets \(x \colon \Delta [n] \to X\). Accordingly, we write \(x \cdot \delta ^i\) for the \(i\)th face of the \(n\)-simplex, an \((n-1)\)-simplex classified by the composite map </p>
+<div class="centered"> <div class="tikzcd" id="a0000000014">
+    <img src="images/img-0003.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+\Delta[n-1] \arrow[r, &#34;\face^i&#34;] &amp; \Delta[n] \arrow[r, &#34;x&#34;] &amp; X.
+\end{tikzcd}" />
+</div> </div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000013">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>This is a special case of the Yoneda lemma. </p>
+
+  </div>
+</div>
+<p>The right action of the face operator defines a map \(X_n \xrightarrow {\cdot \delta ^i} X_{n-1}\). Geometrically, \(x\cdot \delta ^i\) is the “face opposite the vertex \(i\)” in the \(n\)-simplex \(x\). </p>
+<p>The category of simplicial sets, as a presheaf category, is very well-behaved: </p>
+<div class="corollary_thmwrapper theorem-style-theorem" id="cor:sset-cat-limits">
+  <div class="corollary_thmheading">
+    <span class="corollary_thmcaption">
+    Corollary
+    </span>
+    <span class="corollary_thmlabel">1.2.11</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#cor:sset-cat-limits">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000015"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:sset-category">Definition 1.2.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.hasLimits" class="lean_decl">SSet.hasLimits</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="corollary_thmcontent">
+  <p>   The category of simplicial sets is complete. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000015">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Presheaf categories are complete. </p>
+
+  </div>
+</div>
+<div class="corollary_thmwrapper theorem-style-theorem" id="cor:sset-cat-colimits">
+  <div class="corollary_thmheading">
+    <span class="corollary_thmcaption">
+    Corollary
+    </span>
+    <span class="corollary_thmlabel">1.2.12</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#cor:sset-cat-colimits">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000016"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:sset-category">Definition 1.2.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.hasColimits" class="lean_decl">SSet.hasColimits</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="corollary_thmcontent">
+  <p>   The category of simplicial sets is cocomplete. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000016">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Presheaf categories are cocomplete. </p>
+
+  </div>
+</div>
+<p>Instances of these facts currently appear in Mathlib, which likely also knows that the category of simplicial sets is cartesian closed. </p>
+<p>The definition of a quasi-category can be found in Mathlib as well. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="eq:qcat-defn">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.13</span>
+    <span class="definition_thmtitle">quasi-category</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#eq:qcat-defn">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplicial-set">Definition 1.2.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Quasicategory" class="lean_decl">SSet.Quasicategory</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A <b class="bfseries">quasi-category</b> is a simplicial set \(A\) in which any <b class="bfseries">inner horn</b> can be extended to a simplex, solving the displayed lifting problem: </p>
+<figure >
+  
+<div class="tikzcd" id="a0000000017">
+    <img src="images/img-0004.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+  \Lambda^k[n] \arrow[r] \arrow[d, hook] &amp; A  \\ \Delta[n] \arrow[ur, dashed]
+  \end{tikzcd}" />
+</div>
+<p> &#8195;&#8195;for  n ≥2, 0 &lt; k &lt; n. </p>
+
+</figure>
+
+  </div>
+</div>
+<p>Quasi-categories were first introduced by Boardman and Vogt <span class="cite">
+	[
+	<a href="sect0003.html#BoardmanVogt:1973hi" >BV73</a>
+	]
+</span> under the name “weak Kan complexes,” as they generalize the following notion: </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:kan-complex">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.14</span>
+    <span class="definition_thmtitle">Kan complex</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:kan-complex">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplicial-set">Definition 1.2.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.KanComplex" class="lean_decl">SSet.KanComplex</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A <b class="bfseries">Kan complex</b> is a simplicial set admitting extensions as in <a href="sec-simplicial-sets.html#eq:qcat-defn" class="eqref">1.2.13</a> along all horn inclusions \(n \geq 1, 0 \leq k \leq n\). </p>
+
+  </div>
+</div>
+<p>Since any topological space can be encoded as a Kan complex,<a class="footnote" href="#a0000000018">
+  <sup class="footnotemark">1</sup>
+</a> in this way spaces provide examples of quasi-categories. </p>
+<p>Categories also provide examples of quasi-categories via the nerve construction. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:nerve">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.15</span>
+    <span class="definition_thmtitle">nerve</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:nerve">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplicial-set">Definition 1.2.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.nerve" class="lean_decl">CategoryTheory.nerve</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   The category \({\mathord {\mathcal{Cat}}}\) of 1-categories embeds fully faithfully into the category of simplicial sets via the <b class="bfseries">nerve</b> functor. An \(n\)-simplex in the nerve of a 1-category \(C\) is a sequence of \(n\) composable arrows in \(C\), or equally a functor \([n]\to C\) from the ordinal category \([n]\) with objects \(0,\ldots , n\) and a unique arrow \(i \to j\) just when \(i \leq j\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:nerve-functor">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.16</span>
+    <span class="definition_thmtitle">nerve functor</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:nerve-functor">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:nerve">Definition 1.2.15</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.nerveFunctor" class="lean_decl">CategoryTheory.nerveFunctor</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   The map \([n] \mapsto [n]\) defines a fully faithful embedding \(\Delta \hookrightarrow {\mathord {\mathcal{Cat}}}\). From this point of view, the nerve functor can be described as a “restricted Yoneda embedding” which carries a category \(C\) to the restriction of the representable functor \(\hom (-,C)\) to the image of this inclusion. </p>
+
+  </div>
+</div>
+<p>This is an instance of a more general family of “nerve-type constructions.” </p>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:nerve-2-coskeletal">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.2.17</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#prop:nerve-2-coskeletal">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000019"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:nerve">Definition 1.2.15</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.Nerve.cosk₂Iso" class="lean_decl">CategoryTheory.Nerve.cosk₂Iso</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   The nerve of a category \(C\) is <b class="bfseries">2-coskeletal</b> as a simplicial set, meaning that every sphere \(\partial \Delta [n] \to C\) with \(n \geq 3\) is filled uniquely by an \(n\)-simplex in \(C\), or equivalently that the nerve is canonically isomorphic to the right Kan extension of its restriction to 2-truncated simplicial sets.<a class="footnote" href="#a0000000020">
+  <sup class="footnotemark">2</sup>
+</a></p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000019">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Note a sphere \(\partial \Delta [2] \to C\) extends to a 2-simplex if and only if that arrow along its diagonal edge is the composite of the arrows along the edges in the inner horn \(\Lambda ^1[2] \subset \partial \Delta [2] \to C\). The simplices in dimension 3 and above witness the associativity of the composition of the path of composable arrows found along their <b class="bfseries">spine</b>, the 1-skeletal simplicial subset formed by the edges connecting adjacent vertices. In fact, as suggested by the proof of Proposition <a href="sec-simplicial-sets.html#prop:nerve-qcat">1.2.18</a>, any simplicial set in which inner horns admit <em>unique</em> fillers is isomorphic to the nerve of a 1-category. This characterization of nerves is not yet in Mathlib, however, we have proven the one-way result, namely that nerves of categories satisfy the “strict Segal condition” and this is used in the proof of 2-coskeletality. </p>
+
+  </div>
+</div>
+<p>In the book that is the primary source this text <span class="cite">
+	[
+	<a href="sect0003.html#RiehlVerity:2022eo" >RV22</a>
+	]
+</span>, as in much of the \(\infty \)-categories literature, we decline to introduce explicit notation for the nerve functor, preferring instead to identify 1-categories with their nerves. As we shall discover the theory of 1-categories extends to \(\infty \)-categories modeled as quasi-categories in such a way that the restriction of each \(\infty \)-categorical concept along the nerve embedding recovers the corresponding 1-categorical concept. For instance, the standard simplex \(\Delta [n]\) is isomorphic to the nerve of the ordinal category \([n]\), and we frequently adopt the latter notation — writing \([0]:=\Delta [0]\), \([1]:=\Delta [1]\), \([2]:=\Delta [2]\), and so on — to suggest the correct categorical intuition. However, Mathlib notates nerves explicitly, so at some point this document should be adapted to follow that convention. </p>
+<p>To begin down this path, we must first verify the implicit assertion that has just been made. </p>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:nerve-qcat">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.2.18</span>
+    <span class="proposition_thmtitle">nerves are quasi-categories</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#prop:nerve-qcat">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000021"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:nerve">Definition 1.2.15</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#eq:qcat-defn">Definition 1.2.13</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#prop:nerve-2-coskeletal">Proposition 1.2.17</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.Nerve.quasicategory" class="lean_decl">CategoryTheory.Nerve.quasicategory</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   Nerves of categories are quasi-categories. </p>
+
+  </div>
+</div>
+<p>This is not the proof that was formalized but we include it for fun: </p>
+<div class="proof_wrapper" id="a0000000021">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> Via the isomorphism \(C \cong \textup{cosk}_2C\) from Proposition <a href="sec-simplicial-sets.html#prop:nerve-2-coskeletal">1.2.17</a> and the associated adjunction \(\textup{sk}_2 \dashv \textup{cosk}_2\) of, the required lifting problem displayed below-left transposes to the one displayed below-right: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000022">
+    <img src="images/img-0005.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+ \Lambda^k[n] \arrow[d, hook] \arrow[r] &amp; C \cong \cosk_2C &amp; \arrow[d, phantom, &#34;\leftrightsquigarrow&#34;] &amp; \sk_2\Lambda^k[n] \arrow[r] \arrow[d, hook] &amp; C \\ \Delta[n] \arrow[ur, dashed] &amp; &amp; ~ &amp; \sk_2\Delta[n] \arrow[ur, dashed]
+ \end{tikzcd}" />
+</div> </div>
+<p> The functor \(\textup{sk}_2\) replaces a simplicial set by its <b class="bfseries">2-skeleton</b>, the simplicial subset generated by the simplices of dimension at most two. For \(n \geq 4\), the inclusion \(\textup{sk}_2\Lambda ^k[n]\hookrightarrow \textup{sk}_2\Delta [n]\) is an isomorphism, in which case the lifting problems on the right admit (unique) solutions. So it remains only to solve the lifting problems on the left in the cases \(n=2\) and \(n=3\). </p>
+<p>To that end consider </p>
+<div class="centered"> <div class="tikzcd" id="a0000000023">
+    <img src="images/img-0006.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+ \Lambda^1[2] \arrow[r] \arrow[d, hook] &amp; C &amp; \Lambda^1[3] \arrow[d, hook] \arrow[r]  &amp; C &amp; \Lambda^2[3] \arrow[r] \arrow[d, hook] &amp; C \\ \Delta[2] \arrow[ur, dashed] &amp; &amp; \Delta[3] \arrow[ur, dashed] &amp; &amp; \Delta[3] \arrow[ur, dashed]
+ \end{tikzcd}" />
+</div> </div>
+<p> An inner horn \(\Lambda ^1[2] \to C\) defines a composable pair of arrows in \(C\); an extension to a 2-simplex exists precisely because any composable pair of arrows admits a (unique) composite. </p>
+<p>An inner horn \(\Lambda ^1[3] \to C\) specifies the data of three composable arrows in \(C\), as displayed in the following diagram, together with the composites \(gf\), \(hg\), and \((hg)f\). </p>
+<div class="centered"> <div class="tikzcd" id="a0000000024">
+    <img src="images/img-0007.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+ &amp; c_1\arrow[dr, &#34;hg&#34;] \\ c_0 \arrow[ur, &#34;f&#34;] \arrow[dr, &#34;gf&#34;&#39;] \arrow[rr, &#34;(hg)f&#34; near end] &amp; &amp; c_3 \\ &amp; c_2 \arrow[ur, &#34;h&#34;&#39;]  \arrow[from=uu, crossing over, &#34;g&#34;&#39; near end]
+ \end{tikzcd}" />
+</div> </div>
+<p> Because composition is associative, the arrow \((hg)f\) is also the composite of \(gf\) followed by \(h\), which proves that the 2-simplex opposite the vertex \(c_1\) is present in \(C\); by 2-coskeletality, the 3-simplex filling this boundary sphere is also present in \(C\). The filler for a horn \(\Lambda ^2[3] \to C\) is constructed similarly. </p>
+
+  </div>
+</div>
+<p>We now turn to the homotopy category functor. The following definitions and results are not currently in Mathlib. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:1-simplex-htpy">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.19</span>
+    <span class="definition_thmtitle">homotopy relation on 1-simplices</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:1-simplex-htpy">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplicial-set">Definition 1.2.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Truncated.HomotopicL" class="lean_decl">SSet.Truncated.HomotopicL</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A parallel pair of 1-simplices \(f,g\) in a simplicial set \(X\) are <b class="bfseries">homotopic</b> if there exists a 2-simplex whose boundary takes either of the following forms<a class="footnote" href="#a0000000025">
+  <sup class="footnotemark">3</sup>
+</a> </p>
+<div class="centered"> <div class="tikzcd" id="a0000000026">
+    <img src="images/img-0008.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=small, column sep=small]
+   &amp; y \arrow[dr, equals] &amp; &amp;&amp; &amp;  x \arrow[dr, &#34;f&#34;]  \\ x \arrow[ur, &#34;f&#34;] \arrow[rr, &#34;g&#34;&#39;] &amp; &amp; y &amp; &amp; x \arrow[ur, equals] \arrow[rr, &#34;g&#34;&#39;] &amp; &amp; y
+   \end{tikzcd}" />
+</div> </div>
+<p> or if \(f\) and \(g\) are in the same equivalence class generated by this relation. </p>
+
+  </div>
+</div>
+<p>In a quasi-category, the relation witnessed by either of the types of 2-simplex on display in Definition <a href="sec-simplicial-sets.html#defn:1-simplex-htpy">1.2.19</a> is an equivalence relation and these equivalence relations coincide. </p>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:qcat-1-simplex-htpy">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.2.20</span>
+    <span class="lemma_thmtitle">homotopic 1-simplices in a quasi-category</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#lem:qcat-1-simplex-htpy">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000027"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:1-simplex-htpy">Definition 1.2.19</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#eq:qcat-defn">Definition 1.2.13</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#eq:qcat-defn">Definition 1.2.13</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Parallel 1-simplices \(f\) and \(g\) in a quasi-category are homotopic if and only if there exists a 2-simplex of any or equivalently all of the forms displayed in Definition <a href="sec-simplicial-sets.html#defn:1-simplex-htpy">1.2.19</a>. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000027">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> A lengthy exercise in low-dimensional horn filling. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:one-truncation">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.21</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:one-truncation">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplicial-set">Definition 1.2.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.oneTruncation₂" class="lean_decl">SSet.oneTruncation₂</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   By 1-truncating, any simplicial set \(X\) has an underlying <b class="bfseries">reflexive quiver</b> or <b class="bfseries">reflexive directed graph</b> with the 0-simplices of \(X\) defining the objects and the 1-simplices defining the arrows: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000028">
+    <img src="images/img-0009.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+  X_1 \arrow[r, shift left=.75em, &#34;\cdot\face^1&#34;] \arrow[r, shift right=.75em, &#34;\cdot\face^0&#34;&#39;] &amp; X_0, \arrow[l, &#34;\cdot\degen^0&#34; description]
+  \end{tikzcd}" />
+</div> </div>
+<p> By convention, the source of an arrow \(f \in X_1\) is its 0th face \(f \cdot \delta ^1\) (the face opposite 1) while the target is its 1st face \(f \cdot \delta ^0\) (the face opposite 0). </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:free-refl-quiver">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.2.22</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#prop:free-refl-quiver">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000029"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.ReflQuiv.adj" class="lean_decl">CategoryTheory.ReflQuiv.adj</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>  The functor that carries a category to its underlying reflexive quiver has a left adjoint, defining the free category on a reflexive quiver: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000030">
+    <img src="images/img-0010.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=huge]
+    \mathcal{C}at \arrow[r, start anchor=353, end anchor=190, bend right, hook&#39;, &#34;U&#34;&#39;] \arrow[r, phantom, &#34;\bot&#34;] &amp; r\mathcal{Q}uiv \arrow[l, start anchor=170, end anchor=7, bend right, &#34;F&#34;&#39; pos=.48]
+  \end{tikzcd}" />
+</div> </div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000029">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>This has been formalized and is now in Mathlib. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:homotopy-cat">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.2.23</span>
+    <span class="definition_thmtitle">the homotopy category <span class="cite">
+	[
+	<a href="sect0003.html#GabrielZisman:1967cf" >GZ67</a>
+	, 
+	§
+	2.4
+	]
+</span></span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#defn:homotopy-cat">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:simplicial-set">Definition 1.2.5</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#prop:free-refl-quiver">Proposition 1.2.22</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#defn:one-truncation">Definition 1.2.21</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Truncated.HomotopyCategory" class="lean_decl">SSet.Truncated.HomotopyCategory</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   The <b class="bfseries">free category</b> on this reflexive directed graph has \(X_0\) as its object set, degenerate 1-simplices serving as identity morphisms, and nonidentity morphisms defined to be finite directed paths of nondegenerate 1-simplices. The <b class="bfseries">homotopy category</b> \({\mathord {\mathsf{h}}}{X}\) of \(X\) is the quotient of the free category on its underlying reflexive directed graph by the congruence<a class="footnote" href="#a0000000031">
+  <sup class="footnotemark">4</sup>
+</a> generated by imposing a composition relation \(h = g \circ f\) witnessed by 2-simplices </p>
+<div class="centered"> <div class="tikzcd" id="a0000000032">
+    <img src="images/img-0011.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=small, column sep=small]
+   &amp; x_1 \arrow[dr, &#34;g&#34;] \\ x_0 \arrow[ur, &#34;f&#34;] \arrow[rr, &#34;h&#34;&#39;] &amp; &amp; x_2
+   \end{tikzcd}" />
+</div> </div>
+
+  </div>
+</div>
+<p>By soundness of the quotient construction: </p>
+<div class="lem_thmwrapper theorem-style-theorem" id="lem:1-simplex-htpy-in-homotopy-cat">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">1.2.24</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#lem:1-simplex-htpy-in-homotopy-cat">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000033"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:homotopy-cat">Definition 1.2.23</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#defn:1-simplex-htpy">Definition 1.2.19</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p>  Homotopic 1-simplices in a simplicial set represent the same arrow in the homotopy category. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000033">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>This should be relatively straightforward. </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:nerve-reflective">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.2.25</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#prop:nerve-reflective">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000034"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.nerveFunctorCompHoFunctorIso" class="lean_decl">CategoryTheory.nerveFunctorCompHoFunctorIso</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>  The homotopy category of the nerve of a 1-category is isomorphic to the original category, as the 2-simplices in the nerve witness all of the composition relations satisfied by the arrows in the underlying reflexive directed graph. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000034">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> This has been formalized and is now in Mathlib. </p>
+
+  </div>
+</div>
+<p>Indeed, the natural isomorphism \({\mathord {\mathsf{h}}}{C} \cong C\) forms the counit of an adjunction, embedding \({\mathord {\mathcal{Cat}}}\) as a reflective subcategory of \({\mathord {\mathcal{sSet}}}\). </p>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:ho-nerve-adjunction">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.2.26</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#prop:ho-nerve-adjunction">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000035"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:nerve-functor">Definition 1.2.16</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#defn:homotopy-cat">Definition 1.2.23</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#defn:sset-category">Definition 1.2.6</a></li>
+          
+          <li><a href="sec-simplicial-sets.html#prop:nerve-2-coskeletal">Proposition 1.2.17</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.nerveAdjunction" class="lean_decl">CategoryTheory.nerveAdjunction</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   The nerve embedding admits a left adjoint, namely the functor which sends a simplicial set to its homotopy category: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000036">
+    <img src="images/img-0012.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=huge]
+     \mathcal{C}at \arrow[r, start anchor=353, end anchor=190, bend right, hook&#39;] \arrow[r, phantom, &#34;\bot&#34;] &amp; s\mathcal{S}et \arrow[l, start anchor=170, end anchor=7, bend right, &#34;\ho&#34;&#39; pos=.48]
+   \end{tikzcd}" />
+</div> </div>
+
+  </div>
+</div>
+<p>The adjunction of Proposition <a href="sec-simplicial-sets.html#prop:ho-nerve-adjunction">1.2.26</a> exists for formal reasons, via results which have already been formalized in Mathlib, once the category \({\mathord {\mathcal{Cat}}}\) is known to be cocomplete. A proof of this fact did not exist in Mathlib, however, and in fact the adjunction between the homotopy category and the nerve can be used to construct colimits of categories, as it embeds \({\mathord {\mathcal{Cat}}}\) as a reflective subcategory of a cocomplete category (see <span class="cite">
+	[
+	<a href="sect0003.html#Riehl:2016cc" >Rie16</a>
+	, 
+	4.5.16
+	]
+</span>). Thus, we instead formalized a direct proof. </p>
+<div class="proof_wrapper" id="a0000000035">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>   For any simplicial set \(X\), there is a natural map from \(X\) to the nerve of its homotopy category \({\mathord {\mathsf{h}}}{X}\); since nerves are 2-coskeletal, it suffices to define the map \(\textup{sk}_2X \to {\mathord {\mathsf{h}}}{X}\), and this is given immediately by the construction of Definition <a href="sec-simplicial-sets.html#defn:homotopy-cat">1.2.23</a>. Note that the quotient map \(X \to {\mathord {\mathsf{h}}}{X}\) becomes an isomorphism upon applying the homotopy category functor and is already an isomorphism whenever \(X\) is the nerve of a category. Thus the adjointness follows by direct verification of the triangle equalities. </p>
+
+  </div>
+</div>
+<p>By inspection: </p>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:nerve-fully-faithful">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.2.27</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-simplicial-sets.html#prop:nerve-fully-faithful">#</a>
+    
+    <a class="icon proof" href="sec-simplicial-sets.html#a0000000037"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-simplicial-sets.html#defn:nerve">Definition 1.2.15</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.nerveFunctor.fullyfaithful" class="lean_decl">CategoryTheory.nerveFunctor.fullyfaithful</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   The nerve functor is fully faithful. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000037">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> This has been formalized and is now in Mathlib. </p>
+
+  </div>
+</div>
+<p>As a corollary, it follows that \({\mathord {\mathcal{Cat}}}\) has colimits. </p>
+
+</div> <!--main-text -->
+<footer id="footnotes">
+<ol>
+  <li id="a0000000018">The total singular complex construction defines a functor from topological spaces to simplicial sets that is an equivalence on their respective homotopy categories — weak homotopy types of spaces correspond to homotopy equivalence classes of Kan complexes <span class="cite">
+	[
+	<a href="sect0003.html#Quillen:1967ha" >Qui67</a>
+	, 
+	§
+	II.2
+	]
+</span>. The left adjoint “geometrically realizes” a simplicial set as a topological space.</li>
+  <li id="a0000000020">The equivalence between these two perspectives is non-obvious and makes use of Reedy category theory (see <span class="cite">
+	[
+	<a href="sect0003.html#RiehlVerity:2022eo" >RV22</a>
+	, 
+	§
+	C.4-5
+	]
+</span>), which does not currently exist in Mathlib.</li>
+  <li id="a0000000025">The symbol “\(=\)” is used in diagrams to denote a degenerate simplex or an identity arrow.</li>
+  <li id="a0000000031">A binary relation \(\sim \) on parallel arrows of a 1-category is a <b class="bfseries">congruence</b> if it is an equivalence relation that is closed under pre- and post-composition: if \(f \sim g\) then \(hfk \sim hgk\).</li>
+</ol>
+</footer>
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0002.html" title="Overview"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0001.html" title="\(\infty \)-Cosmoi"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sec-homotopy-category.html" title="The homotopy category of a quasi-category, isofibrations, and equivalences"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

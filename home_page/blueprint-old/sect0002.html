@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Overview</title>
+<link rel="next" href="sec-simplicial-sets.html" title="Simplicial sets" />
+<link rel="prev" href="sect0001.html" title="-Cosmoi" />
+<link rel="up" href="sect0001.html" title="-Cosmoi" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">\(\infty \)-Cosmoi</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class=" active current">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Overview</span></a>
+ </li>
+<li class="">
+  <a href="sec-simplicial-sets.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Simplicial sets</span></a>
+ </li>
+<li class="">
+  <a href="sec-homotopy-category.html"><span class="toc_ref">1.3</span> <span class="toc_entry">The homotopy category of a quasi-category, isofibrations, and equivalences</span></a>
+ </li>
+<li class="">
+  <a href="sec-enriched-limits.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Enriched limits</span></a>
+ </li>
+<li class="">
+  <a href="sec-cosmos.html"><span class="toc_ref">1.5</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+ </li>
+<li class="">
+  <a href="sec-change-of-base.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Change of base</span></a>
+ </li>
+<li class="">
+  <a href="sec-examples.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Examples of \(\infty \)-cosmoi</span></a>
+ </li>
+<li class="">
+  <a href="sec-htpy-2-cat.html"><span class="toc_ref">1.8</span> <span class="toc_entry">The homotopy 2-category</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000003">1.1 Overview</h1>
+<p>Following <span class="cite">
+	[
+	<a href="sect0003.html#RiehlVerity:2022eo" >RV22</a>
+	]
+</span>, from which this document was excerpted, we aim to develop the basic theory of \(\infty \)-categories in a model independent fashion using a common axiomatic framework that is satisfied by a variety of models. In contrast with prior “analytic” treatments of the theory of \(\infty \)-categories — in which the central categorical notions are defined in reference to the coordinates of a particular model — our approach is “synthetic,” proceeding from definitions that can be interpreted simultaneously in many models to which our proofs then apply. </p>
+<p>To achieve this, our strategy is not to axiomatize what infinite-dimensional categories <em>are</em>, but rather to axiomatize the categorical “universe” in which they <em>live</em>. This motivates the notion of an \(\infty \)-<em>cosmos</em>, which axiomatizes the universe in which \(\infty \)-categories live as objects.<a class="footnote" href="#a0000000005">
+  <sup class="footnotemark">1</sup>
+</a> So that theorem statement about \(\infty \)-cosmoi suggest their natural interpretation, we recast \(\infty \)-<em>category</em> as a technical term, to mean an object in some (typically fixed) \(\infty \)-cosmos. Several common models of \((\infty ,1)\)-categories<a class="footnote" href="#a0000000006">
+  <sup class="footnotemark">2</sup>
+</a> are \(\infty \)-categories in this sense, but our \(\infty \)-categories also include certain models of \((\infty ,n)\)-categories<a class="footnote" href="#a0000000007">
+  <sup class="footnotemark">3</sup>
+</a> as well as fibered versions of all of the above. Thus each of these objects are \(\infty \)-categories in our sense and our theorems apply to all of them.<a class="footnote" href="#a0000000008">
+  <sup class="footnotemark">4</sup>
+</a> This usage of the term “\(\infty \)-categories” is meant to interpolate between the classical one, which refers to any variety of weak infinite-dimensional categories, and the common one, which is often taken to mean quasi-categories or complete Segal spaces. </p>
+<p>Much of the development of the theory of \(\infty \)-categories takes place not in the full \(\infty \)-cosmos but in a quotient that we call the <em>homotopy 2-category</em>, the name chosen because an \(\infty \)-cosmos is something like a category of fibrant objects in an enriched model category and the homotopy 2-category is then a categorification of its homotopy category. The homotopy 2-category is a strict 2-category — like the 2-category of categories, functors, and natural transformations<a class="footnote" href="#a0000000009">
+  <sup class="footnotemark">5</sup>
+</a> — and in this way the foundational proofs in the theory of \(\infty \)-categories closely resemble the classical foundations of ordinary category theory except that the universal properties they characterize, e.g., when a functor between \(\infty \)-categories defines a cartesian fibration, are slightly weaker than in the familiar case of strict 1-categories. </p>
+<p>There are many alternate choices we could have made in selecting the axioms of an \(\infty \)-cosmos. One of our guiding principles, admittedly somewhat contrary to the setting of homotopical higher category theory, was to allow us to work as strictly as possible, with the aim of shortening and simplifying proofs. As a consequence of these choices, the \(\infty \)-categories in an \(\infty \)-cosmos and the functors and natural transformations between them assemble into a 2-category rather than a bicategory. To help us achieve this counterintuitive strictness, each \(\infty \)-cosmos comes with a specified class of maps between \(\infty \)-categories called <em>isofibrations</em>. The isofibrations have no homotopy-theoretic meaning, as any functor between \(\infty \)-categories is equivalent to an isofibration with the same codomain. However, isofibrations permit us to consider strictly commutative diagrams between \(\infty \)-categories and allow us to require that the limits of such diagrams satisfy a universal property up to simplicially enriched isomorphism. Neither feature is essential for the development of \(\infty \)-category theory. Similar proofs carry through to a weaker setting, at the cost of more time spent considering coherence of higher cells. </p>
+<p>An \(\infty \)-cosmos is a particular sort of <em>simplicially enriched category</em> with certain <em>simplicially enriched limits</em>. In §<a href="sec-simplicial-sets.html">1.2</a>, we first review some prerequisites from the theory of simplicial sets, most of which are either currently in Mathlib or on their way. In §<a href="sec-homotopy-category.html">1.3</a>, we give a simplified description of the homotopy category of a quasi-category and introduce the classes of isofibrations and equivalences. </p>
+<p>While the notion of simplicially enriched category currently exists in Mathlib, simplicially enriched limits do not, so in §<a href="sec-enriched-limits.html">1.4</a> we first introduce the prerequisite notions of simplicially enriched limits that will be required to state the definition of an \(\infty \)-cosmos in §<a href="sec-cosmos.html">1.5</a>. The homotopy 2-category of an \(\infty \)-cosmos is then obtained by applying the general theory of change-of-base from enriched category, which is also currently missing from Mathlib. This theory is described in §<a href="sec-change-of-base.html">1.6</a> and then used to define the homotopy 2-category in §<a href="sec-htpy-2-cat.html">1.8</a>. </p>
+<p>Additional chapters will be added to this blueprint in the future, containing excerpts of the material that can be found in <span class="cite">
+	[
+	<a href="sect0003.html#RiehlVerity:2022eo" >RV22</a>
+	, 
+	Chapters 2-5
+	]
+</span>. The broader aim of this project is to formalize the core basic theory of \(\infty \)-categories, covering those aspects that can be defined in the homotopy 2-category of an \(\infty \)-cosmos. </p>
+<p>The authors of this blueprint are particularly indebted to: </p>
+<ul class="itemize">
+  <li><p>Mario Carneiro, who contributed greatly to the original Lean formalization of \(\infty \)-cosmoi and prerequisite results about the homotopy category functor; </p>
+</li>
+  <li><p>Johan Commelin, who suggested restructuring this as a blueprint project; and </p>
+</li>
+  <li><p>Pietro Monticone, who created a template for blueprint-driven formalization projects in Lean, from which this repository was forked. </p>
+</li>
+</ul>
+<p> Special thanks are also due to the Hausdorff Research Institute for Mathematics and the organizers of the Trimester Program “Prospects of Formal Mathematics,” where the genesis of this project took place. </p>
+
+</div> <!--main-text -->
+<footer id="footnotes">
+<ol>
+  <li id="a0000000005">Metaphorical allusions aside, our \(\infty \)-cosmoi resemble the fibrational cosmoi of Street <span class="cite">
+	[
+	<a href="sect0003.html#Street:1974ec" >Str74</a>
+	]
+</span>.</li>
+  <li id="a0000000006">Quasi-categories, complete Segal spaces, Segal categories, and 1-complicial sets (naturally marked quasi-categories) all define the \(\infty \)-categories in an \(\infty \)-cosmos.</li>
+  <li id="a0000000007">\(n\)-quasi-categories, \(\Theta _n\)-spaces, iterated complete Segal spaces, and \(n\)-complicial sets also define the \(\infty \)-categories in an \(\infty \)-cosmos, as do saturated (née weak) complicial sets, a model for \((\infty ,\infty )\)-categories.</li>
+  <li id="a0000000008">There is a sense, however, in which many of our definitions are optimized for those \(\infty \)-cosmoi whose objects are \((\infty ,1)\)-categories. A good illustration is provided by the notion of <em>discrete \(\infty \)-category</em>. In the \(\infty \)-cosmoi of \((\infty ,1)\)-categories, the discrete \(\infty \)-categories are the \(\infty \)-groupoids, but this is not true for the \(\infty \)-cosmoi of \((\infty ,n)\)-categories.</li>
+  <li id="a0000000009">In fact this is another special case: there is an \(\infty \)-cosmos whose objects are ordinary categories and its homotopy 2-category is the usual category of categories, functors, and natural transformations. This 2-category is as old as category theory itself, introduced in Eilenberg and Mac Lane’s foundational paper <span class="cite">
+	[
+	<a href="sect0003.html#EilenbergMaclane:1945gt" >EML45</a>
+	]
+</span>.</li>
+</ol>
+</footer>
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0001.html" title="\(\infty \)-Cosmoi"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0001.html" title="\(\infty \)-Cosmoi"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sec-simplicial-sets.html" title="Simplicial sets"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

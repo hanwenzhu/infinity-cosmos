@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>\(\infty \)-Cosmoi</title>
+<link rel="next" href="sec-change-of-base.html" title="Change of base" />
+<link rel="prev" href="sec-enriched-limits.html" title="Enriched limits" />
+<link rel="up" href="sect0001.html" title="-Cosmoi" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">\(\infty \)-Cosmoi</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Overview</span></a>
+ </li>
+<li class="">
+  <a href="sec-simplicial-sets.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Simplicial sets</span></a>
+ </li>
+<li class="">
+  <a href="sec-homotopy-category.html"><span class="toc_ref">1.3</span> <span class="toc_entry">The homotopy category of a quasi-category, isofibrations, and equivalences</span></a>
+ </li>
+<li class="">
+  <a href="sec-enriched-limits.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Enriched limits</span></a>
+ </li>
+<li class=" active current">
+  <a href="sec-cosmos.html"><span class="toc_ref">1.5</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+ </li>
+<li class="">
+  <a href="sec-change-of-base.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Change of base</span></a>
+ </li>
+<li class="">
+  <a href="sec-examples.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Examples of \(\infty \)-cosmoi</span></a>
+ </li>
+<li class="">
+  <a href="sec-htpy-2-cat.html"><span class="toc_ref">1.8</span> <span class="toc_entry">The homotopy 2-category</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="sec:cosmos">1.5 \(\infty \)-Cosmoi</h1>
+
+<p>There are a variety of models of infinite-dimensional categories for which the category of “\(\infty \)-categories,” as we call them, and “\(\infty \)-functors” between them is enriched over quasi-categories and admits classes of isofibrations, equivalences, and trivial fibrations satisfying certain properties that are familiar from abstract homotopy theory.<a class="footnote" href="#a0000000069">
+  <sup class="footnotemark">1</sup>
+</a> In particular, the use of isofibrations in diagrams guarantees that their strict limits are equivalence invariant, so we can take advantage of up-to-isomorphism universal properties and strict functoriality of these constructions while still working “homotopically.” This motivates the following axiomatization: </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:cosmos">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.5.1</span>
+    <span class="definition_thmtitle">\(\infty \)-cosmos</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#defn:cosmos">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-enriched-limits.html#defn:simplicial-cotensors">Definition 1.4.7</a></li>
+          
+          <li><a href="sec-enriched-limits.html#defn:simplicial-conical-limit">Definition 1.4.10</a></li>
+          
+          <li><a href="sec-enriched-limits.html#lem:cotensor-bifunctor">Lemma 1.4.9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.InfinityCosmos" class="lean_decl">CategoryTheory.InfinityCosmos</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  An \(\infty \)-<b class="bfseries">cosmos</b> \({\mathord {\mathcal{K}}}\) is a category that is enriched over quasi-categories,<a class="footnote" href="#a0000000070">
+  <sup class="footnotemark">2</sup>
+</a> meaning in particular that</p>
+<ul class="itemize">
+  <li><p>its morphisms \(f \colon A \to B\) define the vertices of a quasi-category denoted \({\mathord {\mathsf{Fun}}}(A,B)\) and referred to as a <b class="bfseries">functor space</b>, </p>
+</li>
+</ul>
+<p> that is also equipped with a specified collection of maps that we call <b class="bfseries">isofibrations</b> and denote by “\(\twoheadrightarrow \)” satisfying the following two axioms: </p>
+<ol class="enumerate">
+  <li><p> (completeness) The quasi-categorically enriched category \({\mathord {\mathcal{K}}}\) possesses a terminal object, small products, pullbacks of isofibrations, limits of countable towers of isofibrations, and cotensors with simplicial sets, each of these limit notions satisfying a universal property that is enriched over simplicial sets.<a class="footnote" href="#a0000000071">
+  <sup class="footnotemark">3</sup>
+</a> </p>
+</li>
+  <li><p> (isofibrations) The isofibrations contain all isomorphisms and any map whose codomain is the terminal object; are closed under composition, product, pullback, forming inverse limits of towers, and Leibniz cotensors with monomorphisms of simplicial sets; and have the property that if \(f \colon A \twoheadrightarrow B\) is an isofibration and \(X\) is any object then \({\mathord {\mathsf{Fun}}}(X,A) \twoheadrightarrow {\mathord {\mathsf{Fun}}}(X,B)\) is an isofibration of quasi-categories. </p>
+</li>
+</ol>
+
+  </div>
+</div>
+<p>For ease of reference, we refer to the simplicially enriched limits of diagrams of isofibrations enumerated in <a href="sec-cosmos.html#itm:cosmos-limits">i</a> as the <b class="bfseries">cosmological limit notions</b>. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:equivalence">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.5.2</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#defn:equivalence">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+          <li><a href="sec-homotopy-category.html#defn:qcat-equivalence">Definition 1.3.16</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  In an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\), a morphism \(f\colon A \to B\) is an <b class="bfseries">equivalence</b> just when the induced map \(f_* \colon {\mathord {\mathsf{Fun}}}(X,A) \rightsquigarrow {\mathord {\mathsf{Fun}}}(X,B)\) on functor spaces is an equivalence of quasi-categories for all \(X \in {\mathord {\mathcal{K}}}\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:trivial-fibration">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.5.3</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#defn:trivial-fibration">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+          <li><a href="sec-cosmos.html#defn:equivalence">Definition 1.5.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  In an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\), a morphism \(f\colon A \to B\) is a <b class="bfseries">trivial fibration</b> just when \(f\) is both an isofibration and an equivalence. </p>
+
+  </div>
+</div>
+<p>These classes are denoted by “\(\rightsquigarrow \)” and “\(\twoheadrightarrow \)”, respectively.<a class="footnote" href="#a0000000072">
+  <sup class="footnotemark">4</sup>
+</a> </p>
+<p>Put more concisely, one might say that an \(\infty \)-cosmos is a “quasi-categorically enriched category of fibrant objects.” </p>
+<div class="con_thmwrapper theorem-style-definition" id="a0000000073">
+  <div class="con_thmheading">
+    <span class="con_thmcaption">
+    Convention
+    </span>
+    <span class="con_thmlabel">1.5.4</span>
+    <span class="con_thmtitle">\(\infty \)-category, as a technical term</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#a0000000073">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="con_thmcontent">
+  <p> Henceforth, we recast \(\infty \)-<b class="bfseries">category</b> as a technical term to refer to an object in an arbitrary ambient \(\infty \)-cosmos. Similarly, we use the term \(\infty \)-<b class="bfseries">functor</b> — or more commonly the elision “<b class="bfseries">functor</b>” — to refer to a morphism \(f \colon A \to B\) in an \(\infty \)-cosmos. This explains why we refer to the quasi-category \({\mathord {\mathsf{Fun}}}(A,B)\) between two \(\infty \)-categories in an \(\infty \)-cosmos as a “functor space”: its vertices are the (\(\infty \)-)functors from \(A\) to \(B\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:underlying-cat-of-cosmos">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.5.5</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#defn:underlying-cat-of-cosmos">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  The underlying category \({\mathord {\mathcal{K}}}_0\) of an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) is the category whose objects are the \(\infty \)-categories in \({\mathord {\mathcal{K}}}\) and whose morphisms are the \(0\)-arrows, i.e., the vertices in the functor spaces. </p>
+
+  </div>
+</div>
+<p>In all of the examples to appear in §<a href="sec-examples.html">1.7</a>, this recovers the expected category of \(\infty \)-categories in a particular model and functors between them. This is compatible with the Lean formalization of simplicial categories as “enriched ordinary categories,” which have a prior 1-category structure which is explicitly identified with the underlying 1-category of the simplicially enriched category. </p>
+<p>The following results are consequences of the axioms of Definition <a href="sec-cosmos.html#defn:cosmos">1.5.1</a>. To begin, observe that the trivial fibrations enjoy the same stability properties satisfied by the isofibrations. </p>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:trivial-fib-conical">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.5.6</span>
+    <span class="lemma_thmtitle">trivial fibrations and conical limits</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#lem:trivial-fib-conical">#</a>
+    
+    <a class="icon proof" href="sec-cosmos.html#a0000000074"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+          <li><a href="sec-cosmos.html#defn:trivial-fibration">Definition 1.5.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  The trivial fibrations in an \(\infty \)-cosmos define a subcategory containing the isomorphisms and are stable under product, pullback, and forming inverse limits of towers. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000074">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>We know in each case that the maps in question are isofibrations in the \(\infty \)-cosmos; it remains to show only that the maps are also equivalences. The equivalences in an \(\infty \)-cosmos are defined to be the maps that \({\mathord {\mathsf{Fun}}}(X,-)\) carries to equivalences of quasi-categories, so it suffices to verify that trivial fibrations of quasi-categories satisfy the corresponding stability properties. These stability properties hold of any class defined by a right lifting property. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:trivial-fib-leibniz">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.5.7</span>
+    <span class="lemma_thmtitle">trivial fibrations and cotensors</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#lem:trivial-fib-leibniz">#</a>
+    
+    <a class="icon proof" href="sec-cosmos.html#a0000000075"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+          <li><a href="sec-cosmos.html#defn:trivial-fibration">Definition 1.5.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  In an \(\infty \)-cosmos, the Leibniz cotensors of any trivial fibration with a monomorphism of simplicial sets is a trivial fibration as is the Leibniz cotensor of an isofibration with a map in the class cellularly generated by the inner horn inclusions and the map \([0]\hookrightarrow I\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000075">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>We know in each case that the maps in question are isofibrations in the \(\infty \)-cosmos; it remains to show only that the maps are also equivalences. The equivalences in an \(\infty \)-cosmos are defined to be the maps that \({\mathord {\mathsf{Fun}}}(X,-)\) carries to equivalences of quasi-categories, so it suffices to verify that trivial fibrations of quasi-categories satisfy the corresponding stability properties. This follows from the cartesian closure of the Joyal model structure. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:trivial-fib-representability">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.5.8</span>
+    <span class="lemma_thmtitle">representable trivial fibrations</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#lem:trivial-fib-representability">#</a>
+    
+    <a class="icon proof" href="sec-cosmos.html#a0000000076"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-homotopy-category.html#defn:qcat-trivial-fibration">Definition 1.3.18</a></li>
+          
+          <li><a href="sec-cosmos.html#defn:trivial-fibration">Definition 1.5.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  If \(E \twoheadrightarrow B\) is a trivial fibration in an \(\infty \)-cosmos, then is \({\mathord {\mathsf{Fun}}}(X,E)\twoheadrightarrow {\mathord {\mathsf{Fun}}}(X,B)\) is a trivial fibration of quasi-categories. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000076">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>By axiom <a href="sec-cosmos.html#defn:cosmos">1.5.1</a><a href="sec-cosmos.html#itm:cosmos-isofib">ii</a> and the definition of the trivial fibrations in an \(\infty \)-cosmos, we know that if \(E \twoheadrightarrow B\) is a trivial fibration then \({\mathord {\mathsf{Fun}}}(X,E)\twoheadrightarrow {\mathord {\mathsf{Fun}}}(X,B)\) is both an isofibration and an equivalence, and hence is a trivial fibration by the compatibility of these classes in the Joyal model structure. </p>
+
+  </div>
+</div>
+<p>By a Yoneda-style argument, the “homotopy equivalence” characterization of the equivalences in the \(\infty \)-cosmos of quasi-categories of Definition <a href="sec-homotopy-category.html#defn:qcat-equivalence">1.3.16</a> extends to an analogous characterization of the equivalences in any \(\infty \)-cosmos: </p>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:equiv-htpy-equiv">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.5.9</span>
+    <span class="lemma_thmtitle">equivalences are homotopy equivalences</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#lem:equiv-htpy-equiv">#</a>
+    
+    <a class="icon proof" href="sec-cosmos.html#a0000000077"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+          <li><a href="sec-homotopy-category.html#defn:coherent-isomorphism">Definition 1.3.12</a></li>
+          
+          <li><a href="sec-cosmos.html#defn:equivalence">Definition 1.5.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  A map \(f \colon A \to B\) between \(\infty \)-categories in an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) is an equivalence if and only if it extends to the data of a “homotopy equivalence” with the free-living isomorphism \(I\) serving as the interval: that is, if there exist maps \(g \colon B \to A\) </p>
+<div class="centered"> <div class="tikzcd" id="a0000000078">
+    <img src="images/img-0027.svg" class="tikzcd-vector" alt="\begin{tikzcd}  &amp; A &amp; &amp;  &amp; B \\ A \arrow[ur, equals] \arrow[dr, &#34;gf&#34;&#39;] \arrow[r, &#34;\alpha&#34;] &amp; A^\iso   \arrow[u, two heads, &#34;\sim&#34;, &#34;\ev_0&#34;&#39;] \arrow[d, two heads, &#34;\sim&#34;&#39;,  &#34;\ev_1&#34;] &amp; \text{and} &amp;  B \arrow[dr, equals] \arrow[r, &#34;\beta&#34;] \arrow[ur, &#34;fg&#34;] &amp; B^\iso  \arrow[u, two heads, &#34;\sim&#34;, &#34;\ev_0&#34;&#39;] \arrow[d, two heads, &#34;\sim&#34;&#39;, &#34;\ev_1&#34;] \\ &amp; A &amp; &amp;  &amp; B
+\end{tikzcd}" />
+</div> </div>
+<p> in the \(\infty \)-cosmos. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000077">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>By hypothesis, if \(f \colon A \to B\) defines an equivalence in the \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) then the induced map on post-composition \(f_* \colon {\mathord {\mathsf{Fun}}}(B,A) \rightsquigarrow {\mathord {\mathsf{Fun}}}(B,B)\) is an equivalence of quasi-categories in the sense of Definition <a href="sec-homotopy-category.html#defn:qcat-equivalence">1.3.16</a>. Evaluating the inverse equivalence \(\tilde{g} \colon {\mathord {\mathsf{Fun}}}(B,B) \rightsquigarrow {\mathord {\mathsf{Fun}}}(B,A)\) and homotopy \(\tilde{\beta } \colon {\mathord {\mathsf{Fun}}}(B,B) \to {\mathord {\mathsf{Fun}}}(B,B)^I\) at the 0-arrow \(\textup{id}_B \in {\mathord {\mathsf{Fun}}}(B,B)\), we obtain a 0-arrow \(g \colon B \to A\) together with an isomorphism \(\beta \colon I\to {\mathord {\mathsf{Fun}}}(B,B)\) from the composite \(fg\) to \(\textup{id}_B\). By the defining universal property of the cotensor <a href="sec-enriched-limits.html#eq:cotensor-defn" class="eqref">1.4.1</a>, this isomorphism internalizes to define the map \(\beta \colon B \to B^I\) in \({\mathord {\mathcal{K}}}\) displayed on the right of the displayed equation in the statement. </p>
+<p>Now the hypothesis that \(f\) is an equivalence also provides an equivalence of quasi-categories \(f_* \colon {\mathord {\mathsf{Fun}}}(A,A) \rightsquigarrow {\mathord {\mathsf{Fun}}}(A,B)\), and the map \(\beta f \colon A \to B^I\) represents an isomorphism in \({\mathord {\mathsf{Fun}}}(A,B)\) from \(fgf\) to \(f\). Since \(f_*\) is an equivalence, we conclude from Lemma <a href="sec-homotopy-category.html#lem:qcat-htpy-cat-equiv">1.3.17</a> that \(\textup{id}_A\) and \(gf\) are isomorphic in the quasi-category \({\mathord {\mathsf{Fun}}}(A,A)\): explicitly, such an isomorphism may be defined by applying the inverse equivalence \(\tilde{h} \colon {\mathord {\mathsf{Fun}}}(A,B) \to {\mathord {\mathsf{Fun}}}(A,A)\) and composing with the components at \(\textup{id}_A, gf \in {\mathord {\mathsf{Fun}}}(A,A)\) of the isomorphism \(\tilde{\alpha } \colon {\mathord {\mathsf{Fun}}}(A,A) \to {\mathord {\mathsf{Fun}}}(A,A)^I\) from \(\textup{id}_{{\mathord {\mathsf{Fun}}}(A,A)}\) to \(\tilde{h}f_*\). Now by Proposition <a href="sec-homotopy-category.html#prop:coherent-iso">1.3.13</a> this isomorphism is represented by a map \(I\to {\mathord {\mathsf{Fun}}}(A,A)\) from \(\textup{id}_A\) to \(gf\), which internalizes to a map \(\alpha \colon A \to A^I\) in \({\mathord {\mathcal{K}}}\) displayed on the left of the displayed equation in the statement. </p>
+<p>The converse is easy: the simplicial cotensor construction commutes with \({\mathord {\mathsf{Fun}}}(X,-)\), so a homotopy equivalence induces a homotopy equivalence of quasi-categories as in Definition <a href="sec-homotopy-category.html#defn:qcat-equivalence">1.3.16</a>. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:equivalence-2-of-3">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.5.10</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#lem:equivalence-2-of-3">#</a>
+    
+    <a class="icon proof" href="sec-cosmos.html#a0000000079"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:equivalence">Definition 1.5.2</a></li>
+          
+          <li><a href="sec-cosmos.html#lem:equiv-htpy-equiv">Lemma 1.5.9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  The equivalences in an \(\infty \)-cosmos are closed under retracts and satisfy the <b class="bfseries">2-of-3 property</b>: given a composable pair of functors and their composite, if any two of these are equivalences so is the third. </p>
+
+  </div>
+</div>
+<p>By the representable definition of equivalences and functoriality, Lemma <a href="sec-cosmos.html#lem:equivalence-2-of-3">1.5.10</a> follows easily from the corresponding results for equivalences between quasi-categories. But we can also prove the general cosmological result without relying on this base case. </p>
+<div class="proof_wrapper" id="a0000000079">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p> Let \(f \colon A \rightsquigarrow B\) be an equivalence equipped with the data described in the statement of Lemma <a href="sec-cosmos.html#lem:equiv-htpy-equiv">1.5.9</a> and consider a retract diagram </p>
+<div class="centered"> <div class="tikzcd" id="a0000000080">
+    <img src="images/img-0028.svg" class="tikzcd-vector" alt="\begin{tikzcd}  C \arrow[r, &#34;u&#34;&#39;] \arrow[rr, bend left, equals] \arrow[d, &#34;h&#34;&#39;] &amp; A \arrow[d, &#34;\sim&#34;, &#34;f&#34;&#39;] \arrow[r, &#34;v&#34;&#39;] &amp; C \arrow[d, &#34;h&#34;] \\ D \arrow[r, &#34;s&#34;] \arrow[rr, bend right, equals] &amp; B \arrow[r, &#34;t&#34;] &amp; D
+\end{tikzcd}" />
+</div> </div>
+<p> By Lemma <a href="sec-cosmos.html#lem:equiv-htpy-equiv">1.5.9</a>, to prove that \(h \colon C \to D\) is an equivalence, it suffices to construct the data of an inverse homotopy equivalence. To that end define \(k \colon D \to C\) to be the composite \(vgs\) and then observe from the commutative diagrams </p>
+<div class="centered"> <div class="tikzcd" id="a0000000081">
+    <img src="images/img-0029.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+&amp; &amp; &amp; &amp;[-3pt] &amp; &amp; C \arrow[dr, &#34;h&#34;] \\
+&amp; &amp; A \arrow[r, &#34;v&#34;&#39;] &amp;C &amp; &amp;A \arrow[r, &#34;f&#34;&#39;] \arrow[ur, &#34;v&#34;&#39;] &amp; B \arrow[r, &#34;t&#34;] &amp; D \\ C \arrow[r, &#34;u&#34;] \arrow[d, &#34;h&#34;&#39;] \arrow[urrr, bend left=40, equals] &amp; A \arrow[d, &#34;f&#34;&#39;] \arrow[r, &#34;\alpha&#34;] \arrow[ur, equals] &amp; A^\iso \arrow[u,
+&#34;\ev_0&#34;&#39;] \arrow[d, &#34;\ev_1&#34;] \arrow[r, &#34;{v^\iso}&#34;] &amp; C^\iso \arrow[u, &#34;\ev_0&#34;&#39;] \arrow[d, &#34;\ev_1&#34;] &amp; D \arrow[r, &#34;s&#34;] \arrow[drrr, equals,  bend right=40] \arrow[uurr, bend left=30, &#34;k&#34;] &amp; B\arrow[u, &#34;g&#34;&#39;] \arrow[r, &#34;\beta&#34;] \arrow[dr, equals] &amp; B^\iso \arrow[r, &#34;t^\iso&#34;] \arrow[d, &#34;\ev_1&#34;]\arrow[u, &#34;\ev_0&#34;&#39;] &amp; D^\iso \arrow[d, &#34;\ev_1&#34;] \arrow[u, &#34;\ev_0&#34;&#39;] \\ D \arrow[r, &#34;s&#34;] \arrow[rrr, bend right=20, &#34;k&#34;&#39;] &amp; B \arrow[r, &#34;g&#34;] &amp; A \arrow[r, &#34;v&#34;]  &amp; C &amp; &amp; &amp; B \arrow[r, &#34;t&#34;] &amp; D
+\end{tikzcd}" />
+</div> </div>
+<p> that \(v^I\alpha u \colon C \to C^I\) and \(t^I\beta s \colon D \to D^I\) define the required homotopy coherent isomorphisms. </p>
+<p>Via Lemma <a href="sec-cosmos.html#lem:equiv-htpy-equiv">1.5.9</a>, the 2-of-3 property for equivalences follows from the fact that the set of isomorphisms in a quasi-category is closed under composition. Homotopy coherent isomorphisms in a quasi-category represent isomorphisms in the homotopy category, whose composite in the homotopy category is then an isomorphism, which can be lifted to a representing homotopy coherent isomorphism by Proposition <a href="sec-homotopy-category.html#prop:coherent-iso">1.3.13</a>. We now apply this to the homotopy coherent isomorphisms in the functor spaces of an \(\infty \)-cosmos that form part of the data of an equivalence of \(\infty \)-categories. </p>
+<p>To prove that equivalences are closed under composition, consider a composable pair of equivalences with their inverse equivalences </p>
+<div class="centered"> <div class="tikzcd" id="a0000000082">
+    <img src="images/img-0030.svg" class="tikzcd-vector" alt="\begin{tikzcd}  A \arrow[r, shift left=.5em, &#34;\sim&#34;&#39;, &#34;f&#34;] &amp; B \arrow[r, shift left=.5em, &#34;\sim&#34;&#39;, &#34;g&#34;] \arrow[l, shift left=.5em, &#34;k&#34;, &#34;\sim&#34;&#39;] &amp; C \arrow[l, shift left=.5em, &#34;\sim&#34;&#39;, &#34;h&#34;] \end{tikzcd}" />
+</div> </div>
+<p> The equivalence data of Lemma <a href="sec-cosmos.html#lem:equiv-htpy-equiv">1.5.9</a> defines isomorphisms \(\alpha \colon \textup{id}_A \cong kf \in {\mathord {\mathsf{Fun}}}(A,A)\) and \(\gamma \colon \textup{id}_B \cong hg \in {\mathord {\mathsf{Fun}}}(B,B)\), the latter of which whiskers to define \(k\gamma f \colon kf \cong khgf \in {\mathord {\mathsf{Fun}}}(B,B)\). Composing these, we obtain an isomorphism \(\textup{id}_A \cong khgf \in {\mathord {\mathsf{Fun}}}(A,A)\), witnessing that \(kh\) defines a left equivalence inverse of \(gf\). The other isomorphism is constructed similarly. </p>
+<p>To prove that the equivalences are closed under right cancelation, consider a diagram </p>
+<div class="centered"> <div class="tikzcd" id="a0000000083">
+    <img src="images/img-0031.svg" class="tikzcd-vector" alt="\begin{tikzcd}  A \arrow[r, &#34;\sim&#34;&#39;, &#34;f&#34;] &amp; B \arrow[r, &#34;g&#34;] \arrow[l, shift left=1em, &#34;k&#34;, &#34;\sim&#34;&#39;] &amp; C \arrow[ll, bend right=45, &#34;\sim&#34;, &#34;\ell&#34;&#39;] \end{tikzcd}" />
+</div> </div>
+<p> with \(k\) an inverse equivalence to \(f\) and \(\ell \) and inverse equivalence to \(gf\). We claim that \(f\ell \) defines an inverse equivalence to \(g\). One of the required isomorphisms \(\textup{id}_C \cong gf\ell \) is given already. The other is obtained by composing three isomorphisms in \({\mathord {\mathsf{Fun}}}(B,B)\) </p>
+<div class="centered"> <div class="tikzcd" id="a0000000084">
+    <img src="images/img-0032.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \id_B \arrow[r,  &#34;\cong&#34;&#39;,  &#34;\beta^{-1}&#34;] &amp; fk \arrow[r, &#34;f\delta k&#34;, &#34;\cong&#34;&#39;] &amp; f\ell gf k \arrow[r, &#34;f\ell g\beta&#34;, &#34;\cong&#34;&#39;] &amp;f \ell g.\end{tikzcd}" />
+</div></div>
+<p> The proof of stability of equivalence under left cancelation is dual. </p>
+
+  </div>
+</div>
+<p>The trivial fibrations admit a similar characterization as split fiber homotopy equivalences. </p>
+<div class="lem_thmwrapper theorem-style-theorem" id="lem:split-triv-fib">
+  <div class="lem_thmheading">
+    <span class="lem_thmcaption">
+    Lemma
+    </span>
+    <span class="lem_thmlabel">1.5.11</span>
+    <span class="lem_thmtitle">trivial fibrations split</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#lem:split-triv-fib">#</a>
+    
+    <a class="icon proof" href="sec-cosmos.html#a0000000085"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:trivial-fibration">Definition 1.5.3</a></li>
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lem_thmcontent">
+  <p>  Every trivial fibration admits a section </p>
+<div class="centered"> <div class="tikzcd" id="a0000000086">
+    <img src="images/img-0033.svg" class="tikzcd-vector" alt="\begin{tikzcd}  &amp; E \arrow[d, two heads, &#34;\sim&#34;&#39;, &#34;p&#34;] \\ B \arrow[ur, dashed, &#34;s&#34;] \arrow[r, equals] &amp; B
+\end{tikzcd}" />
+</div> </div>
+<p> that defines a split fiber homotopy equivalence </p>
+<div class="centered"> <div class="tikzcd" id="a0000000087">
+    <img src="images/img-0034.svg" class="tikzcd-vector" alt="\begin{tikzcd}  E \arrow[r, &#34;\alpha&#34;&#39;] \arrow[rr, end anchor = 165, start anchor = 30, bend left=20, &#34;{(\id_E, sp)}&#34;] \arrow[d, two heads, &#34;p&#34;&#39;] &amp; E^\iso \arrow[d, two heads, &#34;p^\iso&#34;&#39;] \arrow[r, two heads, &#34;{(\ev_0,\ev_1)}&#34;&#39;] &amp; E \times E \\ B \arrow[r, &#34;\Delta&#34;&#39;] &amp; B^\iso
+\end{tikzcd}" />
+</div> </div>
+<p> and conversely any isofibration that defines a split fiber homotopy equivalence is a trivial fibration. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000085">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>If \(p \colon E \twoheadrightarrow B\) is a trivial fibration, then by the stability property of Lemma <a href="sec-cosmos.html#lem:trivial-fib-representability">1.5.8</a>, so is \(p_*\colon {\mathord {\mathsf{Fun}}}(X,E)\twoheadrightarrow Fun(X,B)\) for any \(\infty \)-category \(X\). By Definition <a href="sec-homotopy-category.html#defn:qcat-trivial-fibration">1.3.18</a>, we may solve the lifting problem below-left </p>
+<div class="centered"> <div class="tikzcd" id="a0000000088">
+    <img src="images/img-0035.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \emptyset=\partial\Delta[0] \arrow[d, hook] \arrow[r] &amp; \Fun(B,E) \arrow[d, two heads, &#34;\sim&#34;&#39;, &#34;p_*&#34; pos=.4] &amp; \catone +\catone \arrow[d, hook] \arrow[rr, &#34;{(\id_E,sp)}&#34;] &amp; &amp; \Fun(E,E)  \arrow[d, two heads, &#34;\sim&#34;&#39;, &#34;p_*&#34; pos=.4] \\ \catone= \Delta[0] \arrow[ur, dashed, &#34;s&#34;] \arrow[ur, dashed] \arrow[r, &#34;\id_B&#34;&#39;] &amp; \Fun(B,B) &amp; \iso \arrow[r, &#34;!&#34;&#39;] \arrow[urr, dashed, &#34;\alpha&#34;] &amp; \catone \arrow[r, &#34;p&#34;&#39;] &amp; \Fun(E,B)
+\end{tikzcd}" />
+</div> </div>
+<p> to find a map \(s \colon B \to E\) so that \(ps = \textup{id}_B\), and then solve the lifting problem above-right to construct the desired fibered homotopy. The converse is immediate from Lemma <a href="sec-cosmos.html#lem:equiv-htpy-equiv">1.5.9</a>. </p>
+
+  </div>
+</div>
+<p>A classical construction in abstract homotopy theory proves the following: </p>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:brown-fact">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.5.12</span>
+    <span class="lemma_thmtitle">Brown factorization lemma</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#lem:brown-fact">#</a>
+    
+    <a class="icon proof" href="sec-cosmos.html#a0000000089"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-cosmos.html#defn:cosmos">Definition 1.5.1</a></li>
+          
+          <li><a href="sec-cosmos.html#defn:equivalence">Definition 1.5.2</a></li>
+          
+          <li><a href="sec-cosmos.html#defn:trivial-fibration">Definition 1.5.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Any functor \(f\colon A \to B\) in an \(\infty \)-cosmos may be factored as an equivalence followed by an isofibration, where this equivalence is constructed as a section of a trivial fibration. </p>
+<div class="centered"> <div class="tikzcd" id="a0000000090">
+    <img src="images/img-0036.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+  &amp; Pf \arrow[dr, two heads, &#34;p&#34;] \arrow[dl, two heads, bend right, start anchor=190, end anchor=70, &#34;q&#34;&#39;] &amp; \\ A \arrow[rr, &#34;f&#34;&#39;] \arrow[ur, bend right=25, start anchor=30, end anchor=230, &#34;\sim&#34;, &#34;s&#34;&#39; pos = 0.6] &amp; &amp; B
+\end{tikzcd}" />
+</div> </div>
+<p> Moreover, \(f\) is an equivalence if and only if the isofibration \(p\) is a trivial fibration. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000089">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The displayed factorization is constructed by the pullback of an isofibration formed by the simplicial cotensor of the inclusion \([0]+[0]\hookrightarrow I\) into the \(\infty \)-category \(B\). </p>
+<div class="centered"> <div class="tikzcd" id="a0000000091">
+    <img src="images/img-0037.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+&amp; A^\iso \arrow[dr, &#34;f^\iso&#34;] &amp; \\
+A \arrow[r, &#34;\sim&#34;, &#34;s&#34;&#39;] \arrow[ur, &#34;\Delta&#34;] \arrow[dr, &#34;{(A,f)}&#34;&#39;] &amp;  Pf \arrow[r] \arrow[d, two heads, &#34;{(q,p)}&#34;&#39; pos=.4] \arrow[dr, phantom, &#34;\lrcorner&#34; very near start] &amp; B^\iso \arrow[d, two heads, &#34;{(\ev_0,\ev_1)}&#34;] \\  &amp; A \times B \arrow[r, &#34;f \times B&#34;&#39;] &amp; B \times B
+\end{tikzcd}" />
+</div> </div>
+<p> Note the map \(q\) is a pullback of the trivial fibration \(\textup{ev}_0 \colon B^I\twoheadrightarrow B\) and is hence a trivial fibration. Its section \(s\), constructed by applying the universal property of the pullback to the displayed cone with summit \(A\), is thus an equivalence by the 2-of-3 property. Again by 2-of-3, it follows that \(f\) is an equivalence if and only if \(p\) is. </p>
+
+  </div>
+</div>
+<div class="rmk_thmwrapper theorem-style-theorem" id="rmk:2-of-6">
+  <div class="rmk_thmheading">
+    <span class="rmk_thmcaption">
+    Remark
+    </span>
+    <span class="rmk_thmlabel">1.5.13</span>
+    <span class="rmk_thmtitle">equivalences satisfy the 2-of-6 property</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-cosmos.html#rmk:2-of-6">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="rmk_thmcontent">
+  <p> In fact the equivalences in any \(\infty \)-cosmos satisfy the stronger <b class="bfseries">2-of-6 property</b>: for any composable triple of functors </p>
+<div class="centered"> <div class="tikzcd" id="a0000000092">
+    <img src="images/img-0038.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+&amp; B \arrow[dr, &#34;hg&#34;, &#34;\sim&#34;&#39;] \\ A \arrow[ur, &#34;f&#34;] \arrow[dr, &#34;gf&#34;&#39;,&#34;\sim&#34;] \arrow[rr, &#34;hgf&#34; near start] &amp; &amp; D \\ &amp; C\arrow[from = uu, crossing over, &#34;g&#34; near end] \arrow[ur, &#34;h&#34;&#39;]
+\end{tikzcd}" />
+</div> </div>
+<p> if \(gf\) and \(hg\) are equivalences then \(f\), \(g\), \(h\), and \(hgf\) are too. An argument of Blumberg and Mandell <span class="cite">
+	[
+	<a href="sect0003.html#BlumbergMandell:2011ak" >BM11</a>
+	, 
+	6.4
+	]
+</span> uses Lemmas <a href="sec-cosmos.html#lem:equivalence-2-of-3">1.5.10</a>, <a href="sec-cosmos.html#lem:split-triv-fib">1.5.11</a>, and <a href="sec-cosmos.html#lem:brown-fact">1.5.12</a> to prove that the equivalences have the 2-of-6 property. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+<footer id="footnotes">
+<ol>
+  <li id="a0000000069">More specifically, these classes form a <em>category of fibrant objects</em> à la Brown <span class="cite">
+	[
+	<a href="sect0003.html#Brown:1973ah" >Bro73</a>
+	]
+</span>.</li>
+  <li id="a0000000070">This is to say \({\mathord {\mathcal{K}}}\) is a simplicially enriched category (see Definition <a href="sec-enriched-limits.html#defn:simplicial-category">1.4.1</a>) whose hom spaces are all quasi-categories.</li>
+  <li id="a0000000071">This is to say, these are simplicially enriched limit notions, in the sense described in Definitions <a href="sec-enriched-limits.html#defn:simplicial-cotensor">1.4.6</a> and <a href="sec-enriched-limits.html#defn:simplicial-conical-limit">1.4.10</a>.</li>
+  <li id="a0000000072">Please help us find an html friendly version of the trivial fibration symbol.</li>
+</ol>
+</footer>
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sec-enriched-limits.html" title="Enriched limits"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0001.html" title="\(\infty \)-Cosmoi"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sec-change-of-base.html" title="Change of base"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

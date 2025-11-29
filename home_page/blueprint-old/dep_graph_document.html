@@ -1,0 +1,3095 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dependency graph</title>
+  <meta name="generator" content="plasTeX" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/theme-white.css" />
+  <link rel="stylesheet" href="styles/dep_graph.css" />
+  
+  <script type="text/x-mathjax-config">
+  
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  
+  </script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">  </script>
+
+
+<link rel="stylesheet" href="styles/extra_styles.css" />
+
+</head>
+
+<body>
+<header>
+  <a class="toc" href="index.html">Home</a>
+  <h1 id="doc_title">Dependencies</h1>
+</header>
+<div class="wrapper">
+<div class="content">
+  <div id="Legend">
+    <span id="legend_title" class="title">Legend
+    <div class="btn">
+       <div class="bar"></div>
+       <div class="bar"></div>
+       <div class="bar"></div>
+    </div></span> 
+    <dl class="legend">
+      
+      <dt>Boxes</dt><dd>definitions</dd>
+      
+      <dt>Ellipses</dt><dd>theorems and lemmas</dd>
+      
+      <dt>Blue border</dt><dd>the <em>statement</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Orange border</dt><dd>the <em>statement</em> of this result is not ready to be formalized; the blueprint needs more work</dd>
+      
+      <dt>Blue background</dt><dd>the <em>proof</em> of this result is ready to be formalized; all prerequisites are done</dd>
+      
+      <dt>Green border</dt><dd>the <em>statement</em> of this result is formalized</dd>
+      
+      <dt>Green background</dt><dd>the <em>proof</em> of this result is formalized</dd>
+      
+      <dt>Dark green background</dt><dd>the <em>proof</em> of this result and all its ancestors are formalized</dd>
+      
+      <dt>Dark green border</dt><dd>this is in Mathlib</dd>
+      
+    </dl>
+  </div>
+    <div id="graph"></div>
+<div id="statements">
+
+    
+    <div class="dep-modal-container" id="cor:2-truncated-qcat-htpy-comp_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="cor:2-truncated-qcat-htpy-comp" style="display: none">
+    <div class="thm_thmheading">
+      <span class="corollary_thmcaption">
+      Corollary
+      </span>
+      <span class="corollary_thmlabel">1.3.6</span></div>
+    <div class="thm_thmcontent"><p>   Suppose there is a 2-simplex in a 2-truncated quasi-category with spine formed by the paths \(f\) and \(g\) and diagonal \(h\). Then if \(f \sim f'\), \(g \sim g'\), and \(h \sim h'\), there is a 2-simplex with spine formed by \(f'\) and \(g'\) and diagonal \(h'\). </p>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#cor:2-truncated-qcat-htpy-comp">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Quasicategory₂.transport_all_edges">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="cor:equiv-invar-fun_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="cor:equiv-invar-fun" style="display: none">
+    <div class="thm_thmheading">
+      <span class="corollary_thmcaption">
+      Corollary
+      </span>
+      <span class="corollary_thmlabel">1.8.9</span></div>
+    <div class="thm_thmcontent"><p>  Equivalences of \(\infty \)-categories \(A' \rightsquigarrow A\) and \(B \rightsquigarrow B'\) induce an equivalence of functor spaces \({\mathord {\mathsf{Fun}}}(A,B) \rightsquigarrow {\mathord {\mathsf{Fun}}}(A',B')\). </p>
+</div>
+
+    <a class="latex_link" href="sec-htpy-2-cat.html#cor:equiv-invar-fun">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="cor:free-underlying-2-adj_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="cor:free-underlying-2-adj" style="display: none">
+    <div class="thm_thmheading">
+      <span class="corollary_thmcaption">
+      Corollary
+      </span>
+      <span class="corollary_thmlabel">1.6.7</span></div>
+    <div class="thm_thmcontent"><p>  For any cartesian closed category \({\mathord {\mathcal{V}}}\) with coproducts, the underlying category construction and free category construction define adjoint 2-functors </p>
+<div class="centered"> <div class="tikzcd" id="a0000000105">
+    <img src="images/img-0047.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+  \mathcal{C}at \arrow[r, bend left=20, hook, start anchor=10, end anchor=170] \arrow[r, phantom, &#34;\bot&#34;] &amp; {\cV}\text{-}\mathcal{C}at \arrow[l, bend left=20, start anchor=190, end anchor=-10, &#34;(-)_0&#34;]
+\end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-change-of-base.html#cor:free-underlying-2-adj">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="cor:sset-cat-colimits_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="cor:sset-cat-colimits" style="display: none">
+    <div class="thm_thmheading">
+      <span class="corollary_thmcaption">
+      Corollary
+      </span>
+      <span class="corollary_thmlabel">1.2.12</span></div>
+    <div class="thm_thmcontent"><p>   The category of simplicial sets is cocomplete. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#cor:sset-cat-colimits">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.hasColimits">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="cor:sset-cat-limits_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="cor:sset-cat-limits" style="display: none">
+    <div class="thm_thmheading">
+      <span class="corollary_thmcaption">
+      Corollary
+      </span>
+      <span class="corollary_thmlabel">1.2.11</span></div>
+    <div class="thm_thmcontent"><p>   The category of simplicial sets is complete. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#cor:sset-cat-limits">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.hasLimits">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:1-simplex-htpy_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:1-simplex-htpy" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.19</span><span class="definition_thmtitle">homotopy relation on 1-simplices</span></div>
+    <div class="thm_thmcontent"><p>   A parallel pair of 1-simplices \(f,g\) in a simplicial set \(X\) are <b class="bfseries">homotopic</b> if there exists a 2-simplex whose boundary takes either of the following forms<a class="footnote" href="#a0000000025">
+  <sup class="footnotemark">3</sup>
+</a> </p>
+<div class="centered"> <div class="tikzcd" id="a0000000026">
+    <img src="images/img-0008.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=small, column sep=small]
+   &amp; y \arrow[dr, equals] &amp; &amp;&amp; &amp;  x \arrow[dr, &#34;f&#34;]  \\ x \arrow[ur, &#34;f&#34;] \arrow[rr, &#34;g&#34;&#39;] &amp; &amp; y &amp; &amp; x \arrow[ur, equals] \arrow[rr, &#34;g&#34;&#39;] &amp; &amp; y
+   \end{tikzcd}" />
+</div> </div>
+<p> or if \(f\) and \(g\) are in the same equivalence class generated by this relation. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:1-simplex-htpy">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Truncated.HomotopicL">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:1-simplex-left-right-htpy_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:1-simplex-left-right-htpy" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.3</span><span class="definition_thmtitle">homotopy relation on 1-simplices</span></div>
+    <div class="thm_thmcontent"><p>   A parallel pair of 1-simplices \(f,g\) in a 2-truncated simplicial set \(X\) are <b class="bfseries">left homotopic</b> if there exists a 2-simplex whose boundary takes the form below-left and <b class="bfseries">right homotopic</b> if there exists a 2-simplex whose boundary takes the form below-right: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000039">
+    <img src="images/img-0013.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=small, column sep=small]
+      &amp; y \arrow[dr, equals] &amp; &amp;&amp; &amp;  x \arrow[dr, &#34;f&#34;]  \\ x \arrow[ur, &#34;f&#34;] \arrow[rr, &#34;g&#34;&#39;] &amp; &amp; y &amp; &amp; x \arrow[ur, equals] \arrow[rr, &#34;g&#34;&#39;] &amp; &amp; y
+      \end{tikzcd}" />
+</div> </div>
+<div class="centered"> <div class="tikzcd" id="a0000000040">
+    <img src="images/img-0014.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=small, column sep=small]
+     &amp; y \arrow[dr, equals]   \\ x \arrow[ur, &#34;f&#34;] \arrow[rr, &#34;g&#34;&#39;] &amp; &amp; y
+     \end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#defn:1-simplex-left-right-htpy">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Truncated.HomotopicL">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:2-cat-equivalence_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:2-cat-equivalence" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.8.7</span><span class="definition_thmtitle">equivalence</span></div>
+    <div class="thm_thmcontent"><p> An <b class="bfseries">equivalence</b> in a 2-category is given by </p>
+<ul class="itemize">
+  <li><p>a pair of objects \(A\) and \(B\); </p>
+</li>
+  <li><p>a pair of 1-cells \(f \colon A \to B\) and \(g \colon B \to A\); and </p>
+</li>
+  <li><p>a pair of invertible 2-cells </p>
+<div class="centered"> <div class="tikzcd" id="a0000000153">
+    <img src="images/img-0073.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+  A \arrow[r, bend left=25, equals] \arrow[r, bend right=25, &#34;gf&#34;&#39;] \arrow[r, phantom, &#34;{\scriptstyle\cong\Downarrow\alpha}&#34;] &amp; A &amp; \text{and} &amp; B \arrow[r, bend right=25, equals] \arrow[r, bend left=25, &#34;fg&#34;] \arrow[r, phantom, &#34;{\scriptstyle\cong\Downarrow\beta}&#34;] &amp; B
+  \end{tikzcd}" />
+</div> </div>
+</li>
+</ul>
+<p> When \(A\) and \(B\) are <b class="bfseries">equivalent</b>, we write \(A \simeq B\) and refer to the 1-cells \(f\) and \(g\) as <b class="bfseries">equivalences</b>, denoted by “\(\rightsquigarrow \).” </p>
+</div>
+
+    <a class="latex_link" href="sec-htpy-2-cat.html#defn:2-cat-equivalence">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:2-truncated-qcat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:2-truncated-qcat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.1</span></div>
+    <div class="thm_thmcontent"><p>   A 2-truncated simplicial set \(A\) is a <b class="bfseries">2-truncated quasi-category</b> if it admits the following three operations: </p>
+<ul class="itemize">
+  <li><p>(2,1)-filling: any path \(f_\bullet \) of length 2 in \(A\) may be filled to a \(2\)-simplex whose spine equals the given path. </p>
+</li>
+  <li><p>(3,1)-filling: given any path \(f_\bullet \) of length 3 in \(A\), 2-simplices \(\sigma _3\) and \(\sigma _0\) filling the restricted paths \(f_{012}\) and \(f_{123}\) respectively, and 2-simplex \(\sigma _2\) filling the path formed by \(f_{01}\) and the diagonal of \(\sigma _0\), there is a 2-simplex \(\sigma _1\) filling the path formed by the diagonal of \(\sigma _3\) and \(f_{23}\) and whose diagonal is the diagonal of \(\sigma _2\). </p>
+</li>
+  <li><p>(3,2)-filling: given any path \(f_\bullet \) of length 3 in \(A\), 2-simplices \(\sigma _3\) and \(\sigma _0\) filling the restricted paths \(f_{012}\) and \(f_{123}\) respectively, and 2-simplex \(\sigma _1\) filling the path formed by the diagonal of \(\sigma _3\) and \(f_{23}\), there is a 2-simplex \(\sigma _2\) filling the path formed by \(f_{01}\) and the diagonal of \(\sigma _0\) and whose diagonal is the diagonal of \(\sigma _1\). </p>
+</li>
+</ul>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#defn:2-truncated-qcat">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Truncated.Quasicategory₂">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:2-truncated-qcat-htpy-cat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:2-truncated-qcat-htpy-cat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.7</span><span class="definition_thmtitle">the homotopy category of a 2-truncated quasi-category</span></div>
+    <div class="thm_thmcontent"><p>   If \(A\) is a 2-truncated quasi-category then its <b class="bfseries">homotopy category</b> \({\mathord {\mathsf{h}}}{A}\) has </p>
+<ul class="itemize">
+  <li><p>the set of 0-simplices \(A_0\) as its objects </p>
+</li>
+  <li><p>the set of homotopy classes of 1-simplices \(A_1\) as its arrows </p>
+</li>
+  <li><p>the identity arrow at \(a \in A_0\) represented by the degenerate 1-simplex \(a \cdot \sigma ^0 \in A_1\) </p>
+</li>
+  <li><p>a composition relation \(h = g \circ f\) in \({\mathord {\mathsf{h}}}{A}\) between the homotopy classes of arrows represented by any given 1-simplices \(f,g,h \in A_1\) if and only if there exists a 2-simplex with boundary </p>
+<div class="centered"> <div class="tikzcd" id="a0000000044">
+    <img src="images/img-0015.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=small, column sep=small]
+  &amp; a_1 \arrow[dr, &#34;g&#34;] \\ a_0 \arrow[ur, &#34;f&#34;] \arrow[rr, &#34;h&#34;&#39;] &amp; &amp; a_2
+  \end{tikzcd}" />
+</div> </div>
+</li>
+</ul>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#defn:2-truncated-qcat-htpy-cat">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Quasicategory₂.instCategoryHomotopyCategory₂">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:cat-isofibration_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:cat-isofibration" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.7.2</span><span class="definition_thmtitle">isofibrations of categories</span></div>
+    <div class="thm_thmcontent"><p> An <b class="bfseries">isofibration</b> between categories is a functor \(f \colon A \twoheadrightarrow B\) satisfying the displayed right lifting property for the inclusion of both endpoints of the free-living isomorphism: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000127">
+    <img src="images/img-0058.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+  \catone \arrow[d, hook] \arrow[r] &amp; A \arrow[d, &#34;f&#34;, two heads] \\ \iso \arrow[r] \arrow[ur, dashed] &amp; B
+  \end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-examples.html#defn:cat-isofibration">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:closed-cosmos_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:closed-cosmos" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.7.6</span><span class="definition_thmtitle">cartesian closed \(\infty \)-cosmoi</span></div>
+    <div class="thm_thmcontent"><p>  An \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) is <b class="bfseries">cartesian closed</b> if the product bifunctor \(- \times -\colon {\mathord {\mathcal{K}}}\times {\mathord {\mathcal{K}}}\to {\mathord {\mathcal{K}}}\) extends to a simplicially enriched two-variable adjunction </p>
+<div class="displaymath" id="a0000000141">
+  \[  {\mathord {\mathsf{Fun}}}(A \times B,C) \cong {\mathord {\mathsf{Fun}}}(A,C^B) \cong {\mathord {\mathsf{Fun}}}(B,C^A) \]
+</div>
+<p> in which the right adjoints \((-)^A \colon {\mathord {\mathcal{K}}}\to {\mathord {\mathcal{K}}}\) preserve isofibrations for all \(A \in {\mathord {\mathcal{K}}}\). </p>
+</div>
+
+    <a class="latex_link" href="sec-examples.html#defn:closed-cosmos">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:coherent-isomorphism_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:coherent-isomorphism" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.12</span></div>
+    <div class="thm_thmcontent"><p>   The <b class="bfseries">homotopy coherent isomorphism</b> \(I\), is the nerve of the free-living isomorphism. </p>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#defn:coherent-isomorphism">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.coherentIso">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:cosmos_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:cosmos" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.5.1</span><span class="definition_thmtitle">\(\infty \)-cosmos</span></div>
+    <div class="thm_thmcontent"><p>  An \(\infty \)-<b class="bfseries">cosmos</b> \({\mathord {\mathcal{K}}}\) is a category that is enriched over quasi-categories,<a class="footnote" href="#a0000000070">
+  <sup class="footnotemark">2</sup>
+</a> meaning in particular that</p>
+<ul class="itemize">
+  <li><p>its morphisms \(f \colon A \to B\) define the vertices of a quasi-category denoted \({\mathord {\mathsf{Fun}}}(A,B)\) and referred to as a <b class="bfseries">functor space</b>, </p>
+</li>
+</ul>
+<p> that is also equipped with a specified collection of maps that we call <b class="bfseries">isofibrations</b> and denote by “\(\twoheadrightarrow \)” satisfying the following two axioms: </p>
+<ol class="enumerate">
+  <li><p> (completeness) The quasi-categorically enriched category \({\mathord {\mathcal{K}}}\) possesses a terminal object, small products, pullbacks of isofibrations, limits of countable towers of isofibrations, and cotensors with simplicial sets, each of these limit notions satisfying a universal property that is enriched over simplicial sets.<a class="footnote" href="#a0000000071">
+  <sup class="footnotemark">3</sup>
+</a> </p>
+</li>
+  <li><p> (isofibrations) The isofibrations contain all isomorphisms and any map whose codomain is the terminal object; are closed under composition, product, pullback, forming inverse limits of towers, and Leibniz cotensors with monomorphisms of simplicial sets; and have the property that if \(f \colon A \twoheadrightarrow B\) is an isofibration and \(X\) is any object then \({\mathord {\mathsf{Fun}}}(X,A) \twoheadrightarrow {\mathord {\mathsf{Fun}}}(X,B)\) is an isofibration of quasi-categories. </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sec-cosmos.html#defn:cosmos">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.InfinityCosmos">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:degeneracy-map_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:degeneracy-map" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.3</span><span class="definition_thmtitle">elementary degeneracy maps</span></div>
+    <div class="thm_thmcontent"><p>   The <b class="bfseries">elementary&#160;degeneracy&#160;operators</b> are the maps </p>
+<div class="centered"> <div class="tikzcd" id="a0000000011">
+    <img src="images/img-0002.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=tiny, column sep=small]
+ {[n+1]} \arrow[r, two heads, &#34;{\degen^i}&#34;] &amp; {[n]} &amp; {0 \leq i \leq n }
+\end{tikzcd}" />
+</div> </div>
+<p> whose images double up on the element \(i \in [n]\). </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:degeneracy-map">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SimplexCategory.σ">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:equivalence_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:equivalence" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.5.2</span></div>
+    <div class="thm_thmcontent"><p>  In an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\), a morphism \(f\colon A \to B\) is an <b class="bfseries">equivalence</b> just when the induced map \(f_* \colon {\mathord {\mathsf{Fun}}}(X,A) \rightsquigarrow {\mathord {\mathsf{Fun}}}(X,B)\) on functor spaces is an equivalence of quasi-categories for all \(X \in {\mathord {\mathcal{K}}}\). </p>
+</div>
+
+    <a class="latex_link" href="sec-cosmos.html#defn:equivalence">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:face-map_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:face-map" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.2</span><span class="definition_thmtitle">elementary face maps</span></div>
+    <div class="thm_thmcontent"><p>   The <b class="bfseries">elementary&#160;face&#160;operators</b> are the maps </p>
+<div class="centered"> <div class="tikzcd" id="a0000000010">
+    <img src="images/img-0001.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=tiny, column sep=small]
+   {[n-1]} \arrow[r, tail, &#34;{\face^i}&#34;] &amp; {[n]}  &amp; {0 \leq i \leq n}
+\end{tikzcd}" />
+</div> </div>
+<p> whose images omit the element \(i \in [n]\). </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:face-map">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SimplexCategory.δ">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:homotopy-2-cat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:homotopy-2-cat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.8.2</span><span class="definition_thmtitle">homotopy 2-category</span></div>
+    <div class="thm_thmcontent"><p>  Let \({\mathord {\mathcal{K}}}\) be an \(\infty \)-cosmos. Its <b class="bfseries">homotopy 2-category</b> is the 2-category \(\mathfrak {h}{\mathord {\mathcal{K}}}\) whose </p>
+<ul class="itemize">
+  <li><p>objects are the objects \(A, B\) of \({\mathord {\mathcal{K}}}\), i.e., the \(\infty \)-categories;</p>
+</li>
+  <li><p>1-cells \(f \colon A \to B\) are the 0-arrows in the functor space \({\mathord {\mathsf{Fun}}}(A,B)\), i.e., the \(\infty \)-functors; and </p>
+</li>
+  <li><p>2-cells </p>
+<div class="centered"> <div class="tikzcd" id="a0000000142">
+    <img src="images/img-0067.svg" class="tikzcd-vector" alt="\begin{tikzcd}  A \arrow[r, start anchor=15, end anchor=165, bend left, &#34;f&#34;] \arrow[r, start anchor=345, end anchor=195, bend right, &#34;g&#34;&#39;] \arrow[r, phantom, &#34;{\scriptstyle\Downarrow \alpha}&#34;] &amp; B\end{tikzcd}" />
+</div> </div>
+<p> are homotopy classes of 1-simplices in \({\mathord {\mathsf{Fun}}}(A,B)\), which we call <b class="bfseries">\(\infty \)-natural transformations</b>. </p>
+</li>
+</ul>
+<p> Put another way \(\mathfrak {h}{\mathord {\mathcal{K}}}\) is the 2-category with the same objects as \({\mathord {\mathcal{K}}}\) and with hom-categories defined by </p>
+<div class="displaymath" id="a0000000143">
+  \[  {\mathord {\mathsf{hFun}}}(A,B) :={\mathord {\mathsf{h}}}({\mathord {\mathsf{Fun}}}(A,B)), \]
+</div>
+<p> that is, \({\mathord {\mathsf{hFun}}}(A,B)\) is the homotopy category of the quasi-category \({\mathord {\mathsf{Fun}}}(A,B)\). </p>
+</div>
+
+    <a class="latex_link" href="sec-htpy-2-cat.html#defn:homotopy-2-cat">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:homotopy-cat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:homotopy-cat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.23</span><span class="definition_thmtitle">the homotopy category <span class="cite">
+	[
+	<a href="sect0003.html#GabrielZisman:1967cf" >GZ67</a>
+	, 
+	§
+	2.4
+	]
+</span></span></div>
+    <div class="thm_thmcontent"><p>   The <b class="bfseries">free category</b> on this reflexive directed graph has \(X_0\) as its object set, degenerate 1-simplices serving as identity morphisms, and nonidentity morphisms defined to be finite directed paths of nondegenerate 1-simplices. The <b class="bfseries">homotopy category</b> \({\mathord {\mathsf{h}}}{X}\) of \(X\) is the quotient of the free category on its underlying reflexive directed graph by the congruence<a class="footnote" href="#a0000000031">
+  <sup class="footnotemark">4</sup>
+</a> generated by imposing a composition relation \(h = g \circ f\) witnessed by 2-simplices </p>
+<div class="centered"> <div class="tikzcd" id="a0000000032">
+    <img src="images/img-0011.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=small, column sep=small]
+   &amp; x_1 \arrow[dr, &#34;g&#34;] \\ x_0 \arrow[ur, &#34;f&#34;] \arrow[rr, &#34;h&#34;&#39;] &amp; &amp; x_2
+   \end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:homotopy-cat">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Truncated.HomotopyCategory">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:htpy-cat-of-infinity-cat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:htpy-cat-of-infinity-cat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.8.12</span><span class="definition_thmtitle">homotopy category of an \(\infty \)-category</span></div>
+    <div class="thm_thmcontent"><p>  The <b class="bfseries">homotopy category</b> of an \(\infty \)-category \(A\) in an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) is defined to be the homotopy category of its underlying quasi-category, that is: </p>
+<div class="displaymath" id="a0000000163">
+  \[  {\mathord {\mathsf{h}}}A :={\mathord {\mathsf{hFun}}}(1,A) :={\mathord {\mathsf{h}}}({\mathord {\mathsf{Fun}}}(1,A)). \]
+</div>
+</div>
+
+    <a class="latex_link" href="sec-htpy-2-cat.html#defn:htpy-cat-of-infinity-cat">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:isomorphism_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:isomorphism" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.11</span><span class="definition_thmtitle">isomorphism in a quasi-category</span></div>
+    <div class="thm_thmcontent"><p>  A 1-simplex in a quasi-category is an <b class="bfseries">isomorphism</b><a class="footnote" href="#a0000000048">
+  <sup class="footnotemark">1</sup>
+</a> just when it represents an isomorphism in the homotopy category. By Lemma <a href="sec-homotopy-category.html#lem:htpy-cat-of-qcat">1.3.8</a> this means that \(f \colon a \to b\) is an isomorphism if and only if there exists a 1-simplex \(f^{-1} \colon b \to a\) together with a pair of 2-simplices </p>
+<div class="centered"> <div class="tikzcd" id="a0000000049">
+    <img src="images/img-0016.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=small, column sep=small]
+   &amp; b \arrow[dr, &#34;f^{-1}&#34;, dashed] &amp; &amp; &amp; &amp; a \arrow[dr, &#34;f&#34;] \\ a \arrow[ur, &#34;f&#34;] \arrow[rr, equals] &amp; &amp; a &amp; &amp; b \arrow[ur, &#34;f^{-1}&#34;, dashed] \arrow[rr, equals] &amp; &amp; b
+   \end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#defn:isomorphism">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:kan-complex_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:kan-complex" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.14</span><span class="definition_thmtitle">Kan complex</span></div>
+    <div class="thm_thmcontent"><p>   A <b class="bfseries">Kan complex</b> is a simplicial set admitting extensions as in <a href="sec-simplicial-sets.html#eq:qcat-defn" class="eqref">1.2.13</a> along all horn inclusions \(n \geq 1, 0 \leq k \leq n\). </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:kan-complex">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.KanComplex">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:lax-monoidal-functor_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:lax-monoidal-functor" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.6.1</span></div>
+    <div class="thm_thmcontent"><p>  A <b class="bfseries">(lax) monoidal functor</b> between cartesian closed categories \({\mathord {\mathcal{V}}}\) and \({\mathord {\mathcal{W}}}\) is a functor \(T \colon {\mathord {\mathcal{V}}}\to {\mathord {\mathcal{W}}}\) equipped with natural transformations </p>
+<div class="centered"> <div class="tikzcd" id="a0000000093">
+    <img src="images/img-0039.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \cV \times \cV \arrow[r, &#34;T\times T&#34;] \arrow[dr, phantom, &#34;\scriptstyle\Downarrow\phi&#34;] \arrow[d, &#34;\times&#34;&#39;] &amp; \cW \times \cW \arrow[d, &#34;\times&#34;] &amp; \catone \arrow[r, &#34;1&#34;] \arrow[dr, &#34;1&#34;&#39;] &amp; \cV \arrow[d, &#34;T&#34;] \\ \cV \arrow[r, &#34;T&#34;&#39;] &amp; \cW  &amp;\arrow[ur, phantom, &#34;\scriptstyle\Uparrow\phi_0&#34; pos=.85] &amp; \cW
+\end{tikzcd}" />
+</div> </div>
+<p> so that the evident associativity and unit diagrams commute. </p>
+</div>
+
+    <a class="latex_link" href="sec-change-of-base.html#defn:lax-monoidal-functor">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.LaxMonoidalFunctor">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:n-arrow_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:n-arrow" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.4.2</span></div>
+    <div class="thm_thmcontent"><p>  For each \(n \geq 0\), an \(n\)-simplex in \({\mathord {\mathcal{A}}}(x,y)\) is referred to as an \(n\)-<b class="bfseries">arrow</b> from \(x\) to \(y\). </p>
+</div>
+
+    <a class="latex_link" href="sec-enriched-limits.html#defn:n-arrow">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:nerve_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:nerve" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.15</span><span class="definition_thmtitle">nerve</span></div>
+    <div class="thm_thmcontent"><p>   The category \({\mathord {\mathcal{Cat}}}\) of 1-categories embeds fully faithfully into the category of simplicial sets via the <b class="bfseries">nerve</b> functor. An \(n\)-simplex in the nerve of a 1-category \(C\) is a sequence of \(n\) composable arrows in \(C\), or equally a functor \([n]\to C\) from the ordinal category \([n]\) with objects \(0,\ldots , n\) and a unique arrow \(i \to j\) just when \(i \leq j\). </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:nerve">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.nerve">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:nerve-functor_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:nerve-functor" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.16</span><span class="definition_thmtitle">nerve functor</span></div>
+    <div class="thm_thmcontent"><p>   The map \([n] \mapsto [n]\) defines a fully faithful embedding \(\Delta \hookrightarrow {\mathord {\mathcal{Cat}}}\). From this point of view, the nerve functor can be described as a “restricted Yoneda embedding” which carries a category \(C\) to the restriction of the representable functor \(\hom (-,C)\) to the image of this inclusion. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:nerve-functor">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.nerveFunctor">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:one-truncation_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:one-truncation" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.21</span></div>
+    <div class="thm_thmcontent"><p>   By 1-truncating, any simplicial set \(X\) has an underlying <b class="bfseries">reflexive quiver</b> or <b class="bfseries">reflexive directed graph</b> with the 0-simplices of \(X\) defining the objects and the 1-simplices defining the arrows: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000028">
+    <img src="images/img-0009.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+  X_1 \arrow[r, shift left=.75em, &#34;\cdot\face^1&#34;] \arrow[r, shift right=.75em, &#34;\cdot\face^0&#34;&#39;] &amp; X_0, \arrow[l, &#34;\cdot\degen^0&#34; description]
+  \end{tikzcd}" />
+</div> </div>
+<p> By convention, the source of an arrow \(f \in X_1\) is its 0th face \(f \cdot \delta ^1\) (the face opposite 1) while the target is its 1st face \(f \cdot \delta ^0\) (the face opposite 0). </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:one-truncation">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.oneTruncation₂">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:qcat-equivalence_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:qcat-equivalence" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.16</span><span class="definition_thmtitle">equivalences of quasi-categories</span></div>
+    <div class="thm_thmcontent"><p> w=  A map \(f \colon A \to B\) between quasi-categories is an <b class="bfseries">equivalence</b> if it extends to the data of a “homotopy equivalence” with the free-living isomorphism \(I\) serving as the interval: that is, if there exist maps \(g \colon B \to A\), </p>
+<div class="centered"> <div class="tikzcd" id="a0000000053">
+    <img src="images/img-0019.svg" class="tikzcd-vector" alt="\begin{tikzcd}  &amp; A &amp; &amp;  &amp; B \\ A \arrow[ur, equals] \arrow[dr, &#34;gf&#34;&#39;] \arrow[r, &#34;\alpha&#34;] &amp; A^\iso  \arrow[u, &#34;\ev_0&#34;&#39;] \arrow[d, &#34;\ev_1&#34;] &amp; \text{and} &amp;  B \arrow[dr, equals] \arrow[r, &#34;\beta&#34;] \arrow[ur, &#34;fg&#34;] &amp; B^\iso \arrow[u, &#34;\ev_0&#34;&#39;] \arrow[d, &#34;\ev_1&#34;] \\ &amp; A &amp; &amp;  &amp; B
+  \end{tikzcd}" />
+</div> </div>
+<p> We write “\(\rightsquigarrow \)” to decorate equivalences and \(A \simeq B\) to indicate the presence of an equivalence \(A \rightsquigarrow B\). </p>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#defn:qcat-equivalence">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/QCat.Equiv">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:qcat-isofibration_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:qcat-isofibration" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.15</span><span class="definition_thmtitle">isofibration</span></div>
+    <div class="thm_thmcontent"><p>   A simplicial map \(f \colon A \to B\) between quasi-categories is an <b class="bfseries">isofibration</b> if it lifts against the inner horn inclusions, as displayed below-left, and also against the inclusion of either vertex into the free-living isomorphism \(I\). </p>
+<div class="centered"> <div class="tikzcd" id="a0000000052">
+    <img src="images/img-0018.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+  \Lambda^k[n] \arrow[d, hook] \arrow[r] &amp;  A \arrow[d, two heads, &#34;f&#34;] &amp; &amp;  \catone \arrow[d, hook] \arrow[r] &amp; A \arrow[d, two heads, &#34;f&#34;] \\ \Delta[n] \arrow[ur, dashed] \arrow[r] &amp; B &amp; &amp;  \iso \arrow[ur, dashed] \arrow[r] &amp; B
+  \end{tikzcd}" />
+</div> </div>
+<p> To notationally distinguish the isofibrations, we depict them as arrows “\(\twoheadrightarrow \)” with two heads. </p>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#defn:qcat-isofibration">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Isofibration">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:qcat-trivial-fibration_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:qcat-trivial-fibration" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.3.18</span></div>
+    <div class="thm_thmcontent"><p> A map \(f \colon X \to Y\) between simplicial sets is a <b class="bfseries">trivial fibration</b> if it admits lifts against the boundary inclusions for all simplices </p>
+<div class="centered"> <div class="tikzcd" id="a0000000056">
+    <img src="images/img-0021.svg" class="tikzcd-vector" alt="\begin{tikzcd} \partial\Delta[n] \arrow[r] \arrow[d, hook] &amp; X \arrow[d, two heads, &#34;\sim&#34;&#39;, &#34;f&#34;]  \\ \Delta[n] \arrow[r] \arrow[ur, dashed] &amp; Y
+  \end{tikzcd}" />
+</div> &#8195;&#8195;for  n ≥0 </div>
+<p> We write “\(\twoheadrightarrow \)” to decorate trivial fibrations.<a class="footnote" href="#a0000000057">
+  <sup class="footnotemark">3</sup>
+</a> </p>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#defn:qcat-trivial-fibration">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.TrivialFibration">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:simplex-boundary_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:simplex-boundary" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.8</span><span class="definition_thmtitle">simplex boundary</span></div>
+    <div class="thm_thmcontent"><p>   We write \(\partial \Delta [n] \subset \Delta [n]\) for the <b class="bfseries">boundary sphere</b> of the \(n\)-simplex. The sphere \(\partial \Delta [n]\) is the simplicial subset generated by the codimension-one faces of the \(n\)-simplex. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:simplex-boundary">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.boundary">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:simplex-category_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:simplex-category" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.1</span><span class="definition_thmtitle">the simplex category</span></div>
+    <div class="thm_thmcontent"><p>  Let \(\Delta \) denote the <b class="bfseries">simplex category</b> of finite nonempty ordinals \([n] = \{ 0 {\lt}1 {\lt}\cdots {\lt} n\} \) and order-preserving maps. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:simplex-category">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SimplexCategory.smallCategory">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:simplicial-category_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:simplicial-category" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.4.1</span><span class="definition_thmtitle">simplicial categories as enriched categories</span></div>
+    <div class="thm_thmcontent">
+<p>The data of a <b class="bfseries">simplicial category</b> is a <b class="bfseries">simplicially enriched category</b> with a set of objects and a simplicial set \({\mathord {\mathcal{A}}}(x,y)\) of morphisms between each ordered pair of objects. Each endo-hom space contains a distinguished 0-simplex \(\textup{id}_x \in {\mathord {\mathcal{A}}}(x,y)_0\), and composition is required to define a simplicial map </p>
+<div class="centered"> <div class="tikzcd" id="a0000000058">
+    <img src="images/img-0022.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+  \cA(y,z) \times \cA(x,y) \arrow[r, &#34;\circ&#34;] &amp; \cA(x,z)
+  \end{tikzcd}" />
+</div> </div>
+<p> The composition is required to be associative and unital, in a sense expressed by the commutative diagrams of simplicial sets </p>
+<div class="centered"> <div class="tikzcd" id="a0000000059">
+    <img src="images/img-0023.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=small]
+  \cA(y,z) \times \cA(x,y) \times \cA(w,x) \arrow[d, &#34;\id \times \circ&#34;&#39;] \arrow[r, &#34;\circ \times \id&#34;] &amp; \cA(x,z) \times \cA(w,x) \arrow[d, &#34;\circ&#34;]  \\ \cA(y,z) \times \cA(w,y) \arrow[r, &#34;\circ&#34;&#39;] &amp; \cA(w,z)
+  \end{tikzcd}" />
+</div> <div class="tikzcd" id="a0000000060">
+    <img src="images/img-0024.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \cA(x,y) \arrow[r, &#34;\id_y \times \id&#34;] \arrow[dr, &#34;\id&#34;] \arrow[d, &#34;\id \times \id_x&#34;&#39;]  &amp; \cA(y,y) \times \cA(x,y) \arrow[d, &#34;\circ&#34;] \\ \cA(x,y) \times \cA(x,x) \arrow[r, &#34;\circ&#34;&#39;] &amp; \cA(x,y)
+  \end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-enriched-limits.html#defn:simplicial-category">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.SimplicialCategory">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:simplicial-conical-limit_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:simplicial-conical-limit" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.4.10</span><span class="definition_thmtitle">simplicial conical limits</span></div>
+    <div class="thm_thmcontent"><p>  Consider a limit cone \((\lim _{j \in J}A_j \to A_j)_{j \in J}\) in the underlying category \({\mathord {\mathcal{A}}}_0\) of a simplicially-enriched category \({\mathord {\mathcal{A}}}\). By applying the covariant representable functor \({\mathord {\mathcal{A}}}(X,-) \colon {\mathord {\mathcal{A}}}_0 \to {\mathord {\mathcal{sSet}}}\) to a limit cone \((\lim _{j \in J}A_j \to A_j)_{j \in J}\) in \({\mathord {\mathcal{A}}}_0\), we obtain a natural comparison map </p>
+<div class="equation" id="eq:simplicial-limit-map">
+<p>
+  <div class="equation_content">
+    \begin{equation} \label{eq:simplicial-limit-map} {\mathord {\mathcal{A}}}(X,\lim _{j \in J}A_j) \to \lim _{j \in J}{\mathord {\mathcal{A}}}(X,A_j). \end{equation}
+  </div>
+  <span class="equation_label">1.4.2</span>
+</p>
+</div>
+<p> We say that \(\lim _{j\in J}A_j\) defines a <b class="bfseries">simplicially enriched limit</b> if and only if <a href="sec-enriched-limits.html#eq:simplicial-limit-map" class="eqref">1.4.2</a> is an isomorphism of simplicial sets for all \(X \in {\mathord {\mathcal{A}}}\). </p>
+</div>
+
+    <a class="latex_link" href="sec-enriched-limits.html#defn:simplicial-conical-limit">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.Enriched.IsConicalLimit">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:simplicial-cotensor_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:simplicial-cotensor" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.4.6</span><span class="definition_thmtitle">simplicial cotensors</span></div>
+    <div class="thm_thmcontent"><p>   Let \({\mathord {\mathcal{A}}}\) be a simplicial category. The <b class="bfseries">cotensor</b> of an object \(A \in {\mathord {\mathcal{A}}}\) by a simplicial set \(U\) is given by the data of an object \(A^U \in {\mathord {\mathcal{A}}}\) together with a cone \(U \to {\mathord {\mathcal{A}}}(A^U,A)\) so that the induced map defines an isomorphism of simplicial sets: </p>
+<div class="equation" id="eq:cotensor-defn">
+<p>
+  <div class="equation_content">
+    \begin{equation} \label{eq:cotensor-defn} {\mathord {\mathcal{A}}}(X,A^U) \cong {\mathord {\mathcal{A}}}(X,A)^U \end{equation}
+  </div>
+  <span class="equation_label">1.4.1</span>
+</p>
+</div>
+</div>
+
+    <a class="latex_link" href="sec-enriched-limits.html#defn:simplicial-cotensor">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.SimplicialCategory.HasCotensor">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:simplicial-cotensors_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:simplicial-cotensors" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.4.7</span><span class="definition_thmtitle">simplicial cotensors</span></div>
+    <div class="thm_thmcontent"><p>   A simplicial category \({\mathord {\mathcal{A}}}\) <b class="bfseries">has cotensors</b> when all cotensors exist. </p>
+</div>
+
+    <a class="latex_link" href="sec-enriched-limits.html#defn:simplicial-cotensors">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.SimplicialCategory.HasCotensors">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:simplicial-horn_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:simplicial-horn" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.9</span><span class="definition_thmtitle">simplicial horn</span></div>
+    <div class="thm_thmcontent"><p>   We write \(\Lambda ^k[n] \subset \Delta [n]\) for the \(k\)-<b class="bfseries">horn</b> in the \(n\)-simplex. The horn \(\Lambda ^k[n]\) is the further simplicial subset of \(\partial \Delta [n]\) that omits the face opposite the vertex \(k\), but it is defined as a subset of \(\Delta [n]\). </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:simplicial-horn">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.horn">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:sset-category_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:sset-category" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.6</span><span class="definition_thmtitle">the category of simplicial sets</span></div>
+    <div class="thm_thmcontent"><p>   The category of <b class="bfseries">simplicial sets</b> is the category \({\mathord {\mathcal{sSet}}}:={\mathord {\mathcal{Set}}}^{\Delta ^{\mathord {\textup{op}}}}\) of presheaves on the simplex category. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:sset-category">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.largeCategory">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:standard-simplex_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:standard-simplex" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.7</span><span class="definition_thmtitle">standard simplex</span></div>
+    <div class="thm_thmcontent"><p>   We write \(\Delta [n]\) for the <b class="bfseries">standard \(n\)-simplex</b> the simplicial set represented by \([n] \in \Delta \). </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#defn:standard-simplex">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.stdSimplex">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:trivial-fibration_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:trivial-fibration" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.5.3</span></div>
+    <div class="thm_thmcontent"><p>  In an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\), a morphism \(f\colon A \to B\) is a <b class="bfseries">trivial fibration</b> just when \(f\) is both an isofibration and an equivalence. </p>
+</div>
+
+    <a class="latex_link" href="sec-cosmos.html#defn:trivial-fibration">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:underlying-cat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:underlying-cat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.4.4</span></div>
+    <div class="thm_thmcontent"><p> The category \({\mathord {\mathcal{A}}}_0\) of 0-arrows is the <b class="bfseries">underlying category</b> of the simplicial category \({\mathord {\mathcal{A}}}\), which forgets the higher dimensional simplicial structure. </p>
+</div>
+
+    <a class="latex_link" href="sec-enriched-limits.html#defn:underlying-cat">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.categoryForgetEnrichment">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:underlying-cat-of-2cat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:underlying-cat-of-2cat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.8.3</span><span class="definition_thmtitle">underlying category of a 2-category</span></div>
+    <div class="thm_thmcontent"><p> The <b class="bfseries">underlying category</b> of a 2-category is defined by simply forgetting its 2-cells. Note that an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) and its homotopy 2-category \(\mathfrak {h}{\mathord {\mathcal{K}}}\) share the same underlying category \({\mathord {\mathcal{K}}}_0\) of \(\infty \)-categories and \(\infty \)-functors in \({\mathord {\mathcal{K}}}\). </p>
+</div>
+
+    <a class="latex_link" href="sec-htpy-2-cat.html#defn:underlying-cat-of-2cat">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="defn:underlying-cat-of-cosmos_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="defn:underlying-cat-of-cosmos" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.5.5</span></div>
+    <div class="thm_thmcontent"><p>  The underlying category \({\mathord {\mathcal{K}}}_0\) of an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) is the category whose objects are the \(\infty \)-categories in \({\mathord {\mathcal{K}}}\) and whose morphisms are the \(0\)-arrows, i.e., the vertices in the functor spaces. </p>
+</div>
+
+    <a class="latex_link" href="sec-cosmos.html#defn:underlying-cat-of-cosmos">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="eq:qcat-defn_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="eq:qcat-defn" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.2.13</span><span class="definition_thmtitle">quasi-category</span></div>
+    <div class="thm_thmcontent"><p>   A <b class="bfseries">quasi-category</b> is a simplicial set \(A\) in which any <b class="bfseries">inner horn</b> can be extended to a simplex, solving the displayed lifting problem: </p>
+<figure >
+  
+<div class="tikzcd" id="a0000000017">
+    <img src="images/img-0004.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+  \Lambda^k[n] \arrow[r] \arrow[d, hook] &amp; A  \\ \Delta[n] \arrow[ur, dashed]
+  \end{tikzcd}" />
+</div>
+<p> &#8195;&#8195;for  n ≥2, 0 &lt; k &lt; n. </p>
+
+</figure>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#eq:qcat-defn">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Quasicategory">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:2-truncated-qcat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:2-truncated-qcat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.3.2</span></div>
+    <div class="thm_thmcontent"><p>   The 2-truncation of a quasi-category is a 2-truncated quasi-category. </p>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#lem:2-truncated-qcat">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Truncated.two_truncatation_of_qc_is_2_trunc_qc">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:2-truncated-qcat-htpy_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:2-truncated-qcat-htpy" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.3.4</span></div>
+    <div class="thm_thmcontent"><p>         If \(A\) is a 2-truncated quasi-category then: </p>
+<ol class="enumerate">
+  <li><p>The left and right homotopy relations are reflexive. </p>
+</li>
+  <li><p>The left and right homotopy relations are symmetric. </p>
+</li>
+  <li><p>The left and right homotopy relations are transitive. </p>
+</li>
+  <li><p>The left homotopy relation coincides with the right homotopy relation. </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#lem:2-truncated-qcat-htpy">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Quasicategory₂.HomotopicL_iff_HomotopicR">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:2-truncated-qcat-htpy-comp_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:2-truncated-qcat-htpy-comp" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.3.5</span></div>
+    <div class="thm_thmcontent"><p>  \(\quad \) </p>
+<ol class="enumerate">
+  <li><p>If \(\sigma \) and \(\tau \) are 2-simplices in a 2-truncated quasi-category filling the same path, their diagonal edges are homotopic. </p>
+</li>
+  <li><p>If \(h\) is the diagonal edge of a 2-simplex filling the path formed by \(f\) and \(g\) and \(g\) is homotopic to \(g'\), then \(h\) is the diagonal edge of a 2-simplex filling the path formed by \(f\) and \(g'\). </p>
+</li>
+  <li><p>If \(h\) is the diagonal edge of a 2-simplex filling the path formed by \(f\) and \(g\) and \(f\) is homotopic to \(f'\), then \(h\) is the diagonal edge of a 2-simplex filling the path formed by \(f'\) and \(g\). </p>
+</li>
+</ol>
+
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#lem:2-truncated-qcat-htpy-comp">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Quasicategory₂.transport_edge₀">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:brown-fact_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:brown-fact" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.5.12</span><span class="lemma_thmtitle">Brown factorization lemma</span></div>
+    <div class="thm_thmcontent"><p>  Any functor \(f\colon A \to B\) in an \(\infty \)-cosmos may be factored as an equivalence followed by an isofibration, where this equivalence is constructed as a section of a trivial fibration. </p>
+<div class="centered"> <div class="tikzcd" id="a0000000090">
+    <img src="images/img-0036.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+  &amp; Pf \arrow[dr, two heads, &#34;p&#34;] \arrow[dl, two heads, bend right, start anchor=190, end anchor=70, &#34;q&#34;&#39;] &amp; \\ A \arrow[rr, &#34;f&#34;&#39;] \arrow[ur, bend right=25, start anchor=30, end anchor=230, &#34;\sim&#34;, &#34;s&#34;&#39; pos = 0.6] &amp; &amp; B
+\end{tikzcd}" />
+</div> </div>
+<p> Moreover, \(f\) is an equivalence if and only if the isofibration \(p\) is a trivial fibration. </p>
+</div>
+
+    <a class="latex_link" href="sec-cosmos.html#lem:brown-fact">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:cat-of-n-arrows_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:cat-of-n-arrows" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.4.3</span></div>
+    <div class="thm_thmcontent"><p> For any simplicial category \({\mathord {\mathcal{A}}}\) and \(n \geq 0\), the \(n\)-arrows assemble into the arrows of an ordinary category \({\mathord {\mathcal{A}}}_n\) with the same set of objects as \({\mathord {\mathcal{A}}}\). </p>
+</div>
+
+    <a class="latex_link" href="sec-enriched-limits.html#lem:cat-of-n-arrows">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:cotensor-associativity_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:cotensor-associativity" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.4.8</span></div>
+    <div class="thm_thmcontent"><p>  When a simplicial category has cotensors, cotensors are associative: given \(A \in {\mathord {\mathcal{A}}}\) and simplicial sets \(U\) and \(V\) there are canonical isomorphisms </p>
+<div class="displaymath" id="a0000000065">
+  \[  (A^U)^V \cong A^{U \times V} \cong (A^V)^U. \]
+</div>
+</div>
+
+    <a class="latex_link" href="sec-enriched-limits.html#lem:cotensor-associativity">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:cotensor-bifunctor_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:cotensor-bifunctor" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.4.9</span></div>
+    <div class="thm_thmcontent"><p>  Assuming such objects exist, the simplicial cotensor defines a bifunctor </p>
+<div class="centered"> <div class="tikzcd" id="a0000000067">
+    <img src="images/img-0026.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=tiny] s\mathcal{S}et\op \times \cA \arrow[r] &amp; \cA \\
+  (U,A) \arrow[r, maps to] &amp; A^U
+  \end{tikzcd}" />
+</div></div>
+<p> in a unique way making the isomorphism <a href="sec-enriched-limits.html#eq:cotensor-defn" class="eqref">1.4.1</a> natural in \(U\) and \(A\) as well. </p>
+</div>
+
+    <a class="latex_link" href="sec-enriched-limits.html#lem:cotensor-bifunctor">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.SimplicialCategory.cotensor_bifunctoriality">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:enriched-cob-adjunction_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:enriched-cob-adjunction" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.6.8</span></div>
+    <div class="thm_thmcontent"><p>  Any adjunction comprised of finite-product-preserving functors between cartesian closed categories </p>
+<div class="centered"> <div class="tikzcd" id="a0000000107">
+    <img src="images/img-0048.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+\cV \arrow[r, bend left=20, &#34;F&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; \cW \arrow[l, bend left=20, &#34;U&#34;]  \arrow[r, phantom, &#34;\rightsquigarrow&#34;] &amp; \cV \arrow[r, bend left=20, start anchor=20, end anchor=170, &#34;F&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; U_*\cW \arrow[l, bend left=20, start anchor=190, end anchor=-15, &#34;U&#34;]  \end{tikzcd}" />
+</div> </div>
+<p> defines a \({\mathord {\mathcal{V}}}\)-enriched adjunction between the \({\mathord {\mathcal{V}}}\)-categories \({\mathord {\mathcal{V}}}\) and \(U_*{\mathord {\mathcal{W}}}\); i.e., there exists a \({\mathord {\mathcal{V}}}\)-natural isomorphism \(U{\mathord {\mathcal{W}}}(Fv,w) \cong {\mathord {\mathcal{V}}}(v,Uw)\). </p>
+</div>
+
+    <a class="latex_link" href="sec-change-of-base.html#lem:enriched-cob-adjunction">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:equiv-htpy-equiv_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:equiv-htpy-equiv" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.5.9</span><span class="lemma_thmtitle">equivalences are homotopy equivalences</span></div>
+    <div class="thm_thmcontent"><p>  A map \(f \colon A \to B\) between \(\infty \)-categories in an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) is an equivalence if and only if it extends to the data of a “homotopy equivalence” with the free-living isomorphism \(I\) serving as the interval: that is, if there exist maps \(g \colon B \to A\) </p>
+<div class="centered"> <div class="tikzcd" id="a0000000078">
+    <img src="images/img-0027.svg" class="tikzcd-vector" alt="\begin{tikzcd}  &amp; A &amp; &amp;  &amp; B \\ A \arrow[ur, equals] \arrow[dr, &#34;gf&#34;&#39;] \arrow[r, &#34;\alpha&#34;] &amp; A^\iso   \arrow[u, two heads, &#34;\sim&#34;, &#34;\ev_0&#34;&#39;] \arrow[d, two heads, &#34;\sim&#34;&#39;,  &#34;\ev_1&#34;] &amp; \text{and} &amp;  B \arrow[dr, equals] \arrow[r, &#34;\beta&#34;] \arrow[ur, &#34;fg&#34;] &amp; B^\iso  \arrow[u, two heads, &#34;\sim&#34;, &#34;\ev_0&#34;&#39;] \arrow[d, two heads, &#34;\sim&#34;&#39;, &#34;\ev_1&#34;] \\ &amp; A &amp; &amp;  &amp; B
+\end{tikzcd}" />
+</div> </div>
+<p> in the \(\infty \)-cosmos. </p>
+</div>
+
+    <a class="latex_link" href="sec-cosmos.html#lem:equiv-htpy-equiv">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:equivalence-2-of-3_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:equivalence-2-of-3" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.5.10</span></div>
+    <div class="thm_thmcontent"><p>  The equivalences in an \(\infty \)-cosmos are closed under retracts and satisfy the <b class="bfseries">2-of-3 property</b>: given a composable pair of functors and their composite, if any two of these are equivalences so is the third. </p>
+</div>
+
+    <a class="latex_link" href="sec-cosmos.html#lem:equivalence-2-of-3">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:ho-preserves-finite-products_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:ho-preserves-finite-products" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.3.9</span></div>
+    <div class="thm_thmcontent"><p>  The functor \({\mathord {\mathsf{h}}}\colon {\mathord {\mathcal{sSet}}}\to {\mathord {\mathcal{Cat}}}\) preserves finite products.  </p>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#lem:ho-preserves-finite-products">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.hoFunctor.preservesFiniteProducts">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:ho-preserves-small-products_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:ho-preserves-small-products" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.3.10</span></div>
+    <div class="thm_thmcontent"><p>  The functor \({\mathord {\mathsf{h}}}\colon {\mathord {\mathcal{sSet}}}\to {\mathord {\mathcal{Cat}}}\) preserves finite products. </p>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#lem:ho-preserves-small-products">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:htpy-cat-of-qcat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:htpy-cat-of-qcat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.3.8</span><span class="lemma_thmtitle">the homotopy category of a quasi-category</span></div>
+    <div class="thm_thmcontent"><p> If \(A\) is a quasi-category then its <b class="bfseries">homotopy category</b> \({\mathord {\mathsf{h}}}{A}\) is isomorphic to the homotopy category of its underlying 2-truncated quasi-category, as just described.   </p>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#lem:htpy-cat-of-qcat">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.Quasicategory₂.isoHomotopyCategories">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:invertible-2-cell_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:invertible-2-cell" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.8.5</span></div>
+    <div class="thm_thmcontent"><p>\(\quad \)  </p>
+<ol class="enumerate">
+  <li><p> Every 2-cell </p>
+<div class="centered"> <div class="tikzcd" id="a0000000145">
+    <img src="images/img-0068.svg" class="tikzcd-vector" alt="\begin{tikzcd}  A \arrow[r, start anchor=15, end anchor=165, bend left, &#34;f&#34;] \arrow[r, start anchor=345, end anchor=195, bend right, &#34;g&#34;&#39;] \arrow[r, phantom, &#34;\scriptstyle\Downarrow\alpha&#34;] &amp; B \end{tikzcd}" />
+</div> </div>
+<p> in the homotopy 2-category of an \(\infty \)-cosmos is represented by a map of quasi-categories as below-left or equivalently by a functor as below-right </p>
+<div class="centered"> <div class="tikzcd" id="a0000000146">
+    <img src="images/img-0069.svg" class="tikzcd-vector" alt="\begin{tikzcd} [sep=small] &amp; \catone+\catone \arrow[dl, hook&#39;] \arrow[dr, &#34;{(f,g)}&#34;] &amp; &amp;  &amp; ~ &amp;  A \arrow[rr, &#34;\name{\alpha}&#34;] \arrow[dr, &#34;{(g,f)}&#34;&#39;] &amp; &amp; B^\cattwo \arrow[dl, &#34;{(p_1,p_0)}&#34;, two heads] \\ \cattwo \arrow[rr, &#34;{\alpha}&#34;&#39;] &amp;&amp; \Fun(A,B) &amp;\arrow[ur, phantom, &#34;\leftrightsquigarrow&#34;] &amp;  &amp;&amp; B \times B
+  \end{tikzcd}" />
+</div> </div>
+<p> and two such maps represent the same 2-cell if and only if they are homotopic as 1-simplices in \({\mathord {\mathsf{Fun}}}(A,B)\). </p>
+</li>
+  <li><p> Every invertible 2-cell </p>
+<div class="centered"> <div class="tikzcd" id="a0000000147">
+    <img src="images/img-0070.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large] A \arrow[r, start anchor=18, end anchor=162, bend left=20, &#34;f&#34;] \arrow[r,  start anchor=342, end anchor=198, bend right=20, &#34;g&#34;&#39;] \arrow[r, phantom, &#34;\scriptstyle\cong\Downarrow\alpha&#34;] &amp; B \end{tikzcd}" />
+</div> </div>
+<p> in the homotopy 2-category of an \(\infty \)-cosmos is represented by a map of quasi-categories as below-left or equivalently by a functor as below-right </p>
+<div class="centered"> <div class="tikzcd" id="a0000000148">
+    <img src="images/img-0071.svg" class="tikzcd-vector" alt="\begin{tikzcd} [sep=small] &amp; \catone+\catone \arrow[dl, hook&#39;] \arrow[dr, &#34;{(f,g)}&#34;] &amp; &amp;  &amp; ~ &amp;  A \arrow[rr, &#34;\name{\alpha}&#34;] \arrow[dr, &#34;{(g,f)}&#34;&#39;] &amp; &amp; B^\iso \arrow[dl, &#34;{(p_1,p_0)}&#34;, two heads] \\ \iso \arrow[rr, &#34;{\alpha}&#34;&#39;] &amp;&amp; \Fun(A,B) &amp;\arrow[ur, phantom, &#34;\leftrightsquigarrow&#34;] &amp;  &amp;&amp; B \times B
+  \end{tikzcd}" />
+</div> </div>
+<p> and two such maps represent the same invertible 2-cell if and only if their common restrictions along \([1]\hookrightarrow I\) are homotopic as 1-simplices in \({\mathord {\mathsf{Fun}}}(A,B)\). </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sec-htpy-2-cat.html#lem:invertible-2-cell">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:pro-normal-monoidal_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:pro-normal-monoidal" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.6.10</span></div>
+    <div class="thm_thmcontent"><p> The change-of-base 2-functor induced by a finite-product-preserving functor \(T \colon {\mathord {\mathcal{V}}}\to {\mathord {\mathcal{W}}}\) between cartesian closed categories preserves underlying categories, if and only if, for each \(v \in {\mathord {\mathcal{V}}}\) the composite function on hom-sets </p>
+<div class="centered"> <div class="tikzcd" id="a0000000119">
+    <img src="images/img-0054.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \cV(1,v)_0 \arrow[r, &#34;T&#34;] &amp; \cW(T1,Tv)_0 \arrow[r, &#34;- \circ \cong&#34;] &amp; \cW(1,Tv)_0
+\end{tikzcd}" />
+</div> </div>
+<p> is a bijection. </p>
+</div>
+
+    <a class="latex_link" href="sec-change-of-base.html#lem:pro-normal-monoidal">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:qcat-1-simplex-htpy_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:qcat-1-simplex-htpy" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.2.20</span><span class="lemma_thmtitle">homotopic 1-simplices in a quasi-category</span></div>
+    <div class="thm_thmcontent"><p>  Parallel 1-simplices \(f\) and \(g\) in a quasi-category are homotopic if and only if there exists a 2-simplex of any or equivalently all of the forms displayed in Definition <a href="sec-simplicial-sets.html#defn:1-simplex-htpy">1.2.19</a>. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#lem:qcat-1-simplex-htpy">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:qcat-htpy-cat-equiv_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:qcat-htpy-cat-equiv" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.3.17</span></div>
+    <div class="thm_thmcontent"><p>  If \(f \colon A \to B\) is an equivalence of quasi-categories, then the functor \({\mathord {\mathsf{h}}}{f} \colon {\mathord {\mathsf{h}}}{A} \to {\mathord {\mathsf{h}}}{B}\) is an equivalence of categories, where the data displayed above defines an equivalence inverse \({\mathord {\mathsf{h}}}{g} \colon {\mathord {\mathsf{h}}}{B} \to {\mathord {\mathsf{h}}}{A}\) and natural isomorphisms encoded by the composite<a class="footnote" href="#a0000000054">
+  <sup class="footnotemark">2</sup>
+</a> functors </p>
+<div class="centered"> <div class="tikzcd" id="a0000000055">
+    <img src="images/img-0020.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \ho{A} \arrow[r, &#34;\ho{\alpha}&#34;] &amp; \ho(A^\iso) \arrow[r] &amp; (\ho{A})^\iso &amp; \ho{B} \arrow[r, &#34;\ho{\beta}&#34;] &amp; \ho(B^\iso) \arrow[r] &amp; (\ho{B})^\iso \end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#lem:qcat-htpy-cat-equiv">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:right-of-monoidal-adj-ucats_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:right-of-monoidal-adj-ucats" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.6.11</span></div>
+    <div class="thm_thmcontent"><p>  Consider a finite-product-preserving adjunction between cartesian closed categories: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000121">
+    <img src="images/img-0053.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+\cV \arrow[r, bend left=20, &#34;F&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; \cW \arrow[l, bend left=20, &#34;U&#34;]   \end{tikzcd}" />
+</div> </div>
+<p> Then change of base along the right adjoint respects the underlying categories: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000122">
+    <img src="images/img-0055.svg" class="tikzcd-vector" alt="\begin{tikzcd} [sep=1.5 em] {\cW}\text{-}\mathcal{C}at \arrow[rr, &#34;U_*&#34;] \arrow[dr, &#34;{(-)_0}&#34;&#39;] &amp; &amp; {\cV}\text{-}\mathcal{C}at \arrow[dl, &#34;(-)_0&#34;] \\ &amp; \mathcal{C}at
+\end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-change-of-base.html#lem:right-of-monoidal-adj-ucats">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:simplex-yoneda_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:simplex-yoneda" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.2.10</span></div>
+    <div class="thm_thmcontent"><p>   Each \(n\)-simplex \(x \in X_n\) corresponds to a map of simplicial sets \(x \colon \Delta [n] \to X\). Accordingly, we write \(x \cdot \delta ^i\) for the \(i\)th face of the \(n\)-simplex, an \((n-1)\)-simplex classified by the composite map </p>
+<div class="centered"> <div class="tikzcd" id="a0000000014">
+    <img src="images/img-0003.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+\Delta[n-1] \arrow[r, &#34;\face^i&#34;] &amp; \Delta[n] \arrow[r, &#34;x&#34;] &amp; X.
+\end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#lem:simplex-yoneda">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SSet.yonedaEquiv">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:trivial-fib-conical_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:trivial-fib-conical" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.5.6</span><span class="lemma_thmtitle">trivial fibrations and conical limits</span></div>
+    <div class="thm_thmcontent"><p>  The trivial fibrations in an \(\infty \)-cosmos define a subcategory containing the isomorphisms and are stable under product, pullback, and forming inverse limits of towers. </p>
+</div>
+
+    <a class="latex_link" href="sec-cosmos.html#lem:trivial-fib-conical">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:trivial-fib-leibniz_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:trivial-fib-leibniz" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.5.7</span><span class="lemma_thmtitle">trivial fibrations and cotensors</span></div>
+    <div class="thm_thmcontent"><p>  In an \(\infty \)-cosmos, the Leibniz cotensors of any trivial fibration with a monomorphism of simplicial sets is a trivial fibration as is the Leibniz cotensor of an isofibration with a map in the class cellularly generated by the inner horn inclusions and the map \([0]\hookrightarrow I\). </p>
+</div>
+
+    <a class="latex_link" href="sec-cosmos.html#lem:trivial-fib-leibniz">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:trivial-fib-representability_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:trivial-fib-representability" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.5.8</span><span class="lemma_thmtitle">representable trivial fibrations</span></div>
+    <div class="thm_thmcontent"><p>  If \(E \twoheadrightarrow B\) is a trivial fibration in an \(\infty \)-cosmos, then is \({\mathord {\mathsf{Fun}}}(X,E)\twoheadrightarrow {\mathord {\mathsf{Fun}}}(X,B)\) is a trivial fibration of quasi-categories. </p>
+</div>
+
+    <a class="latex_link" href="sec-cosmos.html#lem:trivial-fib-representability">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="lem:underlying-cat-iso_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="lem:underlying-cat-iso" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.8.4</span></div>
+    <div class="thm_thmcontent"><p>  The underlying category of the homotopy 2-category of an \(\infty \)-cosmos is isomorphic to the underlying category of the \(\infty \)-cosmos. </p>
+</div>
+
+    <a class="latex_link" href="sec-htpy-2-cat.html#lem:underlying-cat-iso">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:2-cat-as-cat-enriched_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:2-cat-as-cat-enriched" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.8.1</span></div>
+    <div class="thm_thmcontent"><p> There is an equivalence between categories enriched in categories and strict bicategories. In particular, each can be converted into the other. </p>
+</div>
+
+    <a class="latex_link" href="sec-htpy-2-cat.html#prop:2-cat-as-cat-enriched">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:cat-cosmos_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:cat-cosmos" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.7.3</span><span class="proposition_thmtitle">the \(\infty \)-cosmos of categories</span></div>
+    <div class="thm_thmcontent"><p>  The category \({\mathord {\mathcal{Cat}}}\) of 1-categories defines an \(\infty \)-cosmos whose isofibrations are the isofibrations. The equivalences are the equivalences of categories and the trivial fibrations are <b class="bfseries">surjective equivalences</b>: equivalences of categories that are also surjective on objects. </p>
+</div>
+
+    <a class="latex_link" href="sec-examples.html#prop:cat-cosmos">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:change-of-base_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:change-of-base" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.6.4</span></div>
+    <div class="thm_thmcontent"><p>   A finite-product-preserving functor \(T \colon {\mathord {\mathcal{V}}}\to {\mathord {\mathcal{W}}}\) between cartesian closed categories induces a change-of-base 2-functor </p>
+<div class="centered"> <div class="tikzcd" id="a0000000098">
+    <img src="images/img-0041.svg" class="tikzcd-vector" alt="\begin{tikzcd}  {\cV}\text{-}\mathcal{C}at \arrow[r, &#34;T_*&#34;] &amp; {\cW}\text{-}\mathcal{C}at\, . \end{tikzcd}" />
+</div></div>
+</div>
+
+    <a class="latex_link" href="sec-change-of-base.html#prop:change-of-base">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.instEnrichedCategoryTransportEnrichment">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:change-of-base-adjunction_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:change-of-base-adjunction" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.6.6</span></div>
+    <div class="thm_thmcontent"><p>  Any adjunction between cartesian closed categories whose left adjoint preserves finite products induces a change-of-base 2-adjunction </p>
+<div class="centered"> <div class="tikzcd" id="a0000000104">
+    <img src="images/img-0046.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+\cV \arrow[r, bend left=20, &#34;F&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; \cW \arrow[l, bend left=20, &#34;U&#34;] \arrow[r, phantom, &#34;\rightsquigarrow&#34;] &amp; {\cV}\text{-}\mathcal{C}at \arrow[r, bend left=20, start anchor=10, end anchor=170,  &#34;F_*&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; {\cW}\text{-}\mathcal{C}at \arrow[l, bend left=20, start anchor=190, end anchor=-10,  &#34;U_*&#34;]
+\end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-change-of-base.html#prop:change-of-base-adjunction">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:cob-adjunction_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:cob-adjunction" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.6.9</span></div>
+    <div class="thm_thmcontent"><p>  Given an adjunction between cartesian closed categories </p>
+<div class="centered"> <div class="tikzcd" id="a0000000113">
+    <img src="images/img-0053.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+\cV \arrow[r, bend left=20, &#34;F&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; \cW \arrow[l, bend left=20, &#34;U&#34;]   \end{tikzcd}" />
+</div> </div>
+<p> whose left adjoint preserves finite products then if \({\mathord {\mathcal{C}}}\) is co/tensored as a \({\mathord {\mathcal{W}}}\)-category, \(U_*{\mathord {\mathcal{C}}}\) is co/tensored as \({\mathord {\mathcal{V}}}\)-category with the co/tensor of \(c \in {\mathord {\mathcal{C}}}\) by \(v \in {\mathord {\mathcal{V}}}\) defined by </p>
+<div class="displaymath" id="a0000000114">
+  \[  v \otimes c :=Fv \otimes c \qquad \text{and} \qquad c^v :=c^{Fv}. \]
+</div>
+</div>
+
+    <a class="latex_link" href="sec-change-of-base.html#prop:cob-adjunction">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:coherent-iso_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:coherent-iso" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.3.13</span></div>
+    <div class="thm_thmcontent"><p>  An arrow \(f\) in a quasi-category \(A\) is an isomorphism if and only if it extends to a homotopy coherent isomorphism </p>
+<div class="centered"> <div class="tikzcd" id="a0000000050">
+    <img src="images/img-0017.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \cattwo \arrow[r, &#34;f&#34;] \arrow[d, hook] &amp; A \\ \iso \arrow[ur, dashed]
+   \end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-homotopy-category.html#prop:coherent-iso">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:free-refl-quiver_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:free-refl-quiver" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.2.22</span></div>
+    <div class="thm_thmcontent"><p>  The functor that carries a category to its underlying reflexive quiver has a left adjoint, defining the free category on a reflexive quiver: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000030">
+    <img src="images/img-0010.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=huge]
+    \mathcal{C}at \arrow[r, start anchor=353, end anchor=190, bend right, hook&#39;, &#34;U&#34;&#39;] \arrow[r, phantom, &#34;\bot&#34;] &amp; r\mathcal{Q}uiv \arrow[l, start anchor=170, end anchor=7, bend right, &#34;F&#34;&#39; pos=.48]
+  \end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#prop:free-refl-quiver">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.ReflQuiv.adj">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:ho-nerve-adjunction_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:ho-nerve-adjunction" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.2.26</span></div>
+    <div class="thm_thmcontent"><p>   The nerve embedding admits a left adjoint, namely the functor which sends a simplicial set to its homotopy category: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000036">
+    <img src="images/img-0012.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=huge]
+     \mathcal{C}at \arrow[r, start anchor=353, end anchor=190, bend right, hook&#39;] \arrow[r, phantom, &#34;\bot&#34;] &amp; s\mathcal{S}et \arrow[l, start anchor=170, end anchor=7, bend right, &#34;\ho&#34;&#39; pos=.48]
+   \end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#prop:ho-nerve-adjunction">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.nerveAdjunction">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:htpy-2-cat-closure_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:htpy-2-cat-closure" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.8.6</span><span class="proposition_thmtitle">cartesian (closure)</span></div>
+    <div class="thm_thmcontent"><p>  \(\quad \) </p>
+<ol class="enumerate">
+  <li><p>The homotopy 2-category of any \(\infty \)-cosmos has 2-categorical products. </p>
+</li>
+  <li><p> The homotopy 2-category of a cartesian closed \(\infty \)-cosmos is cartesian closed as a 2-category. </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sec-htpy-2-cat.html#prop:htpy-2-cat-closure">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:isofib-define-isofib_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:isofib-define-isofib" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.8.10</span><span class="proposition_thmtitle">isofibrations are isofibrations</span></div>
+    <div class="thm_thmcontent"><p>  An isofibration \(p \colon E \twoheadrightarrow B\) in an \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) also defines an <b class="bfseries">isofibration</b> in the homotopy 2-category \(\mathfrak {h}{\mathord {\mathcal{K}}}\): given any invertible 2-cell as displayed below-left abutting to \(B\) with a specified lift of one of its boundary 1-cells through \(p\), there exists an invertible 2-cell abutting to \(E\) with this boundary 1-cell as displayed below-right that whiskers with \(p\) to the original 2-cell. </p>
+<div class="centered"> <div class="tikzcd" id="a0000000159">
+    <img src="images/img-0075.svg" class="tikzcd-vector" alt="\begin{tikzcd}  X \arrow[r, &#34;e&#34;] \arrow[dr, bend right, &#34;b&#34;&#39;] &amp; E \arrow[d, two heads, &#34;p&#34;] \arrow[dl, phantom, &#34;{\scriptstyle\cong\Downarrow\beta}&#34; near start] &amp;\arrow[d, phantom, &#34;=&#34;] &amp; X \arrow[rr, start anchor=15, end anchor=165, bend left=20, &#34;e&#34;] \arrow[rr, start anchor=345, end anchor=195, bend right=20, &#34;\bar{e}&#34;&#39;, dashed] \arrow[rr, phantom, &#34;{\scriptstyle\cong\Downarrow\gamma}&#34;] &amp;&amp; E \arrow[d, two heads, &#34;p&#34;] \\ ~ &amp; B &amp; ~ &amp; &amp; &amp; B
+  \end{tikzcd}" />
+</div> </div>
+</div>
+
+    <a class="latex_link" href="sec-htpy-2-cat.html#prop:isofib-define-isofib">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:kan-cosmos_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:kan-cosmos" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.7.4</span><span class="proposition_thmtitle">the \(\infty \)-cosmos of Kan complexes</span></div>
+    <div class="thm_thmcontent"><p>  The category \({\mathord {\mathcal{Kan}}}\) of Kan complexes defines an \(\infty \)-cosmos whose isofibrations are the <b class="bfseries">Kan fibrations</b>: maps that lift against all horn inclusions \(\Lambda ^k[n] \hookrightarrow \Delta [n]\) for \(n \geq 1\) and \(0 \leq k \leq n\). </p>
+</div>
+
+    <a class="latex_link" href="sec-examples.html#prop:kan-cosmos">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:nerve-2-coskeletal_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:nerve-2-coskeletal" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.2.17</span></div>
+    <div class="thm_thmcontent"><p>   The nerve of a category \(C\) is <b class="bfseries">2-coskeletal</b> as a simplicial set, meaning that every sphere \(\partial \Delta [n] \to C\) with \(n \geq 3\) is filled uniquely by an \(n\)-simplex in \(C\), or equivalently that the nerve is canonically isomorphic to the right Kan extension of its restriction to 2-truncated simplicial sets.<a class="footnote" href="#a0000000020">
+  <sup class="footnotemark">2</sup>
+</a></p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#prop:nerve-2-coskeletal">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.Nerve.cosk₂Iso">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:nerve-fully-faithful_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:nerve-fully-faithful" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.2.27</span></div>
+    <div class="thm_thmcontent"><p>   The nerve functor is fully faithful. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#prop:nerve-fully-faithful">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.nerveFunctor.fullyfaithful">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:nerve-qcat_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:nerve-qcat" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.2.18</span><span class="proposition_thmtitle">nerves are quasi-categories</span></div>
+    <div class="thm_thmcontent"><p>   Nerves of categories are quasi-categories. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#prop:nerve-qcat">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.Nerve.quasicategory">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:nerve-reflective_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:nerve-reflective" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.2.25</span></div>
+    <div class="thm_thmcontent"><p>  The homotopy category of the nerve of a 1-category is isomorphic to the original category, as the 2-simplices in the nerve witness all of the composition relations satisfied by the arrows in the underlying reflexive directed graph. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#prop:nerve-reflective">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.nerveFunctorCompHoFunctorIso">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:qcat-cosmos_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:qcat-cosmos" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.7.1</span><span class="proposition_thmtitle">the \(\infty \)-cosmos of quasi-categories</span></div>
+    <div class="thm_thmcontent"><p>  The full subcategory \({\mathord {\mathcal{QCat}}}\subset {\mathord {\mathcal{sSet}}}\) of quasi-categories defines an \(\infty \)-cosmos in which the isofibrations, equivalences, and trivial fibrations coincide with the classes already bearing these names. </p>
+</div>
+
+    <a class="latex_link" href="sec-examples.html#prop:qcat-cosmos">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:simplex-cat-factorization_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:simplex-cat-factorization" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.2.4</span></div>
+    <div class="thm_thmcontent"><p>   Every morphism in \(\Delta \) factors uniquely as an epimorphism followed by a monomorphism; these epimorphisms, the <b class="bfseries">degeneracy operators</b>, decompose as composites of elementary degeneracy operators, while the monomorphisms, the <b class="bfseries">face operators</b>, decompose as composites of elementary face operators. </p>
+</div>
+
+    <a class="latex_link" href="sec-simplicial-sets.html#prop:simplex-cat-factorization">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/SimplexCategory.instHasStrongEpiImages">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:sliced-cosmoi_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:sliced-cosmoi" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">1.7.5</span><span class="proposition_thmtitle">sliced \(\infty \)-cosmoi</span></div>
+    <div class="thm_thmcontent"><p>  For any \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\) and any \(\infty \)-category \(B \in {\mathord {\mathcal{K}}}\) there is an <b class="bfseries">\(\infty \)-cosmos \({\mathord {\mathcal{K}}}_{/B}\) of isofibrations over \(B\)</b> whose </p>
+<ol class="enumerate">
+  <li><p> objects are isofibrations \(p \colon E \twoheadrightarrow B\) with codomain \(B\) </p>
+</li>
+  <li><p> functor spaces, say from \(p \colon E \twoheadrightarrow B\) to \(q \colon F \twoheadrightarrow B\), are defined by pullback </p>
+<div class="centered"> <div class="tikzcd" id="a0000000132">
+    <img src="images/img-0060.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=small] \Fun_B(p \colon E \fib B,q\colon F\fib B) \arrow[r] \arrow[d, two heads] \arrow[dr, phantom, &#34;\lrcorner&#34; very near start] &amp; \Fun(E,F) \arrow[d, two heads, &#34;{q_*}&#34;] \\ \catone \arrow[r, &#34;p&#34;] &amp; \Fun(E,B)
+\end{tikzcd}" />
+</div> </div>
+<p> and abbreviated to \({\mathord {\mathsf{Fun}}}_B(E,F)\) when the specified isofibrations are clear from context </p>
+</li>
+  <li><p> isofibrations are commutative triangles of isofibrations over \(B\) </p>
+<div class="centered"> <div class="tikzcd" id="a0000000133">
+    <img src="images/img-0061.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=small, column sep=small]
+E \arrow[rr,two heads, &#34;r&#34;] \arrow[dr, two heads, &#34;p&#34;&#39;] &amp; &amp; F \arrow[dl, two heads, &#34;q&#34;] \\ &amp; B
+\end{tikzcd}" />
+</div> </div>
+</li>
+  <li><p> terminal object is \(\textup{id}\colon B \twoheadrightarrow B\) and products are defined by the pullback along the diagonal </p>
+<div class="centered"> <div class="tikzcd" id="a0000000134">
+    <img src="images/img-0062.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \times^B_i E_i \arrow[r] \arrow[d, two heads] \arrow[dr, phantom, &#34;\lrcorner&#34; very near start] &amp; \prod_i E_i \arrow[d, two heads, &#34;\prod_i p_i&#34;] \\ B \arrow[r, &#34;\Delta&#34;] &amp; \prod_i B
+\end{tikzcd}" />
+</div> </div>
+</li>
+  <li><p> pullbacks and limits of towers of isofibrations are created by the forgetful functor \({\mathord {\mathcal{K}}}_{/B} \to {\mathord {\mathcal{K}}}\) </p>
+</li>
+  <li><p> simplicial cotensor of \(p \colon E \twoheadrightarrow B\) with \(U \in {\mathord {\mathcal{sSet}}}\) is constructed by the pullback </p>
+<div class="centered"> <div class="tikzcd" id="a0000000135">
+    <img src="images/img-0063.svg" class="tikzcd-vector" alt="\begin{tikzcd}  U \pwr_B p \arrow[d, two heads] \arrow[r] \arrow[dr, phantom, &#34;\lrcorner&#34; very near start] &amp; E^U \arrow[d, two heads, &#34;p^U&#34;] \\ B \arrow[r, &#34;\Delta&#34;] &amp; B^U
+\end{tikzcd}" />
+</div> </div>
+</li>
+  <li><p> and in which a map over \(B\) </p>
+<div class="centered"> <div class="tikzcd" id="a0000000136">
+    <img src="images/img-0064.svg" class="tikzcd-vector" alt="\begin{tikzcd} [row sep=small, column sep=small]
+E \arrow[rr, &#34;f&#34;] \arrow[dr, two heads, &#34;p&#34;&#39;] &amp; &amp; F \arrow[dl, two heads, &#34;q&#34;] \\ &amp; B
+\end{tikzcd}" />
+</div> </div>
+<p> is an equivalence in the \(\infty \)-cosmos \({\mathord {\mathcal{K}}}_{/B}\) if and only if \(f\) is an equivalence in \({\mathord {\mathcal{K}}}\). </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sec-examples.html#prop:sliced-cosmoi">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:equiv-are-equiv_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:equiv-are-equiv" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">1.8.8</span><span class="theorem_thmtitle">equivalences are equivalences</span></div>
+    <div class="thm_thmcontent"><p>  In any \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\), the following are equivalent and characterize what it means for a functor \(f \colon A \to B\) between \(\infty \)-categories to define an <b class="bfseries">equivalence</b>. </p>
+<ol class="enumerate">
+  <li><p> For all \(X \in {\mathord {\mathcal{K}}}\), the post-composition map \(f_* \colon {\mathord {\mathsf{Fun}}}(X,A) \rightsquigarrow {\mathord {\mathsf{Fun}}}(X,B)\) defines an equivalence of quasi-categories. </p>
+</li>
+  <li><p> There exists a functor \(g \colon B \to A\) and natural isomorphisms \(\alpha \colon \textup{id}_A \cong gf\) and \(\beta \colon fg \cong \textup{id}_B\) in the homotopy 2-category. </p>
+</li>
+  <li><p> There exists a functor \(g \colon B \to A\) and maps </p>
+<div class="centered"> <div class="tikzcd" id="a0000000155">
+    <img src="images/img-0074.svg" class="tikzcd-vector" alt="\begin{tikzcd}  &amp; A &amp; &amp;  &amp; B \\ A \arrow[ur, equals] \arrow[dr, &#34;gf&#34;&#39;] \arrow[r, &#34;\alpha&#34;] &amp; A^\iso  \arrow[u, two heads, &#34;\sim&#34;, &#34;\ev_0&#34;&#39;] \arrow[d, two heads, &#34;\sim&#34;&#39;, &#34;\ev_1&#34;] &amp;\text{and} &amp;  B \arrow[dr, equals] \arrow[r, &#34;\beta&#34;] \arrow[ur, &#34;fg&#34;] &amp; B^\iso \arrow[u, two heads, &#34;\sim&#34;, &#34;\ev_0&#34;&#39;] \arrow[d, two heads, &#34;\sim&#34;&#39;, &#34;\ev_1&#34;] \\ &amp; A &amp; &amp;  &amp; B
+  \end{tikzcd}" />
+</div> </div>
+<p> in the \(\infty \)-cosmos \({\mathord {\mathcal{K}}}\). </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="sec-htpy-2-cat.html#thm:equiv-are-equiv">LaTeX</a>
+    
+    
+  
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+</div>
+</div> <!-- content -->
+</div> <!-- wrapper -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script src="js/d3.min.js"></script>
+<script src="js/hpcc.min.js"></script>
+<script src="js/d3-graphviz.js"></script>
+
+<script type="text/javascript">
+const graphContainer = d3.select("#graph");
+const width = graphContainer.node().clientWidth;
+const height = graphContainer.node().clientHeight;
+
+
+graphContainer.graphviz({useWorker: true})
+    .width(width)
+    .height(height)
+    .fit(true)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"defn:1-simplex-left-right-htpy"	[color=green,		fillcolor="#B0ECA3",		label="1-simplex-left-right-htpy",		shape=box,		style=filled];	"lem:2-truncated-qcat-htpy-comp"	[color=green,		fillcolor="#9CEC8B",		label="2-truncated-qcat-htpy-comp",		shape=ellipse,		style=filled];	"defn:1-simplex-left-right-htpy" -> "lem:2-truncated-qcat-htpy-comp"	[style=dashed];	"lem:2-truncated-qcat-htpy"	[color=green,		fillcolor="#9CEC8B",		label="2-truncated-qcat-htpy",		shape=ellipse,		style=filled];	"defn:1-simplex-left-right-htpy" -> "lem:2-truncated-qcat-htpy"	[style=dashed];	"cor:2-truncated-qcat-htpy-comp"	[color=green,		fillcolor="#9CEC8B",		label="2-truncated-qcat-htpy-comp",		shape=ellipse,		style=filled];	"lem:2-truncated-qcat-htpy-comp" -> "cor:2-truncated-qcat-htpy-comp";	"defn:2-truncated-qcat-htpy-cat"	[color=green,		fillcolor="#B0ECA3",		label="2-truncated-qcat-htpy-cat",		shape=box,		style=filled];	"lem:2-truncated-qcat-htpy" -> "defn:2-truncated-qcat-htpy-cat"	[style=dashed];	"cor:2-truncated-qcat-htpy-comp" -> "defn:2-truncated-qcat-htpy-cat"	[style=dashed];	"lem:htpy-cat-of-qcat"	[color=green,		fillcolor="#9CEC8B",		label="htpy-cat-of-qcat",		shape=ellipse,		style=filled];	"defn:2-truncated-qcat-htpy-cat" -> "lem:htpy-cat-of-qcat"	[style=dashed];	"lem:ho-preserves-small-products"	[color=blue,		fillcolor="#A3D6FF",		label="ho-preserves-small-products",		shape=ellipse,		style=filled];	"lem:htpy-cat-of-qcat" -> "lem:ho-preserves-small-products";	"lem:ho-preserves-finite-products"	[color=green,		fillcolor="#9CEC8B",		label="ho-preserves-finite-products",		shape=ellipse,		style=filled];	"lem:htpy-cat-of-qcat" -> "lem:ho-preserves-finite-products";	"prop:htpy-2-cat-closure"	[label="htpy-2-cat-closure",		shape=ellipse];	"lem:ho-preserves-finite-products" -> "prop:htpy-2-cat-closure";	"defn:htpy-cat-of-infinity-cat"	[color=blue,		fillcolor="#A3D6FF",		label="htpy-cat-of-infinity-cat",		shape=box,		style=filled];	"lem:enriched-cob-adjunction"	[label="enriched-cob-adjunction",		shape=ellipse];	"prop:simplex-cat-factorization"	[color=green,		fillcolor="#1CAC78",		label="simplex-cat-factorization",		shape=ellipse,		style=filled];	"prop:nerve-fully-faithful"	[color=green,		fillcolor="#9CEC8B",		label="nerve-fully-faithful",		shape=ellipse,		style=filled];	"defn:underlying-cat"	[color=green,		fillcolor="#B0ECA3",		label="underlying-cat",		shape=box,		style=filled];	"lem:underlying-cat-iso"	[label="underlying-cat-iso",		shape=ellipse];	"defn:underlying-cat" -> "lem:underlying-cat-iso"	[style=dashed];	"defn:lax-monoidal-functor"	[color=green,		fillcolor="#B0ECA3",		label="lax-monoidal-functor",		shape=box,		style=filled];	"prop:change-of-base"	[color=green,		fillcolor="#A3D6FF",		label="change-of-base",		shape=ellipse,		style=filled];	"defn:lax-monoidal-functor" -> "prop:change-of-base"	[style=dashed];	"prop:change-of-base-adjunction"	[color=blue,		fillcolor="#A3D6FF",		label="change-of-base-adjunction",		shape=ellipse,		style=filled];	"prop:change-of-base" -> "prop:change-of-base-adjunction"	[style=dashed];	"prop:change-of-base-adjunction" -> "lem:enriched-cob-adjunction"	[style=dashed];	"cor:free-underlying-2-adj"	[label="free-underlying-2-adj",		shape=ellipse];	"prop:change-of-base-adjunction" -> "cor:free-underlying-2-adj"	[style=dashed];	"prop:cob-adjunction"	[label="cob-adjunction",		shape=ellipse];	"prop:change-of-base-adjunction" -> "prop:cob-adjunction"	[style=dashed];	"lem:right-of-monoidal-adj-ucats"	[label="right-of-monoidal-adj-ucats",		shape=ellipse];	"prop:change-of-base-adjunction" -> "lem:right-of-monoidal-adj-ucats"	[style=dashed];	"lem:trivial-fib-leibniz"	[label="trivial-fib-leibniz",		shape=ellipse];	"prop:qcat-cosmos"	[label="qcat-cosmos",		shape=ellipse];	"prop:coherent-iso"	[label="coherent-iso",		shape=ellipse];	"lem:invertible-2-cell"	[label="invertible-2-cell",		shape=ellipse];	"prop:coherent-iso" -> "lem:invertible-2-cell"	[style=dashed];	"defn:coherent-isomorphism"	[color=green,		fillcolor="#B0ECA3",		label="coherent-isomorphism",		shape=box,		style=filled];	"defn:coherent-isomorphism" -> "prop:coherent-iso"	[style=dashed];	"defn:qcat-equivalence"	[color=green,		fillcolor="#B0ECA3",		label="qcat-equivalence",		shape=box,		style=filled];	"defn:coherent-isomorphism" -> "defn:qcat-equivalence"	[style=dashed];	"defn:qcat-isofibration"	[color=green,		fillcolor="#B0ECA3",		label="qcat-isofibration",		shape=box,		style=filled];	"defn:coherent-isomorphism" -> "defn:qcat-isofibration"	[style=dashed];	"lem:qcat-htpy-cat-equiv"	[color=blue,		label="qcat-htpy-cat-equiv",		shape=ellipse];	"defn:qcat-equivalence" -> "lem:qcat-htpy-cat-equiv"	[style=dashed];	"defn:equivalence"	[color=blue,		fillcolor="#A3D6FF",		label=equivalence,		shape=box,		style=filled];	"defn:qcat-equivalence" -> "defn:equivalence"	[style=dashed];	"defn:qcat-isofibration" -> "prop:qcat-cosmos";	"lem:equiv-htpy-equiv"	[label="equiv-htpy-equiv",		shape=ellipse];	"defn:equivalence" -> "lem:equiv-htpy-equiv"	[style=dashed];	"thm:equiv-are-equiv"	[label="equiv-are-equiv",		shape=ellipse];	"defn:equivalence" -> "thm:equiv-are-equiv"	[style=dashed];	"defn:trivial-fibration"	[label="trivial-fibration",		shape=box];	"defn:equivalence" -> "defn:trivial-fibration"	[style=dashed];	"lem:equivalence-2-of-3"	[label="equivalence-2-of-3",		shape=ellipse];	"lem:equiv-htpy-equiv" -> "lem:equivalence-2-of-3";	"defn:simplicial-conical-limit"	[color=green,		fillcolor="#B0ECA3",		label="simplicial-conical-limit",		shape=box,		style=filled];	"defn:cosmos"	[color=green,		fillcolor="#B0ECA3",		label=cosmos,		shape=box,		style=filled];	"defn:simplicial-conical-limit" -> "defn:cosmos"	[style=dashed];	"defn:cosmos" -> "defn:htpy-cat-of-infinity-cat"	[style=dashed];	"defn:cosmos" -> "defn:equivalence"	[style=dashed];	"defn:homotopy-2-cat"	[label="homotopy-2-cat",		shape=box];	"defn:cosmos" -> "defn:homotopy-2-cat"	[style=dashed];	"prop:isofib-define-isofib"	[color=blue,		fillcolor="#A3D6FF",		label="isofib-define-isofib",		shape=ellipse,		style=filled];	"defn:cosmos" -> "prop:isofib-define-isofib"	[style=dashed];	"defn:underlying-cat-of-cosmos"	[color=blue,		fillcolor="#A3D6FF",		label="underlying-cat-of-cosmos",		shape=box,		style=filled];	"defn:cosmos" -> "defn:underlying-cat-of-cosmos"	[style=dashed];	"defn:closed-cosmos"	[color=blue,		fillcolor="#A3D6FF",		label="closed-cosmos",		shape=box,		style=filled];	"defn:cosmos" -> "defn:closed-cosmos"	[style=dashed];	"defn:homotopy-2-cat" -> "lem:underlying-cat-iso"	[style=dashed];	"defn:homotopy-2-cat" -> "lem:invertible-2-cell"	[style=dashed];	"defn:homotopy-2-cat" -> "thm:equiv-are-equiv"	[style=dashed];	"defn:closed-cosmos" -> "prop:htpy-2-cat-closure"	[style=dashed];	"eq:qcat-defn"	[color=green,		fillcolor="#B0ECA3",		label="qcat-defn",		shape=box,		style=filled];	"eq:qcat-defn" -> "prop:coherent-iso"	[style=dashed];	"eq:qcat-defn" -> "defn:qcat-equivalence"	[style=dashed];	"lem:qcat-1-simplex-htpy"	[color=blue,		fillcolor="#A3D6FF",		label="qcat-1-simplex-htpy",		shape=ellipse,		style=filled];	"eq:qcat-defn" -> "lem:qcat-1-simplex-htpy"	[style=dashed];	"lem:2-truncated-qcat"	[color=green,		fillcolor="#9CEC8B",		label="2-truncated-qcat",		shape=ellipse,		style=filled];	"eq:qcat-defn" -> "lem:2-truncated-qcat"	[style=dashed];	"prop:nerve-qcat"	[color=green,		fillcolor="#9CEC8B",		label="nerve-qcat",		shape=ellipse,		style=filled];	"eq:qcat-defn" -> "prop:nerve-qcat"	[style=dashed];	"lem:qcat-1-simplex-htpy" -> "lem:invertible-2-cell"	[style=dashed];	"cor:sset-cat-limits"	[color=green,		fillcolor="#9CEC8B",		label="sset-cat-limits",		shape=ellipse,		style=filled];	"defn:kan-complex"	[color=green,		fillcolor="#B0ECA3",		label="kan-complex",		shape=box,		style=filled];	"prop:kan-cosmos"	[label="kan-cosmos",		shape=ellipse];	"defn:kan-complex" -> "prop:kan-cosmos"	[style=dashed];	"prop:cat-cosmos"	[label="cat-cosmos",		shape=ellipse];	"prop:sliced-cosmoi"	[color=blue,		label="sliced-cosmoi",		shape=ellipse];	"defn:simplex-boundary"	[color=green,		fillcolor="#B0ECA3",		label="simplex-boundary",		shape=box,		style=filled];	"defn:2-cat-equivalence"	[color=blue,		fillcolor="#A3D6FF",		label="2-cat-equivalence",		shape=box,		style=filled];	"defn:2-cat-equivalence" -> "thm:equiv-are-equiv"	[style=dashed];	"cor:equiv-invar-fun"	[color=blue,		label="equiv-invar-fun",		shape=ellipse];	"thm:equiv-are-equiv" -> "cor:equiv-invar-fun";	"lem:simplex-yoneda"	[color=green,		fillcolor="#9CEC8B",		label="simplex-yoneda",		shape=ellipse,		style=filled];	"lem:cat-of-n-arrows"	[color=blue,		label="cat-of-n-arrows",		shape=ellipse];	"defn:nerve"	[color=green,		fillcolor="#B0ECA3",		label=nerve,		shape=box,		style=filled];	"defn:nerve" -> "prop:nerve-fully-faithful"	[style=dashed];	"defn:nerve" -> "defn:coherent-isomorphism"	[style=dashed];	"prop:nerve-2-coskeletal"	[color=green,		fillcolor="#9CEC8B",		label="nerve-2-coskeletal",		shape=ellipse,		style=filled];	"defn:nerve" -> "prop:nerve-2-coskeletal"	[style=dashed];	"defn:nerve-functor"	[color=green,		fillcolor="#B0ECA3",		label="nerve-functor",		shape=box,		style=filled];	"defn:nerve" -> "defn:nerve-functor"	[style=dashed];	"prop:nerve-2-coskeletal" -> "prop:nerve-qcat";	"prop:ho-nerve-adjunction"	[color=green,		fillcolor="#9CEC8B",		label="ho-nerve-adjunction",		shape=ellipse,		style=filled];	"prop:nerve-2-coskeletal" -> "prop:ho-nerve-adjunction";	"defn:nerve-functor" -> "prop:ho-nerve-adjunction"	[style=dashed];	"defn:one-truncation"	[color=green,		fillcolor="#B0ECA3",		label="one-truncation",		shape=box,		style=filled];	"defn:homotopy-cat"	[color=green,		fillcolor="#B0ECA3",		label="homotopy-cat",		shape=box,		style=filled];	"defn:one-truncation" -> "defn:homotopy-cat"	[style=dashed];	"defn:homotopy-cat" -> "lem:htpy-cat-of-qcat"	[style=dashed];	"defn:homotopy-cat" -> "defn:htpy-cat-of-infinity-cat"	[style=dashed];	"defn:homotopy-cat" -> "lem:qcat-htpy-cat-equiv"	[style=dashed];	"defn:homotopy-cat" -> "defn:homotopy-2-cat"	[style=dashed];	"defn:homotopy-cat" -> "prop:ho-nerve-adjunction"	[style=dashed];	"defn:underlying-cat-of-2cat"	[color=blue,		fillcolor="#A3D6FF",		label="underlying-cat-of-2cat",		shape=box,		style=filled];	"defn:underlying-cat-of-2cat" -> "lem:underlying-cat-iso"	[style=dashed];	"prop:2-cat-as-cat-enriched"	[color=blue,		label="2-cat-as-cat-enriched",		shape=ellipse];	"prop:2-cat-as-cat-enriched" -> "defn:homotopy-2-cat"	[style=dashed];	"defn:simplicial-category"	[color=green,		fillcolor="#B0ECA3",		label="simplicial-category",		shape=box,		style=filled];	"defn:simplicial-category" -> "defn:underlying-cat"	[style=dashed];	"defn:simplicial-category" -> "defn:simplicial-conical-limit"	[style=dashed];	"defn:n-arrow"	[color=blue,		fillcolor="#A3D6FF",		label="n-arrow",		shape=box,		style=filled];	"defn:simplicial-category" -> "defn:n-arrow"	[style=dashed];	"defn:simplicial-cotensor"	[color=green,		fillcolor="#B0ECA3",		label="simplicial-cotensor",		shape=box,		style=filled];	"defn:simplicial-category" -> "defn:simplicial-cotensor"	[style=dashed];	"defn:n-arrow" -> "lem:cat-of-n-arrows";	"defn:simplicial-cotensors"	[color=green,		fillcolor="#B0ECA3",		label="simplicial-cotensors",		shape=box,		style=filled];	"defn:simplicial-cotensor" -> "defn:simplicial-cotensors"	[style=dashed];	"defn:simplicial-cotensors" -> "prop:cob-adjunction"	[style=dashed];	"lem:cotensor-bifunctor"	[color=green,		fillcolor="#9CEC8B",		label="cotensor-bifunctor",		shape=ellipse,		style=filled];	"defn:simplicial-cotensors" -> "lem:cotensor-bifunctor"	[style=dashed];	"lem:cotensor-associativity"	[color=blue,		fillcolor="#A3D6FF",		label="cotensor-associativity",		shape=ellipse,		style=filled];	"defn:simplicial-cotensors" -> "lem:cotensor-associativity"	[style=dashed];	"lem:cotensor-bifunctor" -> "defn:cosmos"	[style=dashed];	"cor:sset-cat-colimits"	[color=green,		fillcolor="#9CEC8B",		label="sset-cat-colimits",		shape=ellipse,		style=filled];	"defn:simplex-category"	[color=green,		fillcolor="#B0ECA3",		label="simplex-category",		shape=box,		style=filled];	"defn:face-map"	[color=green,		fillcolor="#B0ECA3",		label="face-map",		shape=box,		style=filled];	"defn:simplex-category" -> "defn:face-map"	[style=dashed];	"defn:degeneracy-map"	[color=green,		fillcolor="#B0ECA3",		label="degeneracy-map",		shape=box,		style=filled];	"defn:simplex-category" -> "defn:degeneracy-map"	[style=dashed];	"defn:sset-category"	[color=green,		fillcolor="#B0ECA3",		label="sset-category",		shape=box,		style=filled];	"defn:simplex-category" -> "defn:sset-category"	[style=dashed];	"defn:face-map" -> "prop:simplex-cat-factorization"	[style=dashed];	"defn:degeneracy-map" -> "prop:simplex-cat-factorization"	[style=dashed];	"defn:sset-category" -> "cor:sset-cat-limits"	[style=dashed];	"defn:sset-category" -> "prop:ho-nerve-adjunction"	[style=dashed];	"defn:sset-category" -> "defn:simplicial-category"	[style=dashed];	"defn:sset-category" -> "cor:sset-cat-colimits"	[style=dashed];	"defn:isomorphism"	[color=blue,		fillcolor="#A3D6FF",		label=isomorphism,		shape=box,		style=filled];	"defn:isomorphism" -> "prop:coherent-iso"	[style=dashed];	"lem:brown-fact"	[label="brown-fact",		shape=ellipse];	"lem:brown-fact" -> "prop:sliced-cosmoi";	"defn:trivial-fibration" -> "lem:trivial-fib-leibniz"	[style=dashed];	"defn:trivial-fibration" -> "prop:qcat-cosmos"	[style=dashed];	"defn:trivial-fibration" -> "prop:kan-cosmos"	[style=dashed];	"defn:trivial-fibration" -> "prop:cat-cosmos"	[style=dashed];	"defn:trivial-fibration" -> "lem:brown-fact"	[style=dashed];	"lem:trivial-fib-conical"	[label="trivial-fib-conical",		shape=ellipse];	"defn:trivial-fibration" -> "lem:trivial-fib-conical"	[style=dashed];	"lem:trivial-fib-representability"	[label="trivial-fib-representability",		shape=ellipse];	"defn:trivial-fibration" -> "lem:trivial-fib-representability"	[style=dashed];	"lem:trivial-fib-conical" -> "prop:sliced-cosmoi";	"defn:cat-isofibration"	[color=blue,		fillcolor="#A3D6FF",		label="cat-isofibration",		shape=box,		style=filled];	"defn:cat-isofibration" -> "prop:cat-cosmos"	[style=dashed];	"defn:qcat-trivial-fibration"	[color=green,		fillcolor="#B0ECA3",		label="qcat-trivial-fibration",		shape=box,		style=filled];	"defn:qcat-trivial-fibration" -> "prop:qcat-cosmos"	[style=dashed];	"defn:qcat-trivial-fibration" -> "lem:trivial-fib-representability"	[style=dashed];	"prop:nerve-reflective"	[color=green,		fillcolor="#1CAC78",		label="nerve-reflective",		shape=ellipse,		style=filled];	"prop:nerve-reflective" -> "lem:ho-preserves-small-products";	"prop:nerve-reflective" -> "lem:ho-preserves-finite-products";	"defn:standard-simplex"	[color=green,		fillcolor="#B0ECA3",		label="standard-simplex",		shape=box,		style=filled];	"defn:standard-simplex" -> "defn:simplex-boundary"	[style=dashed];	"defn:standard-simplex" -> "lem:simplex-yoneda"	[style=dashed];	"defn:simplicial-horn"	[color=green,		fillcolor="#B0ECA3",		label="simplicial-horn",		shape=box,		style=filled];	"defn:standard-simplex" -> "defn:simplicial-horn"	[style=dashed];	"defn:1-simplex-htpy"	[color=green,		fillcolor="#B0ECA3",		label="1-simplex-htpy",		shape=box,		style=filled];	"defn:1-simplex-htpy" -> "lem:qcat-1-simplex-htpy"	[style=dashed];	"lem:pro-normal-monoidal"	[color=blue,		fillcolor="#A3D6FF",		label="pro-normal-monoidal",		shape=ellipse,		style=filled];	"defn:2-truncated-qcat"	[color=green,		fillcolor="#B0ECA3",		label="2-truncated-qcat",		shape=box,		style=filled];	"defn:2-truncated-qcat" -> "lem:2-truncated-qcat-htpy-comp"	[style=dashed];	"defn:2-truncated-qcat" -> "lem:2-truncated-qcat-htpy"	[style=dashed];	"defn:2-truncated-qcat" -> "lem:2-truncated-qcat"	[style=dashed];	"prop:free-refl-quiver"	[color=green,		fillcolor="#1CAC78",		label="free-refl-quiver",		shape=ellipse,		style=filled];	"prop:free-refl-quiver" -> "defn:homotopy-cat"	[style=dashed];}`)
+    .on("end", interactive);
+
+latexLabelEscaper = function(label) {
+  return label.replace(/\./g, '\\.').replace(/:/g, '\\:')
+}
+
+clickNode = function() {
+  $("#statements div").hide()
+  var node_id = $('text', this).text();
+  $('.thm').hide();
+  $('#'+latexLabelEscaper(node_id)).show().children().show();
+}
+function interactive() {
+    $("span#legend_title").on("click", function () {
+           $(this).siblings('dl').toggle();
+        })
+
+    d3.selectAll('.node')
+        .attr('pointer-events', 'fill')
+        .on('click', function () {
+           var title = d3.select(this).selectAll('title').text().trim();
+           $('#statements > div').hide()
+           $('.thm').hide();
+           $('#'+latexLabelEscaper(title)+'_modal').show().children().show().children().show();
+           $('#statements').show()
+        });
+
+    d3.selectAll('.dep-closebtn').on('click', function() {
+        var modal =
+            d3.select(this).node().parentNode.parentNode.parentNode ;
+        d3.select(modal).style('display', 'none');
+    });
+}
+
+</script>
+
+</body>
+</html>

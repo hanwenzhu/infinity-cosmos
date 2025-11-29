@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Change of base</title>
+<link rel="next" href="sec-examples.html" title="Examples of -cosmoi" />
+<link rel="prev" href="sec-cosmos.html" title="-Cosmoi" />
+<link rel="up" href="sect0001.html" title="-Cosmoi" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">\(\infty \)-Cosmoi</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0002.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Overview</span></a>
+ </li>
+<li class="">
+  <a href="sec-simplicial-sets.html"><span class="toc_ref">1.2</span> <span class="toc_entry">Simplicial sets</span></a>
+ </li>
+<li class="">
+  <a href="sec-homotopy-category.html"><span class="toc_ref">1.3</span> <span class="toc_entry">The homotopy category of a quasi-category, isofibrations, and equivalences</span></a>
+ </li>
+<li class="">
+  <a href="sec-enriched-limits.html"><span class="toc_ref">1.4</span> <span class="toc_entry">Enriched limits</span></a>
+ </li>
+<li class="">
+  <a href="sec-cosmos.html"><span class="toc_ref">1.5</span> <span class="toc_entry">\(\infty \)-Cosmoi</span></a>
+ </li>
+<li class=" active current">
+  <a href="sec-change-of-base.html"><span class="toc_ref">1.6</span> <span class="toc_entry">Change of base</span></a>
+ </li>
+<li class="">
+  <a href="sec-examples.html"><span class="toc_ref">1.7</span> <span class="toc_entry">Examples of \(\infty \)-cosmoi</span></a>
+ </li>
+<li class="">
+  <a href="sec-htpy-2-cat.html"><span class="toc_ref">1.8</span> <span class="toc_entry">The homotopy 2-category</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">2</span> <span class="toc_entry">Bibliography</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="sec:change-of-base">1.6 Change of base</h1>
+
+<p>“Change of base,” first considered by Eilenberg and Kelly in <span class="cite">
+	[
+	<a href="sect0003.html#EilenbergKelly:1966cc" >EK66</a>
+	]
+</span>, refers to a systematic procedure by which enrichment over one category \({\mathord {\mathcal{V}}}\) is converted into enrichment over another category \({\mathord {\mathcal{W}}}\). This will be applied in §<a href="sec-htpy-2-cat.html">1.8</a> to convert an \(\infty \)-cosmos into a simpler structure. For a cartesian closed category \({\mathord {\mathcal{V}}}\), there is a 2-category \({{\mathord {\mathcal{V}}}}\text{-}{\mathord {\mathcal{Cat}}}\) of \({\mathord {\mathcal{V}}}\)-categories, \({\mathord {\mathcal{V}}}\)-functors, and \({\mathord {\mathcal{V}}}\)-natural transformations. The first main result, appearing as Proposition <a href="sec-change-of-base.html#prop:change-of-base">1.6.4</a>, gives conditions under which a functor \(T \colon {\mathord {\mathcal{V}}}\to {\mathord {\mathcal{W}}}\) between cartesian closed categories induces a change-of-base 2-functor \(T_* \colon {{\mathord {\mathcal{V}}}}\text{-}{\mathord {\mathcal{Cat}}} \to {{\mathord {\mathcal{W}}}}\text{-}{\mathord {\mathcal{Cat}}}\). </p>
+<p>As the context we are working in here is less general than the one considered by Eilenberg and Kelly — our base categories are cartesian closed while theirs are closed symmetric monoidal — we take a shortcut which covers all of our examples and is easier to explain. In general, all that is needed to produce a change of base 2-functor is a <em>lax monoidal</em> functor between symmetric monoidal categories, but the lax monoidal functors we encounter between cartesian closed categories are in fact finite-product-preserving, so we content ourselves with explicating the results in that case instead. </p>
+<p>However, lax monoidal functors exist in Mathlib already, so we briefly recall the definition. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="defn:lax-monoidal-functor">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">1.6.1</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#defn:lax-monoidal-functor">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.LaxMonoidalFunctor" class="lean_decl">CategoryTheory.LaxMonoidalFunctor</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  A <b class="bfseries">(lax) monoidal functor</b> between cartesian closed categories \({\mathord {\mathcal{V}}}\) and \({\mathord {\mathcal{W}}}\) is a functor \(T \colon {\mathord {\mathcal{V}}}\to {\mathord {\mathcal{W}}}\) equipped with natural transformations </p>
+<div class="centered"> <div class="tikzcd" id="a0000000093">
+    <img src="images/img-0039.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \cV \times \cV \arrow[r, &#34;T\times T&#34;] \arrow[dr, phantom, &#34;\scriptstyle\Downarrow\phi&#34;] \arrow[d, &#34;\times&#34;&#39;] &amp; \cW \times \cW \arrow[d, &#34;\times&#34;] &amp; \catone \arrow[r, &#34;1&#34;] \arrow[dr, &#34;1&#34;&#39;] &amp; \cV \arrow[d, &#34;T&#34;] \\ \cV \arrow[r, &#34;T&#34;&#39;] &amp; \cW  &amp;\arrow[ur, phantom, &#34;\scriptstyle\Uparrow\phi_0&#34; pos=.85] &amp; \cW
+\end{tikzcd}" />
+</div> </div>
+<p> so that the evident associativity and unit diagrams commute. </p>
+
+  </div>
+</div>
+<p>Except in a special case that we now introduce, the maps \(\phi \) and \(\phi _0\) are to be regarded as part of the structure of a lax monoidal functor, rather than a property the functor \(T\) enjoys. </p>
+<p>Recall that a functor \(T \colon {\mathord {\mathcal{V}}}\to {\mathord {\mathcal{W}}}\) between cartesian closed categories <b class="bfseries">preserves finite products</b> just when the natural maps defined for any \(u,v \in {\mathord {\mathcal{V}}}\) </p>
+<div class="displaymath" id="a0000000094">
+  \[  T(u \times v) \rightsquigarrow Tu \times Tv \qquad \text{and} \qquad T1 \rightsquigarrow 1 \]
+</div>
+<p> are isomorphisms. These maps satisfy the duals of the coherence conditions mentioned in Definition <a href="sec-change-of-base.html#defn:lax-monoidal-functor">1.6.1</a> and make \(T\) into a <b class="bfseries">strong monoidal functor</b> between the cartesian closed categories \({\mathord {\mathcal{V}}}\) and \({\mathord {\mathcal{W}}}\). The inverse isomorphisms then provide the structure maps of Definition <a href="sec-change-of-base.html#defn:lax-monoidal-functor">1.6.1</a>. </p>
+<p>For example: </p>
+<div class="ex_thmwrapper theorem-style-definition" id="ex:lax-u-set">
+  <div class="ex_thmheading">
+    <span class="ex_thmcaption">
+    Example
+    </span>
+    <span class="ex_thmlabel">1.6.2</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#ex:lax-u-set">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="ex_thmcontent">
+  <p> Since representable functors preserve products, for any cartesian closed category \({\mathord {\mathcal{V}}}\), the underlying set functor \((-)_0 \colon {\mathord {\mathcal{V}}}\to {\mathord {\mathcal{Set}}}\) is product-preserving </p>
+
+  </div>
+</div>
+<div class="ex_thmwrapper theorem-style-definition" id="ex:strong-free">
+  <div class="ex_thmheading">
+    <span class="ex_thmcaption">
+    Example
+    </span>
+    <span class="ex_thmlabel">1.6.3</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#ex:strong-free">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="ex_thmcontent">
+  <p> In a cartesian closed category \({\mathord {\mathcal{V}}}\), finite products distribute over arbitrary coproducts. In particular, for any sets \(X\) and \(Y\) there is an isomorphism </p>
+<div class="displaymath" id="a0000000095">
+  \[  \amalg _{X \times Y} 1 \cong (\amalg _X 1) \times (\amalg _Y 1) \]
+</div>
+<p> between coproducts of the terminal object \(1\), which proves that the functor </p>
+<div class="centered"> <div class="tikzcd" id="a0000000096">
+    <img src="images/img-0040.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \mathcal{S}et \arrow[r, &#34;{\amalg_{-} 1}&#34;] &amp; \cV
+\end{tikzcd}" />
+</div> </div>
+<p> is finite-product-preserving. </p>
+
+  </div>
+</div>
+<p>A finite-product-preserving functor may be used to change the base as follows: </p>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:change-of-base">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.6.4</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#prop:change-of-base">#</a>
+    
+    <a class="icon proof" href="sec-change-of-base.html#a0000000097"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-change-of-base.html#defn:lax-monoidal-functor">Definition 1.6.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://emilyriehl.github.io/infinity-cosmos/docs/find/#doc/CategoryTheory.instEnrichedCategoryTransportEnrichment" class="lean_decl">CategoryTheory.instEnrichedCategoryTransportEnrichment</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   A finite-product-preserving functor \(T \colon {\mathord {\mathcal{V}}}\to {\mathord {\mathcal{W}}}\) between cartesian closed categories induces a change-of-base 2-functor </p>
+<div class="centered"> <div class="tikzcd" id="a0000000098">
+    <img src="images/img-0041.svg" class="tikzcd-vector" alt="\begin{tikzcd}  {\cV}\text{-}\mathcal{C}at \arrow[r, &#34;T_*&#34;] &amp; {\cW}\text{-}\mathcal{C}at\, . \end{tikzcd}" />
+</div></div>
+
+  </div>
+</div>
+<p>An early observation along these lines was first stated as <span class="cite">
+	[
+	<a href="sect0003.html#EilenbergKelly:1966cc" >EK66</a>
+	, 
+	II.6.3
+	]
+</span>, with the proof left to the reader. We adopt the same tactic and leave the diagram chases to the reader or to <span class="cite">
+	[
+	<a href="sect0003.html#Cruttwell:2008rr" >Cru08</a>
+	, 
+	4.2.4
+	]
+</span> and instead just give the construction of the change-of-base 2-functor, which is the important thing. The construction of a \({\mathord {\mathcal{W}}}\)-category \(T_*{\mathord {\mathcal{C}}}\) from a \({\mathord {\mathcal{V}}}\)-category \({\mathord {\mathcal{C}}}\) exists in Mathlib in the more general setting of a lax monoidal functor \(T\), but change of base for enriched functors or natural transformations has not been formalized. </p>
+<div class="proof_wrapper" id="a0000000097">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \({\mathord {\mathcal{C}}}\) be a \({\mathord {\mathcal{V}}}\)-category and define a \({\mathord {\mathcal{W}}}\)-category \(T_*{\mathord {\mathcal{C}}}\) to have the same objects and to have mapping objects \(T_*{\mathord {\mathcal{C}}}(x,y) :=T{\mathord {\mathcal{C}}}(x,y)\). The composition and identity maps are given by the composites </p>
+<div class="centered"> <div class="tikzcd" id="a0000000099">
+    <img src="images/img-0042.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=small] T\cC(y,z)\times T\cC(x,y) \arrow[r, &#34;\cong&#34;] &amp; T(\cC(y,z) \times \cC(x,y)) \arrow[r, &#34;T\circ&#34;] &amp; T\cC(x,z) &amp; 1 \arrow[r, &#34;\cong&#34;] &amp; T1 \arrow[r, &#34;T\id_x&#34;] &amp; T\cC(x,x)
+\end{tikzcd}" />
+</div> </div>
+<p> which make use of the inverses of the natural maps that arise when a finite-product-preserving functor is applied to a finite product. A straightforward diagram chase verifies that \(T_*{\mathord {\mathcal{C}}}\) is a \({\mathord {\mathcal{W}}}\)-category. </p>
+<p>If \(F \colon {\mathord {\mathcal{C}}}\to {\mathord {\mathcal{D}}}\) is a \({\mathord {\mathcal{V}}}\)-functor, then we define a \({\mathord {\mathcal{W}}}\)-functor \(T_*F \colon T_*{\mathord {\mathcal{C}}}\to T_*{\mathord {\mathcal{D}}}\) to act on objects by \(c \in {\mathord {\mathcal{C}}}\mapsto Fc \in {\mathord {\mathcal{D}}}\) and with internal action on arrows defined by </p>
+<div class="centered"> <div class="tikzcd" id="a0000000100">
+    <img src="images/img-0043.svg" class="tikzcd-vector" alt="\begin{tikzcd}  T\cC(x,y) \arrow[r, &#34;TF_{x,y}&#34;] &amp; T\cD(Fx,Fy) \end{tikzcd}" />
+</div> </div>
+<p> Again, a straightforward diagram chase verifies that \(T_*F\) is \({\mathord {\mathcal{W}}}\)-functorial. It is evident from this definition that \(T_*(GF) = T_*G \cdot T_*F\). </p>
+<p>Finally, let \(\alpha \colon F \Rightarrow G\) be a \({\mathord {\mathcal{V}}}\)-natural transformation between \({\mathord {\mathcal{V}}}\)-functors \(F,G \colon {\mathord {\mathcal{C}}}\to {\mathord {\mathcal{D}}}\) and define a \({\mathord {\mathcal{W}}}\)-natural transformation \(T_*\alpha \colon T_* F \Rightarrow T_*G\) to have components </p>
+<div class="centered"> <div class="tikzcd" id="a0000000101">
+    <img src="images/img-0044.svg" class="tikzcd-vector" alt="\begin{tikzcd}  1 \arrow[r, &#34;\cong&#34;] &amp; T1 \arrow[r, &#34;T\alpha_c&#34;] &amp; T\cD(Fc, Gc)\end{tikzcd}" />
+</div> </div>
+<p> Another straightforward diagram chase verifies that \(T_*\alpha \) is \({\mathord {\mathcal{W}}}\)-natural. </p>
+<p>It remains to verify this assignment is functorial for both horizontal and vertical composition of enriched natural transformations. The component of \(T_*(\beta \cdot \alpha )\) is defined by the top-horizontal composite below while the component of the vertical composite of \(T_*\alpha \) with \(T_*\beta \colon T_*G \Rightarrow T_*H\) is defined by the bottom composite: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000102">
+    <img src="images/img-0045.svg" class="tikzcd-vector" alt="\begin{tikzcd}  1 \arrow[r, &#34;\cong&#34;] \arrow[dr, &#34;\cong&#34;&#39;] &amp; T1 \arrow[r, &#34;T(\beta_c\times \alpha_c)&#34;] &amp; T(\cD(Gc, Hc) \times \cD(Fc, Gc)) \arrow[r, &#34;T\circ&#34;] &amp; T\cD(Fc,Hc) \\ &amp; T1 \times T1 \arrow[u, &#34;\cong&#34;&#39;] \arrow[r, &#34;T\beta_c \times T\alpha_c&#34;&#39;] &amp; T\cD(Gc,Hc) \times T\cD(Fc,Gc) \arrow[u, &#34;\cong&#34;&#39;]  \end{tikzcd}" />
+</div> </div>
+<p> The square commutates by the naturality of the isomorphism \(T(u \times v) \cong Tu \times Tv\), while the triangle commutes because 1 is terminal, so the inverses of the displayed isomorphisms form a commutative triangle. The argument for functoriality of horizontal composites is similar. </p>
+
+  </div>
+</div>
+<div class="rmk_thmwrapper theorem-style-theorem" id="rmk:change-of-base-2-fun">
+  <div class="rmk_thmheading">
+    <span class="rmk_thmcaption">
+    Remark
+    </span>
+    <span class="rmk_thmlabel">1.6.5</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#rmk:change-of-base-2-fun">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="rmk_thmcontent">
+  <p> In fact, the “change of base” procedure \({\mathord {\mathcal{V}}}\mapsto {{\mathord {\mathcal{V}}}}\text{-}{\mathord {\mathcal{Cat}}}\) is <em>itself</em> a 2-functor from the 2-category of cartesian closed categories, finite-product-preserving functors, and natural transformations to the 2-category of 2-categories, 2-functors, and 2-natural transformations. See <span class="cite">
+	[
+	<a href="sect0003.html#Cruttwell:2008rr" >Cru08</a>
+	, 
+	§
+	4.3
+	]
+</span> for a discussion and proof. </p>
+
+  </div>
+</div>
+<p>As an immediate consequence of the 2-functoriality of Remark <a href="sec-change-of-base.html#rmk:change-of-base-2-fun">1.6.5</a>: </p>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:change-of-base-adjunction">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.6.6</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#prop:change-of-base-adjunction">#</a>
+    
+    <a class="icon proof" href="sec-change-of-base.html#a0000000103"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-change-of-base.html#defn:lax-monoidal-functor">Definition 1.6.1</a></li>
+          
+          <li><a href="sec-change-of-base.html#prop:change-of-base">Proposition 1.6.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>  Any adjunction between cartesian closed categories whose left adjoint preserves finite products induces a change-of-base 2-adjunction </p>
+<div class="centered"> <div class="tikzcd" id="a0000000104">
+    <img src="images/img-0046.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+\cV \arrow[r, bend left=20, &#34;F&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; \cW \arrow[l, bend left=20, &#34;U&#34;] \arrow[r, phantom, &#34;\rightsquigarrow&#34;] &amp; {\cV}\text{-}\mathcal{C}at \arrow[r, bend left=20, start anchor=10, end anchor=170,  &#34;F_*&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; {\cW}\text{-}\mathcal{C}at \arrow[l, bend left=20, start anchor=190, end anchor=-10,  &#34;U_*&#34;]
+\end{tikzcd}" />
+</div> </div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000103">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Of course right adjoints always preserve products, so the adjoint pair of functors \(F \dashv U\) defines an adjunction in the 2-category of cartesian closed categories and finite-product-preserving functors described in Remark <a href="sec-change-of-base.html#rmk:change-of-base-2-fun">1.6.5</a>. The 2-functor \({\mathord {\mathcal{V}}}\mapsto {{\mathord {\mathcal{V}}}}\text{-}{\mathord {\mathcal{Cat}}}\) then carries the adjunction displayed on the left to the adjunction displayed on the right. </p>
+
+  </div>
+</div>
+<p>As a special case we have a free-forgetful adjunction between \({\mathord {\mathcal{Cat}}}\) and \({{\mathord {\mathcal{V}}}}\text{-}{\mathord {\mathcal{Cat}}}\). Some pieces of this are in the enriched categories folder of Mathlib. </p>
+<div class="corollary_thmwrapper theorem-style-theorem" id="cor:free-underlying-2-adj">
+  <div class="corollary_thmheading">
+    <span class="corollary_thmcaption">
+    Corollary
+    </span>
+    <span class="corollary_thmlabel">1.6.7</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#cor:free-underlying-2-adj">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-change-of-base.html#prop:change-of-base-adjunction">Proposition 1.6.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="corollary_thmcontent">
+  <p>  For any cartesian closed category \({\mathord {\mathcal{V}}}\) with coproducts, the underlying category construction and free category construction define adjoint 2-functors </p>
+<div class="centered"> <div class="tikzcd" id="a0000000105">
+    <img src="images/img-0047.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+  \mathcal{C}at \arrow[r, bend left=20, hook, start anchor=10, end anchor=170] \arrow[r, phantom, &#34;\bot&#34;] &amp; {\cV}\text{-}\mathcal{C}at \arrow[l, bend left=20, start anchor=190, end anchor=-10, &#34;(-)_0&#34;]
+\end{tikzcd}" />
+</div> </div>
+
+  </div>
+</div>
+<p>In light of Proposition <a href="sec-change-of-base.html#prop:change-of-base-adjunction">1.6.6</a> and results to follow, an adjunction between cartesian closed categories whose left adjoint preserves finite products provides a <b class="bfseries">change-of-base adjunction</b>. While Proposition <a href="sec-change-of-base.html#prop:change-of-base-adjunction">1.6.6</a> permits the change of base along either adjoint of a finite-product-preserving adjunction, the next series of results reveal that change of base along the right adjoint is somewhat better behaved. </p>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:enriched-cob-adjunction">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.6.8</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#lem:enriched-cob-adjunction">#</a>
+    
+    <a class="icon proof" href="sec-change-of-base.html#a0000000106"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-change-of-base.html#prop:change-of-base-adjunction">Proposition 1.6.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Any adjunction comprised of finite-product-preserving functors between cartesian closed categories </p>
+<div class="centered"> <div class="tikzcd" id="a0000000107">
+    <img src="images/img-0048.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+\cV \arrow[r, bend left=20, &#34;F&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; \cW \arrow[l, bend left=20, &#34;U&#34;]  \arrow[r, phantom, &#34;\rightsquigarrow&#34;] &amp; \cV \arrow[r, bend left=20, start anchor=20, end anchor=170, &#34;F&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; U_*\cW \arrow[l, bend left=20, start anchor=190, end anchor=-15, &#34;U&#34;]  \end{tikzcd}" />
+</div> </div>
+<p> defines a \({\mathord {\mathcal{V}}}\)-enriched adjunction between the \({\mathord {\mathcal{V}}}\)-categories \({\mathord {\mathcal{V}}}\) and \(U_*{\mathord {\mathcal{W}}}\); i.e., there exists a \({\mathord {\mathcal{V}}}\)-natural isomorphism \(U{\mathord {\mathcal{W}}}(Fv,w) \cong {\mathord {\mathcal{V}}}(v,Uw)\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000106">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The internal action \(U_{a,b} \colon U{\mathord {\mathcal{W}}}(a,b) \to {\mathord {\mathcal{V}}}(Ua,Ub)\) of the \({\mathord {\mathcal{V}}}\)-functor \(U \colon U_*{\mathord {\mathcal{W}}}\to {\mathord {\mathcal{V}}}\) is defined by the transpose of the map \(U\textup{ev}\colon U{\mathord {\mathcal{W}}}(a,b) \times Ua \to Ub\) defined by applying \(U\) to the counit of the cartesian closure adjunction of \({\mathord {\mathcal{W}}}\). The \({\mathord {\mathcal{V}}}\)-functoriality of this map follows from naturality of evaluation in a cartesian closed category. </p>
+<p>By the \({\mathord {\mathcal{V}}}\)-functoriality of \(U \colon U_*{\mathord {\mathcal{W}}}\to {\mathord {\mathcal{V}}}\), the map </p>
+<div class="centered"> <div class="tikzcd" id="a0000000108">
+    <img src="images/img-0049.svg" class="tikzcd-vector" alt="\begin{tikzcd}  U\cW(Fv,w) \arrow[r, &#34;U_{Fv,w}&#34;] &amp; \cV(UFv,Uw) \arrow[r, &#34;{- \circ \eta_v}&#34;] &amp; \cV(v,Uw)
+\end{tikzcd}" />
+</div> </div>
+<p> is \({\mathord {\mathcal{V}}}\)-natural in \(w \in U_*{\mathord {\mathcal{W}}}\) for all \(v \in {\mathord {\mathcal{V}}}\). By a general result about enriching adjoints, to construct a compatible \({\mathord {\mathcal{V}}}\)-enrichment of \(F\), we need only demonstrate that this map in an isomorphism in \({\mathord {\mathcal{V}}}\). </p>
+<p>We do this by constructing an explicit inverse, namely </p>
+<div class="centered"> <div class="tikzcd" id="a0000000109">
+    <img src="images/img-0050.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+\cV(v,Uw) \arrow[r, &#34;\eta&#34;] &amp; UF\cV(v,Uw) \arrow[r, &#34;U(F_{v,Uw})&#34;] &amp; U\cW(Fv,FUw) \arrow[r, &#34;\epsilon_w \circ -&#34;] &amp; U\cW(Fv,w)
+\end{tikzcd}" />
+</div> </div>
+<p> where the middle map is defined by applying the unenriched functor \(U\) to the action map from the \({\mathord {\mathcal{W}}}\)-functor \(F \colon F_*{\mathord {\mathcal{V}}}\to {\mathord {\mathcal{W}}}\), which is defined similarly to the \({\mathord {\mathcal{V}}}\)-functor \(U \colon U_*{\mathord {\mathcal{W}}}\to {\mathord {\mathcal{V}}}\). </p>
+<p>The proof that these maps are inverses involves a pair of diagram chases, the first of which demonstrates that the top-right composite reduces to the left-bottom composite, which is the identity: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000110">
+    <img src="images/img-0051.svg" class="tikzcd-vector" alt="\begin{tikzcd} 
+\cV(v,Uw) \arrow[r, &#34;\eta&#34;] \arrow[ddrr, &#34;\eta_{Uw}\circ-&#34;&#39;] &amp; UF\cV(v,Uw) \arrow[r, &#34;U(F_{v,Uw})&#34;] \arrow[dr, &#34;UF_{v, Uw}&#34; description] &amp; U\cW(Fv,FUw) \arrow[r, &#34;\epsilon_w \circ -&#34;] \arrow[d, &#34;U_{Fv,FUw}&#34;] &amp; U\cW(Fv,w) \arrow[d, &#34;U_{Fv,w}&#34;] \\ &amp; &amp; \cV(UFv,UFUw) \arrow[r, &#34;U\epsilon_w \circ -&#34;]  \arrow[d, &#34;-\circ \eta_v&#34;]&amp; \cV(UFv,Uw) \arrow[d, &#34;-\circ \eta_v&#34;] \\ &amp; &amp; \cV(v,UFUw) \arrow[r, &#34;U\epsilon_w\circ-&#34;] &amp; \cV(v,Uw)
+\end{tikzcd}" />
+</div> </div>
+<p> The only subtle point is the commutativity of the trapezoidal region, which expresses the fact that \(\eta \colon \textup{id}_{\mathord {\mathcal{V}}}\Rightarrow UF\) is a <em>closed natural transformation</em> between product-preserving functors between cartesian closed categories. This region commutes because the transposed diagram does: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000111">
+    <img src="images/img-0052.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \cV(v,Uw) \times v\arrow[d, &#34;\eta \times \eta_v&#34;&#39;] \arrow[r, equals] &amp;  \cV(v,Uw) \times v \arrow[d, &#34;\eta&#34;&#39;]  \arrow[r, &#34;\ev&#34;] &amp; Uw \arrow[d, &#34;\eta_{Uw}&#34;] \\  UF\cV(v,Uw)\times UFv  \arrow[r, &#34;\cong&#34;] &amp; UF(\cV(v,UW)\times v) \arrow[r, &#34;UF\ev&#34;] &amp; UFUw
+\end{tikzcd}" />
+</div> </div>
+<p> the right-hand square by naturality, and the left-hand square because any naturally transformation between product-preserving functors is automatically a monoidal natural transformation. The other diagram chase is similar. </p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-theorem" id="prop:cob-adjunction">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">1.6.9</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#prop:cob-adjunction">#</a>
+    
+    <a class="icon proof" href="sec-change-of-base.html#a0000000112"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-change-of-base.html#prop:change-of-base-adjunction">Proposition 1.6.6</a></li>
+          
+          <li><a href="sec-enriched-limits.html#defn:simplicial-cotensors">Definition 1.4.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>  Given an adjunction between cartesian closed categories </p>
+<div class="centered"> <div class="tikzcd" id="a0000000113">
+    <img src="images/img-0053.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+\cV \arrow[r, bend left=20, &#34;F&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; \cW \arrow[l, bend left=20, &#34;U&#34;]   \end{tikzcd}" />
+</div> </div>
+<p> whose left adjoint preserves finite products then if \({\mathord {\mathcal{C}}}\) is co/tensored as a \({\mathord {\mathcal{W}}}\)-category, \(U_*{\mathord {\mathcal{C}}}\) is co/tensored as \({\mathord {\mathcal{V}}}\)-category with the co/tensor of \(c \in {\mathord {\mathcal{C}}}\) by \(v \in {\mathord {\mathcal{V}}}\) defined by </p>
+<div class="displaymath" id="a0000000114">
+  \[  v \otimes c :=Fv \otimes c \qquad \text{and} \qquad c^v :=c^{Fv}. \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000112">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Suppose \({\mathord {\mathcal{C}}}\) admits cotensors as a \({\mathord {\mathcal{W}}}\)-category. To verify that \(U_*{\mathord {\mathcal{C}}}\) admits cotensors as a \({\mathord {\mathcal{V}}}\)-category we must supply an isomorphism </p>
+<div class="displaymath" id="a0000000115">
+  \[  U{\mathord {\mathcal{C}}}(x,c^{Fv}) \cong (U{\mathord {\mathcal{C}}}(x,c))^v \]
+</div>
+<p> in \({\mathord {\mathcal{V}}}\) that is \({\mathord {\mathcal{V}}}\)-natural in \(x\). By the enriched Yoneda lemma, we can extract this isomorphism from an isomorphism </p>
+<div class="displaymath" id="a0000000116">
+  \[  {\mathord {\mathcal{V}}}(u,U{\mathord {\mathcal{C}}}(x,c^{Fv})) \cong {\mathord {\mathcal{V}}}(u,(U{\mathord {\mathcal{C}}}(x,c))^v) \]
+</div>
+<p> that is \({\mathord {\mathcal{V}}}\)-natural in \(u \in {\mathord {\mathcal{V}}}\). To that end, by composing the \({\mathord {\mathcal{V}}}\)-natural isomorphisms of Lemma <a href="sec-change-of-base.html#lem:enriched-cob-adjunction">1.6.8</a>, the enriched natural isomorphisms arising from the cartesian closed structure on \({\mathord {\mathcal{V}}}\) and on \(U_*{\mathord {\mathcal{W}}}\), and the isomorphisms that characterize the cotensor on \({\mathord {\mathcal{C}}}\) and express the fact that \(F\) preserves binary products, we have: </p>
+<div class="displaymath" id="a0000000117">
+  \begin{align*}  {\mathord {\mathcal{V}}}(u,U{\mathord {\mathcal{C}}}(x,c^{Fv})) & \cong U{\mathord {\mathcal{W}}}(Fu, {\mathord {\mathcal{C}}}(x,c^{Fv})) \cong U{\mathord {\mathcal{W}}}(Fu, {\mathord {\mathcal{C}}}(x,c)^{Fv}) \\ & \cong U{\mathord {\mathcal{W}}}(Fu \times Fv, {\mathord {\mathcal{C}}}(x,c)) \cong U{\mathord {\mathcal{W}}}(F(u \times v), {\mathord {\mathcal{C}}}(x,c)) \\ & \cong {\mathord {\mathcal{V}}}(u \times v, U{\mathord {\mathcal{C}}}(x,c)) \cong {\mathord {\mathcal{V}}}(u, (U{\mathord {\mathcal{C}}}(x,c))^v). \qedhere \end{align*}
+</div>
+
+  </div>
+</div>
+<p>This theory of change of base is all well and good from the compound noun perspective on enriched categories, but an additional concern arises from the adjectival point of view. If the finite-product-preserving functor \(T \colon {\mathord {\mathcal{V}}}\to {\mathord {\mathcal{W}}}\) commutes with the underlying set functors for \({\mathord {\mathcal{V}}}\) and \({\mathord {\mathcal{W}}}\) up to natural isomorphism, then by the 2-functoriality of Remark <a href="sec-change-of-base.html#rmk:change-of-base-2-fun">1.6.5</a>, the change-of-base 2-functor \(T_* \colon {{\mathord {\mathcal{V}}}}\text{-}{\mathord {\mathcal{Cat}}} \to {{\mathord {\mathcal{W}}}}\text{-}{\mathord {\mathcal{Cat}}}\) also preserves the underlying categories up to natural isomorphism. This happens in particular in the following setting. </p>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:pro-normal-monoidal">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.6.10</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#lem:pro-normal-monoidal">#</a>
+    
+    <a class="icon proof" href="sec-change-of-base.html#a0000000118"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p> The change-of-base 2-functor induced by a finite-product-preserving functor \(T \colon {\mathord {\mathcal{V}}}\to {\mathord {\mathcal{W}}}\) between cartesian closed categories preserves underlying categories, if and only if, for each \(v \in {\mathord {\mathcal{V}}}\) the composite function on hom-sets </p>
+<div class="centered"> <div class="tikzcd" id="a0000000119">
+    <img src="images/img-0054.svg" class="tikzcd-vector" alt="\begin{tikzcd}  \cV(1,v)_0 \arrow[r, &#34;T&#34;] &amp; \cW(T1,Tv)_0 \arrow[r, &#34;- \circ \cong&#34;] &amp; \cW(1,Tv)_0
+\end{tikzcd}" />
+</div> </div>
+<p> is a bijection. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000118">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The displayed function defines the component at \(v \in {\mathord {\mathcal{V}}}\) of the unique monoidal natural transformation from the underlying set-functor for \({\mathord {\mathcal{V}}}\) to the composite of \(T\) with the underlying set functor for \({\mathord {\mathcal{W}}}\). By the 2-functoriality of Remark <a href="sec-change-of-base.html#rmk:change-of-base-2-fun">1.6.5</a>, if it defines a monoidal natural isomorphism, then it induces a 2-natural isomorphism between the underlying category 2-functor \((-)_0 \colon {{\mathord {\mathcal{V}}}}\text{-}{\mathord {\mathcal{Cat}}} \to {\mathord {\mathcal{Cat}}}\) and the composite of the change-of-base 2-functor \(T_* \colon {{\mathord {\mathcal{V}}}}\text{-}{\mathord {\mathcal{Cat}}} \to {{\mathord {\mathcal{W}}}}\text{-}{\mathord {\mathcal{Cat}}}\) with the underlying category 2-functor \((-)_0 \colon {{\mathord {\mathcal{W}}}}\text{-}{\mathord {\mathcal{Cat}}} \to {\mathord {\mathcal{Cat}}}\). </p>
+<p>Conversely, this condition is necessary for the underlying category of the \({\mathord {\mathcal{W}}}\)-category \(T_*{\mathord {\mathcal{V}}}\) to coincide with the underlying category of the cartesian closed category \({\mathord {\mathcal{V}}}\). </p>
+
+  </div>
+</div>
+<p>One situation in which the condition of Lemma <a href="sec-change-of-base.html#lem:pro-normal-monoidal">1.6.10</a> is automatic is when the lax monoidal functor is the right adjoint of a monoidal adjunction. The proof, originally given in <span class="cite">
+	[
+	<a href="sect0003.html#Kelly:1974da" >Kel74</a>
+	]
+</span>, is by a short diagram chase. </p>
+<div class="lemma_thmwrapper theorem-style-theorem" id="lem:right-of-monoidal-adj-ucats">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.6.11</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#lem:right-of-monoidal-adj-ucats">#</a>
+    
+    <a class="icon proof" href="sec-change-of-base.html#a0000000120"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-change-of-base.html#prop:change-of-base-adjunction">Proposition 1.6.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Consider a finite-product-preserving adjunction between cartesian closed categories: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000121">
+    <img src="images/img-0053.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+\cV \arrow[r, bend left=20, &#34;F&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; \cW \arrow[l, bend left=20, &#34;U&#34;]   \end{tikzcd}" />
+</div> </div>
+<p> Then change of base along the right adjoint respects the underlying categories: </p>
+<div class="centered"> <div class="tikzcd" id="a0000000122">
+    <img src="images/img-0055.svg" class="tikzcd-vector" alt="\begin{tikzcd} [sep=1.5 em] {\cW}\text{-}\mathcal{C}at \arrow[rr, &#34;U_*&#34;] \arrow[dr, &#34;{(-)_0}&#34;&#39;] &amp; &amp; {\cV}\text{-}\mathcal{C}at \arrow[dl, &#34;(-)_0&#34;] \\ &amp; \mathcal{C}at
+\end{tikzcd}" />
+</div> </div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000120">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \({\mathord {\mathcal{C}}}\) be a \({\mathord {\mathcal{W}}}\) category. Then the hom-set in the underlying category of \(U_*{\mathord {\mathcal{C}}}\) from \(x\) to \(y\) is isomorphic to the corresponding hom-set </p>
+<div class="displaymath" id="a0000000123">
+  \[  U_*{\mathord {\mathcal{C}}}(x,y)_0 \cong {\mathord {\mathcal{V}}}(1, U{\mathord {\mathcal{C}}}(x,y))_0 \cong {\mathord {\mathcal{W}}}(F1,{\mathord {\mathcal{C}}}(x,y))_0 \cong {\mathord {\mathcal{W}}}(1,{\mathord {\mathcal{C}}}(x,y))_0 \cong {\mathord {\mathcal{C}}}(x,y)_0 \]
+</div>
+<p> in the underlying category of \({\mathord {\mathcal{C}}}\) and moreover this isomorphism respects the composition and identities in the underlying categories. Thus \({\mathord {\mathcal{C}}}_0 \cong U{\mathord {\mathcal{C}}}_0\). A similar argument shows that change of base along \(U\) respects underlying functors and natural transformations. </p>
+
+  </div>
+</div>
+<p>The general theory of change-of-base will be applied in the following case the next section. </p>
+<div class="example_thmwrapper theorem-style-definition" id="ex:nerve-ho-change-of-base">
+  <div class="example_thmheading">
+    <span class="example_thmcaption">
+    Example
+    </span>
+    <span class="example_thmlabel">1.6.12</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sec-change-of-base.html#ex:nerve-ho-change-of-base">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sec-change-of-base.html#prop:change-of-base-adjunction">Proposition 1.6.6</a></li>
+          
+          <li><a href="sec-homotopy-category.html#lem:ho-preserves-finite-products">Lemma 1.3.9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+        </div>
+  </div>
+  <div class="example_thmcontent">
+  <p>  Both adjoints of the adjunction </p>
+<div class="centered"> <div class="tikzcd" id="a0000000124">
+    <img src="images/img-0056.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+s\mathcal{S}et \arrow[r, bend left=20, start anchor=10, end anchor=170, &#34;\ho&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp; \mathcal{C}at \arrow[l, bend left=20, start anchor=190, end anchor=-10, hook&#39;]
+\end{tikzcd}" />
+</div> </div>
+<p> of Proposition <a href="sec-simplicial-sets.html#prop:ho-nerve-adjunction">1.2.26</a> preserve finite products. Hence, Proposition <a href="sec-change-of-base.html#prop:change-of-base-adjunction">1.6.6</a> induces a change-of-base adjunction defined by the 2-functors </p>
+<div class="centered"> <div class="tikzcd" id="a0000000125">
+    <img src="images/img-0057.svg" class="tikzcd-vector" alt="\begin{tikzcd} [column sep=large]
+s\mathcal{C}at  \arrow[r, bend left=20, start anchor=7, end anchor=170, &#34;\ho_*&#34;] \arrow[r, phantom, &#34;\bot&#34;] &amp;2\text{-}\mathcal{C}at\arrow[l, bend left=20, start anchor=190, end anchor=-5, hook&#39;]
+\end{tikzcd}" />
+</div> </div>
+<p> that act identically on objects and act by applying the homotopy category functor or nerve functor, respectively, on homs. The right adjoint, which builds a simplicially enriched category from a 2-category, respects the underlying category: the underlying category of objects and 1-cells is identified with the underlying category of objects and 0-arrows. In this case, the functor \({\mathord {\mathsf{h}}}\colon {\mathord {\mathcal{sSet}}}\to {\mathord {\mathcal{Cat}}}\) commutes with the underlying set functors, so in fact both adjoints preserve underlying categories, as is evident from direct computation. In particular, the homotopy 2-category of an \(\infty \)-cosmos has the same underlying 1-category. Since the nerve embedding is fully faithful, 2-categories can be identified as a full subcategory comprised of those simplicial categories whose hom spaces are nerves of categories. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sec-cosmos.html" title="\(\infty \)-Cosmoi"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="sect0001.html" title="\(\infty \)-Cosmoi"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="sec-examples.html" title="Examples of \(\infty \)-cosmoi"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>
