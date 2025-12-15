@@ -9,7 +9,7 @@ relaxedAutoImplicit = false
 [[require]]
 name = "LeanArchitect"
 scope = "hanwenzhu"
-rev = "v4.26.0"
+rev = "v4.26.0-rc2"
 
 [[require]]
 name = "mathlib"
